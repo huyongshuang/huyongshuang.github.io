@@ -1,0 +1,26 @@
+.post_cover.left,
+.post_cover.right {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+img.post-bg {
+    width: 100% !important;
+    height: 100% !important;
+    order: 0 !important;
+    z-index: 0 !important;
+}
+
+@media (max-width: 768px) {
+    img.post-bg {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .post_cover.left,
+    .post_cover.right {
+        justify-content: stretch;
+        align-items: center;
+    }
+}

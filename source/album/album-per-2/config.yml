@@ -1,0 +1,70 @@
+# 全局页面配置
+global:
+  # 相册名称
+  album_name: 壁纸
+  # 封面图片路径
+  cover_path: photos/2025-05-20-01.png
+  # 相册描述
+  album_desc: 电脑壁纸
+  # 是否按最新日期在前排序
+  new_first: true
+  # 本地媒体根路径：完整路径 = local_media_path + id.ext
+  local_media_path: photos/
+
+# 本地媒体列表：日期从 id 中解析
+local_media_list:
+  - id: 2025-05-20-01
+    ext: png
+    name: ''
+    description: ''
+  - id: 2025-05-20-02
+    ext: png
+    name: ''
+    description: ''
+  - id: 2025-05-20-03
+    ext: png
+    name: ''
+    description: ''
+  - id: 2025-05-20-04
+    ext: png
+    name: ''
+    description: ''
+  - id: 2025-05-20-05
+    ext: png
+    name: ''
+    description: ''
+  - id: 2025-05-20-06
+    ext: png
+    name: ''
+    description: ''
+  - id: 2025-05-20-07
+    ext: png
+    name: ''
+    description: ''
+  - id: 2025-05-20-08
+    ext: png
+    name: ''
+    description: ''
+  - id: 2025-05-20-09
+    ext: png
+    name: ''
+    description: ''
+  - id: 2025-05-20-10
+    ext: png
+    name: ''
+    description: ''
+
+# 远程媒体列表：日期由 date 字段指定，直接使用 url 加载资源
+remote_media_list:
+  - url: https://picture.huyongshuang.top/sample_images/胡永双.png
+    date:
+    name: 胡永双
+    description:
+  - url: https://picture.huyongshuang.top/sample_images/MC胡永双.png
+    date:
+    name: MC胡永双
+    description:
+  - url: https://picture.huyongshuang.top/sample_images/MC胡永双（旧）.png
+    date:
+    name: MC胡永双（旧）
+    description:

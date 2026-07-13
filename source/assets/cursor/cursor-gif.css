@@ -1,0 +1,75 @@
+/* 全局样式：隐藏浏览器原生光标，禁止过渡动画 */
+* {
+	cursor: none !important;
+	caret-color: auto !important;
+	transition: none !important;
+}
+
+/* 自定义光标基础容器样式 */
+.gif-cursor {
+	position: fixed;
+	width: 32px;
+	height: 32px;
+	left: 0;
+	top: 0;
+	pointer-events: none;
+	z-index: 999999 !important;
+	opacity: 1;
+	transform: translateZ(0);
+	will-change: left, top;
+	transition: none !important;
+	animation: none !important;
+}
+
+/* 默认状态光标样式 */
+.gif-cursor.normal {
+	background: url(/assets/cursor/ani/default.gif) no-repeat center center;
+	background-size: 100% 100%;
+	margin-left: -2px;
+	margin-top: -3px;
+}
+
+/* 可点击元素光标样式 */
+.gif-cursor.clickable {
+	background: url(/assets/cursor/ani/pointer.gif) no-repeat center center;
+	background-size: 100% 100%;
+	margin-left: -2px;
+	margin-top: -3px;
+}
+
+/* 文本输入/选中文本光标样式 */
+.gif-cursor.text {
+	background: url(/assets/cursor/ani/text.gif) no-repeat center center;
+	background-size: 100% 100%;
+	margin-left: -4px;
+	margin-top: -10px;
+}
+
+/* 光标隐藏类，滚动条/右键菜单时使用 */
+.gif-cursor.hidden {
+	opacity: 0;
+}
+
+/* 输入框保留原生输入闪烁光标 */
+input,
+textarea,
+[contenteditable] {
+	caret-color: auto !important;
+}
+
+/* 页面出现滚动条/右键菜单时，恢复系统原生光标 */
+body.show-system-cursor,
+body.show-system-cursor * {
+	cursor: auto !important;
+}
+
+/* 移动端适配：关闭自定义光标，恢复原生光标 */
+@media (max-width: 768px) {
+	.gif-cursor {
+		display: none !important;
+	}
+
+	* {
+		cursor: auto !important;
+	}
+}

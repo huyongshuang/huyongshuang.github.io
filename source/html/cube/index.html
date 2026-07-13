@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>胡永双：3D魔方</title>
+    <meta name="description" content="胡永双：3D魔方游戏。创造，为了更好的生存。">
+    <meta name="keywords" content="胡永双,魔方,HTML,cube">
+    <link rel="icon" href="https://huyongshuang.github.io/img/favicon.ico">
+    <link rel="stylesheet" href="./assets/style.css">
+    <script src="./assets/Three.js"></script><script src="./assets/React-Three.js"></script><script src="./assets/Fiber.js"></script><script src="./assets/Cube.js"></script><script src="./assets/webpack/webpack-1.js"></script><script src="./assets/webpack/webpack-2.js"></script><script src="./assets/webpack/webpack-3.js"></script><script src="./assets/webpack/webpack-4.js"></script>
+</head>
+<body>
+    <div class="flex flex-col min-h-screen">
+        <main class="flex-grow container mx-auto mt-6 px-2 sm:px-4">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 w-full mb-6">
+                <h1 class="text-2xl font-bold">‎</h1>
+            </div>
+            <div class="w-full flex flex-col lg:flex-row">
+                <div class="h-[70vh] lg:w-4/5 relative flex items-center justify-center">
+                    <div class="w-full lg:w-4/5 h-full relative bg-gradient-to-br rounded-lg shadow-inner border border-gray-400 bg-gray-200">
+                        <div style="position: absolute; width: 100%; height: 100%; overflow: hidden; pointer-events: auto; top: 0px; left: 0px; touch-action: none;">
+                            <div style="width:100%;height:100%">
+                                <canvas style="display: block; width: 797.571px; height: 523.25px; touch-action: auto;" data-engine="three.js r169" width="1395" height="915"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/5 p-4 overflow-y-auto">
+                    <div class="flex flex-col gap-4">
+                        <button class="w-full py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 disabled:bg-gray-400">随机打乱魔方</button>
+                        <button class="w-full py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 disabled:bg-gray-400">重置魔方</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="./assets/rsc-data.js"></script><script src="./assets/webpack.js"></script>
+</body>
+</html>

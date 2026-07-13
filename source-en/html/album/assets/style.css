@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    padding: 40px 20px;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.page-title {
+    color: #222;
+    font-weight: 500;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.page-desc {
+    color: #777;
+    font-size: 15px;
+}
+
+/* 相册容器网格布局 */
+.album-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px;
+}
+
+/* 手机适配 每行3个 */
+@media (max-width: 768px) {
+    .album-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+
+    body {
+        padding: 20px 10px;
+    }
+
+    .page-title {
+        font-size: 22px;
+    }
+}
+
+/* 相册卡片 */
+.album-card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    aspect-ratio: 4 / 3;
+}
+
+.album-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.album-card:hover img {
+    transform: scale(1.06);
+}
+
+/* 底部悬浮相册名称 */
+.album-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* 密码弹窗遮罩 */
+.mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.mask.show {
+    display: flex;
+}
+
+/* 白色密码弹窗 */
+.pwd-box {
+    background: #fff;
+    padding: 30px 24px;
+    border-radius: 12px;
+    width: 320px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.pwd-box h3 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.pwd-input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 16px;
+}
+
+.pwd-input:focus {
+    border-color: #888;
+}
+
+.btn-group {
+    display: flex;
+    gap: 12px;
+}
+
+button {
+    flex: 1;
+    padding: 11px;
+    border-radius: 6px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.confirm-btn {
+    background: #333;
+    color: #fff;
+}
+
+.cancel-btn {
+    background: #f5f5f5;
+    color: #333;
+}
+
+.tip-text {
+    color: #f44336;
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 10px;
+    display: none;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>相册</title>
+    <link rel="icon" href="https://huyongshuang.github.io/img/favicon.ico">
+    <link rel="stylesheet" href="./assets/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+</head>
+<body>
+    <div class="album-header" id="albumHeader">
+        <div class="cover-box" id="coverWrap">
+            <img id="coverImg" alt="相册封面">
+        </div>
+        <div class="album-text">
+            <h1 class="album-title" id="albumName"></h1>
+            <p class="album-desc" id="albumDesc"></p>
+        </div>
+    </div>
+    <div id="photoContainer"></div>
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" id="closeBtn">×</span>
+        <span class="lightbox-prev" id="prevBtn">&lt</span>
+        <span class="lightbox-next" id="nextBtn">&gt</span>
+        <img class="lightbox-media" id="lbImg" style="display:none;">
+        <video class="lightbox-media" id="lbVideo" controls style="display:none;"></video>
+        <div class="lightbox-text" id="lbText"></div>
+    </div>
+    <script src="./assets/script.js"></script>
+</body>
+</html>

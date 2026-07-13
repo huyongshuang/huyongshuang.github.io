@@ -1,0 +1,160 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# 网站
+title: 胡永双
+subtitle: '创造，为了更好的生存。'
+description: '胡永双的博客网站，专注于Minecraft红石、指令、服务端等技术分享，以及更多关于数学、网络、计算机等方面的技术。创造，为了更好的生存。'
+keywords: 胡永双, Minecraft, 红石, 指令， Hexo, 博客
+author: 胡永双
+language: zh-CN
+timezone: 'Asia/Shanghai'
+
+# 网址
+## 在此处设置你的网站网址. 例如，如果你使用GitHub Page，请将网址设置为 'https://username.github.io/project'
+url: https://huyongshuang.top/
+permalink: :year/:i_month/:i_day-:title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: false # 是否在永久链接中保留尾部的index.html，设置为false时去除
+  trailing_html: false # 是否在永久链接中保留尾部的.html，设置为false时去除，对尾部的index.html无效
+
+# 目录
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+  - "*.html"
+  - "html/**"
+
+# 文章
+new_post_name: :title.md # 新文章的文件名称
+default_layout: post
+titlecase: false # 把标题转换为 title case
+external_link:
+  enable: true # 在新标签中打开链接
+  field: site # 对整个网站（site）生效或仅对文章（post）生效
+  exclude: ''
+filename_case: 0
+render_drafts: false
+post_asset_folder: true # 启用资源文件夹
+relative_link: false
+future: true
+syntax_highlighter: highlight.js
+highlight:
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+  exclude_languages: ['mermaid']
+prismjs:
+  preprocess: true
+  line_number: true
+  tab_replace: ''
+  exclude_languages: ['mermaid']
+
+# 首页设置
+# path: 博客索引页面的根路径 (默认 = '')
+# per_page: 每页显示帖子数 (0 = 禁用分页)
+# order_by: 帖子排列顺序 (默认按日期降序排列)
+index_generator:
+  path: ''
+  per_page: 15
+  order_by: -date
+
+# 分类 & 标签
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Metadata elements
+## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+meta_generator: true
+
+# 日期 / 时间格式
+## Hexo 使用 Moment.js 来解析和显示日期  
+## 您可以根据需要自定义日期格式
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+## updated_option 支持 'mtime', 'date', 'empty'
+updated_option: 'mtime'
+
+# 分页
+## 将 set_per_page 设置为 0 以禁用分页
+per_page: 10
+pagination_dir: page
+
+# 包括或不包括目录和文件
+## include:/exclude: 选项仅适用于 "source/" 文件夹
+include:
+exclude:
+ignore:
+  - source-en/
+
+# 扩展
+## 插件: https://hexo.io/plugins/
+## 主题: https://hexo.io/themes/
+theme: butterfly
+
+# 部署
+## Docs: https://hexo.io/docs/one-command-deployment
+deploy:
+  - type: git
+    repo: https://github.com/huyongshuang/huyongshuang.github.io.git
+    branch: page
+  - type: git
+    repo: root@139.155.173.10:/blog/hexo.git
+    branch: main
+
+kramed:
+  gfm: true
+  pedantic: false
+  sanitize: false
+  tables: true
+  breaks: true
+  smartLists: true
+  smartypants: true
+
+nofollow:
+  enable: true
+  field: site
+  exclude:
+    - ''
+    - ''
+
+sitemap:
+  path: 
+    - sitemap.xml
+    - sitemap.txt
+  template: ./sitemap_template.xml
+  template_txt: ./sitemap_template.txt
+  rel: true
+  tags: true
+  categories: true
+
+baidusitemap:
+  path: baidusitemap.xml
+
+feed:
+  enable: true
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  icon: icon.png
+  autodiscovery: true
+
+aplayer:
+  meting: true
+  asset_inject: false

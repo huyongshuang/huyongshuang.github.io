@@ -1,0 +1,169 @@
+/* 核心根容器 */
+.custom-sidebar-widget {
+	padding: 0;
+	margin: -50px 0 0;
+	text-align: center;
+	background-color: inherit;
+	border-radius: 16px;
+	border: 0px solid var(--border-color);
+}
+
+/* 时间模块 */
+.time-section {
+	margin-bottom: 1.5px;
+}
+
+.current-time {
+	font-size: 2rem;
+	font-weight: 600;
+	color: inherit;
+	letter-spacing: 1px;
+}
+
+/* 日期模块 */
+.date-section {
+	margin-bottom: 7px;
+}
+
+.current-date {
+	font-size: 0.9rem;
+	font-weight: 500;
+	color: inherit;
+}
+
+/* 天气模块 */
+.weather-section {
+	margin-bottom: 5px;
+	padding-bottom: 7px;
+	border-bottom: 1px solid var(--border-color);
+}
+
+.current-weather {
+	font-size: 0.9rem;
+	font-weight: 500;
+	color: inherit;
+	line-height: 1.4;
+	white-space: pre-line;
+}
+
+/* 日历根容器 */
+.calendar-section {
+	margin-top: 0;
+}
+
+/* 日历头部 */
+.calendar-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 0;
+}
+
+/* 日历头部h3 */
+.calendar-header h3 {
+	font-size: 0.9rem;
+	font-weight: 500;
+	color: inherit;
+	margin: 0;
+}
+
+/* 日历头部按钮 */
+.calendar-nav-btn {
+	font-size: 0.9rem;
+	font-weight: 600;
+	color: inherit;
+	background: none;
+	border: none;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: background-color 0.2s;
+	transform: translateY(-1px);
+}
+
+.calendar-nav-btn:hover {
+	background-color: var(--hover-bg);
+}
+
+/* 日历星期栏 */
+.calendar-weekdays {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	margin-bottom: 0;
+}
+
+.calendar-weekdays div {
+	font-size: 0.9rem;
+	font-weight: 500;
+	color: inherit;
+	text-align: center;
+	padding: 0;
+}
+
+/* 日历日期栏 */
+.calendar-dates {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	gap: 0;
+}
+
+.calendar-dates div {
+	font-size: 0.9rem;
+	font-weight: 500;
+	color: inherit;
+	text-align: center;
+	padding: 0;
+	border-radius: 8px;
+	transition: all 0.2s;
+	cursor: default;
+}
+
+/* 其他月份日期 */
+.calendar-dates .other-month {
+	color: var(--secondary-text-color);
+	opacity: 0.8;
+}
+
+/* 当前月份日期 */
+.calendar-dates .current-month {
+	color: inherit;
+}
+
+/* 今日日期 */
+.calendar-dates .today {
+	color: white;
+	background-color: var(--primary-color);
+	box-shadow: 0 2px 5px rgba(var(--primary-color-rgb), 0.3);
+}
+
+.calendar-dates .date-item:hover:not(.today) {
+	background-color: var(--hover-bg);
+}
+
+@media (prefers-color-scheme: dark) {
+	.custom-sidebar-widget {
+		color: inherit;
+	}
+
+	.current-weather {
+		color: inherit;
+	}
+}
+
+@media (max-width: 768px) {
+	.current-time {
+		font-size: 1.8rem;
+	}
+
+	.current-date {
+		font-size: 0.9rem;
+	}
+
+	.current-weather {
+		font-size: 0.9rem;
+	}
+}

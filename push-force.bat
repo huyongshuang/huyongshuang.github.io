@@ -1,0 +1,1 @@
+wt -d "public" cmd /k "git init -b page & git add . & git commit -m "HuYongshuang's first blog update" & git remote add origin https://github.com/huyongshuang/huyongshuang.github.io.git & git push -u origin page --force"

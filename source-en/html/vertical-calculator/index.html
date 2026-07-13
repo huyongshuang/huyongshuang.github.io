@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Calculator</title>
+    <link rel="icon" href="https://huyongshuang.github.io/img/favicon.ico">
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+    <main class="container">
+        <div id="canvasArea" class="left">
+            <canvas id="scrawlArea" class="scrawlArea" width="529" height="749">The browser does not support some features of HTML5!</canvas>
+            <div class="a4">Reference paper size: A4</div>
+        </div>
+        <div id="rightArea" class="right">
+            <div class="inputarea" id="inputarea">
+                <div class="inputtop">
+                    <h3>Vertical Calculator</h3>
+                    <div class="formulatext" id="math_formula" data-audio="🕪"></div>
+                    <div class="infotip" id="infotip"></div>
+                </div>
+                <div class="button-group-row">
+                    <button type="button" class="s_button" id="numb_1" onclick="formula(&#39;1&#39;,this);">1</button>
+                    <button type="button" class="s_button" id="numb_2" onclick="formula(&#39;2&#39;,this);">2</button>
+                    <button type="button" class="s_button" id="numb_3" onclick="formula(&#39;3&#39;,this);">3</button>
+                    <button type="button" class="s_button" id="numb_4" onclick="formula(&#39;4&#39;,this);">4</button>
+                    <button type="button" class="s_button" id="numb_5" onclick="formula(&#39;5&#39;,this);">5</button>
+                </div>
+                <div class="button-group-row">
+                    <button type="button" class="s_button" id="numb_6" onclick="formula(&#39;6&#39;,this);">6</button>
+                    <button type="button" class="s_button" id="numb_7" onclick="formula(&#39;7&#39;,this);">7</button>
+                    <button type="button" class="s_button" id="numb_8" onclick="formula(&#39;8&#39;,this);">8</button>
+                    <button type="button" class="s_button" id="numb_9" onclick="formula(&#39;9&#39;,this);">9</button>
+                    <button type="button" class="s_button" id="numb_0" onclick="formula(&#39;0&#39;,this);">0</button>
+                </div>
+                <div class="button-group-row">
+                    <button type="button" class="s_button" id="numb_dot" onclick="formula(&#39;.&#39;,this);" disabled="disabled">.</button>
+                    <button type="button" class="s_button" id="numb_add" onclick="formula(&#39;+&#39;,this);" disabled="disabled">+</button>
+                    <button type="button" class="s_button" id="numb_sub" onclick="formula(&#39;-&#39;,this);" disabled="disabled">-</button>
+                    <button type="button" class="s_button" id="numb_mul" onclick="formula(&#39;×&#39;,this);" disabled="disabled">×</button>
+                    <button type="button" class="s_button" id="numb_div" onclick="formula(&#39;÷&#39;,this);" disabled="disabled">÷</button>
+                </div>
+                <div class="button-group-row">
+                    <button type="button" class="l_button" id="numb_back" onclick="backspace();">Backspace<sub>←</sub></button>
+                    <button type="button" class="l_button" id="numb_clear" onclick="clearAll();">Clear<sub>Space</sub></button>
+                </div>
+                <div class="button-group-row">
+                    <button type="button" class="l_button" id="createVertical" disabled="disabled">Generate<sub>Enter</sub></button>
+                    <button type="button" class="l_button" id="createVertical_" disabled="disabled">Blank<sub>=</sub></button>
+                </div>
+                <div class="button-group-row">
+                    <button type="button" class="l_button" onclick="print();">Print<sub>Ctrl+P</sub></button>
+                    <button type="button" class="l_button" onclick="download();">Download</button>
+                </div>
+            </div>
+            <div class="explain">
+                <strong>Vertical calculator: </strong>Support vertical calculation for addition, subtraction, multiplication and division (with remainder display).
+            </div>
+            <div class="copy"> © <a href="https://huyongshuang.github.io">HuYongshuang</a>
+            </div>
+        </div>
+    </main>
+    <script src="./assets/script.js"></script>
+</body>
+</html>

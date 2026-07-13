@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, "Microsoft YaHei", sans-serif;
+}
+
+body {
+    background: #ffffff;
+    color: #222222;
+    padding: 20px;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+/* PC头部布局 */
+.album-header {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    margin-bottom: 42px;
+}
+
+/* 封面容器 */
+.cover-box {
+    width: 330px;
+    height: 230px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: zoom-in;
+    background-color: #f6f6f6;
+}
+
+/* 封面图片 */
+.cover-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 头部文字外层 */
+.album-text {
+    flex: 1;
+}
+
+/* 相册大标题 */
+.album-title {
+    font-size: 44px;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+/* 相册描述文字 */
+.album-desc {
+    font-size: 16px;
+    color: #666666;
+    line-height: 1.8;
+}
+
+/* 日期分组标题 */
+.date-group-title {
+    font-size: 21px;
+    margin: 40px 0 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+/* 照片网格容器 */
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 18px;
+}
+
+/* 媒体卡片 */
+.media-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    cursor: zoom-in;
+    background: #f8f8f8;
+}
+
+/* 卡片内图片、视频通用样式 */
+.media-card img,
+.media-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 卡片底部悬浮文字 */
+.media-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 10px 12px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.68));
+    color: #ffffff;
+}
+
+/* 卡片内图片名称 */
+.media-caption .pic-name {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+/* 卡片内图片描述 */
+.media-caption .pic-desc {
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+/* 全屏放大弹窗 */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.93);
+    z-index: 9999;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.lightbox.show {
+    display: flex;
+}
+
+/* 弹窗关闭按钮 */
+.lightbox-close {
+    position: absolute;
+    top: 24px;
+    right: 36px;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10;
+}
+
+/* 左右切换按钮 */
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.15);
+    width: 50px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 6px;
+    z-index: 10;
+    transition: background 0.2s;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* 左右切换按钮定位 */
+.lightbox-prev {
+    left: 20px;
+}
+
+.lightbox-next {
+    right: 20px;
+}
+
+/* 弹窗内图片/视频尺寸 */
+.lightbox-media {
+    max-width: 92vw;
+    max-height: 82vh;
+}
+
+/* 弹窗底部文字容器 */
+.lightbox-text {
+    margin-top: 20px;
+    color: white;
+    text-align: center;
+    max-width: 900px;
+}
+
+/* 弹窗图片名称 */
+.lightbox-name {
+    font-size: 24px;
+    margin-bottom: 6px;
+}
+
+/* 弹窗拍摄日期 */
+.lightbox-date {
+    font-size: 16px;
+    opacity: 0.75;
+    margin-bottom: 8px;
+}
+
+/* 弹窗图片描述 */
+.lightbox-desc {
+    font-size: 16px;
+    opacity: 0.86;
+    line-height: 1.7;
+}
+
+/* 手机端适配 768px以下 */
+@media (max-width: 768px) {
+    body {
+        padding: 12px;
+    }
+
+    .album-header {
+        flex-direction: column;
+        position: relative;
+        margin-bottom: 30px;
+    }
+
+    .cover-box {
+        width: 100%;
+        height: 270px;
+    }
+
+    .album-text {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 22px 16px;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.72));
+        border-radius: 0 0 10px 10px;
+    }
+
+    .album-title {
+        font-size: 30px;
+        color: #fff;
+    }
+
+    .album-desc {
+        font-size: 14px;
+        color: #eeeeee;
+    }
+
+    /* 手机一行3张 */
+    .media-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+
+    .date-group-title {
+        font-size: 18px;
+        margin: 28px 0 14px;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        width: 30px;
+        height: 60px;
+        font-size: 30px;
+    }
+
+    .lightbox-prev {
+        left: 8px;
+    }
+
+    .lightbox-next {
+        right: 8px;
+    }
+
+    .lightbox-media {
+        max-width: 75vw;
+        max-height: 65vh;
+    }
+}

@@ -1,0 +1,44 @@
+{
+  "name": "hexo-site",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "server": "hexo clean && hexo generate && hexo server",
+    "deploy": "hexo clean && hexo generate && hexo deploy",
+    "cp-zh": "cp _config-zh.yml _config.yml && cp _config.butterfly-zh.yml _config.butterfly.yml",
+    "cp-en": "cp _config-en.yml _config.yml && cp _config.butterfly-en.yml _config.butterfly.yml",
+    "rm": "rm _config.yml _config.butterfly.yml",
+    "server-zh": "hexo clean && npm run cp-zh && hexo g && hexo s",
+    "server-en": "hexo clean && npm run cp-en && hexo g && hexo s",
+    "server-all": "hexo clean && npm run cp-en && hexo g && npm run cp-zh && hexo g && hexo s",
+    "deploy-zh": "hexo clean && npm run cp-zh && hexo g && hexo d && npm run rm",
+    "deploy-en": "hexo clean && npm run cp-en && hexo g && hexo d && npm run rm",
+    "deploy-all": "hexo clean && npm run cp-en && hexo g && npm run cp-zh && hexo g && hexo d && npm run rm",
+    "push-first": "git init && git add . && git commit -m \"First Commit\" && git branch -M main && git remote add origin https://github.com/huyongshuang/huyongshuang.github.io.git && git push -u origin main",
+    "push": "git add . && git commit -m \"Blog Update\" && git push",
+    "push-force": "git add . && git commit -m \"Blog Update\" && git push -u origin main --force"
+  },
+  "hexo": {
+    "version": "8.1.2"
+  },
+  "dependencies": {
+    "hexo": "^8.1.2",
+    "hexo-deployer-git": "^4.0.0",
+    "hexo-filter-nofollow": "^2.0.2",
+    "hexo-generator-archive": "^2.0.0",
+    "hexo-generator-baidu-sitemap": "^0.1.9",
+    "hexo-generator-category": "^2.0.0",
+    "hexo-generator-feed": "^4.0.0",
+    "hexo-generator-index": "^4.0.0",
+    "hexo-generator-searchdb": "^1.5.0",
+    "hexo-generator-sitemap": "^3.0.1",
+    "hexo-generator-tag": "^2.0.0",
+    "hexo-renderer-ejs": "^2.0.0",
+    "hexo-renderer-kramed": "^0.1.4",
+    "hexo-renderer-pug": "^3.0.0",
+    "hexo-renderer-stylus": "^3.0.1",
+    "hexo-server": "^3.0.0",
+    "hexo-theme-butterfly": "^5.5.5",
+    "hexo-wordcount": "^6.0.1"
+  }
+}
