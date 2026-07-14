@@ -243,10 +243,10 @@ reward:
 # 文章编辑
 # 轻松在线浏览和编辑博客源代码
 post_edit:
-  enable: false
+  enable: true
   # url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name/
   # 例如: https://github.com/jerryc127/butterfly.js.org/edit/main/source/
-  url:
+  url: https://github.com/huyongshuang/huyongshuang.github.io/tree/main/source/
 
 # 相关文章
 related_post:
@@ -337,11 +337,11 @@ footer:
     version: true
   custom_text: |
     <style>
-      .beian {display: flex; flex-direction: row; gap: 20px; justify-content: center; align-items: center}
-      .beian a {text-decoration: none}
-      .beian .police-beian {display: inline-flex; align-items: center}
-      .beian img {height: 15px; margin-right: 5px; vertical-align: middle}
-      @media(max-width:768px) {.beian{flex-direction: column; gap: 2.5px}}
+      .beian {display: flex; flex-direction: row; gap: 20px; justify-content: center; align-items: center;}
+      .beian a {text-decoration: none;}
+      .beian .police-beian {display: inline-flex; align-items: center;}
+      .beian img {height: 15px; margin-right: 5px; vertical-align: middle;}
+      @media(max-width:768px) {.beian{flex-direction: column; gap: 2.5px;}}
     </style>
     <div class="beian">
       <a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">鄂ICP备2026000237号-2</a>
