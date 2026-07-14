@@ -2,7 +2,7 @@ top:
   - name:
     icon:
     html: |
-      <div class="sidebar-widget custom-sidebar-widget">
+      <div class="sidebar-widget widget">
         <div class="time-section">
           <div id="current-time" class="current-time"></div>
         </div>

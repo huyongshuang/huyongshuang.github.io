@@ -186,7 +186,7 @@ function initCalendarWidget() {
 		const borderColor = computedStyle.getPropertyValue('--border-color').trim() || '#eaeaea';
 		const secondaryTextColor = computedStyle.getPropertyValue('--secondary-text-color').trim() || '#666666';
 		const hoverBg = computedStyle.getPropertyValue('--hover-bg').trim() || '#f5f5f5';
-		const widget = document.querySelector('.custom-sidebar-widget');
+		const widget = document.querySelector('.sidebar-widget');
 		if (widget) {
 			widget.style.setProperty('--primary-color', primaryColor);
 			widget.style.setProperty('--card-bg', cardBg);
@@ -285,7 +285,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 		for (const mutation of mutations) {
 			if (mutation.type === 'childList') {
-				const widget = document.querySelector('.custom-sidebar-widget');
+				const widget = document.querySelector('.sidebar-widget');
 				if (widget) {
 					const timeEl = widget.querySelector('#current-time');
 					const weatherEl = widget.querySelector('#current-weather');
