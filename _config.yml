@@ -30,7 +30,8 @@ code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
   - "*.html"
-  - "html/**"
+  - "html/*/**"
+  - "_posts/**/*.yml"
 
 # 文章
 new_post_name: :title.md # 新文章的文件名称

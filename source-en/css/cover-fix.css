@@ -8,16 +8,12 @@
 img.post-bg {
     width: 100% !important;
     height: 100% !important;
+    margin: 0;
     order: 0 !important;
     z-index: 0 !important;
 }
 
 @media (max-width: 768px) {
-    img.post-bg {
-        width: 100% !important;
-        height: 100% !important;
-    }
-
     .post_cover.left,
     .post_cover.right {
         justify-content: stretch;

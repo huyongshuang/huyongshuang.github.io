@@ -931,7 +931,7 @@ beautify:
 # 全局字体设置
 # 除非您知道它们的工作原理，否则不要修改以下设置
 font:
-  global_font_size:
+  global_font_size: 15px
   code_font_size:
   font_family: Times New Roman, SimSun, Songti SC, Microsoft YaHei, serif
   code_font_family: Consolas, Menlo, Monaco, SimSun

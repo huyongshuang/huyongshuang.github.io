@@ -1,0 +1,131 @@
+- class_name: '<i class="fa-solid fa-link" style="margin-right: 10px"></i>友情链接'
+  class_desc: '交换友情链接请向 <a href="mailto:746059847@qq.com" target="_blank">E-mail: 746059847@qq.com</a> 发送任意内容即可，需要包含关键词如 <strong>交换友情链接</strong> 等等以及你的网站地址。'
+  link_list:
+    - name: Hexo
+      link: https://hexo.io/zh-cn
+      avatar: /img/avatar/hexo.png
+      descr: 一个快速、简洁且高效的博客框架。
+    - name: Hexo 主题
+      link: https://hexo.io/themes/
+      avatar: /img/avatar/pro.png
+      descr: Hexo 主题
+    - name: Hexo 插件
+      link: https://hexo.io/plugins/
+      avatar: /img/avatar/plugin.png
+      descr: Hexo 插件
+
+- class_name: '<i class="fa-solid fa-video" style="margin-right: 10px"></i>视频主页'
+  class_desc: Various videos related to Minecraft, as well as more content, are being streamed on these platforms.
+  link_list:
+    - name: 抖音
+      link: https://v.douyin.com/USq91Jn
+      avatar: /img/ico/douyin.ico
+      descr: ''
+    - name: 快手
+      link: https://www.kuaishou.com/profile/3xgkz6dvtip3dsi
+      avatar: /img/ico/kuaishou.ico
+      descr: ''
+    - name: B站
+      link: https://space.bilibili.com/400547411
+      avatar: /img/ico/bilibili.ico
+      descr: ''
+    - name: 腾讯视频
+      link: https://v.qq.com/s/videoplus/9000237633/2
+      avatar: /img/ico/v.qq.ico
+      descr: ''
+    - name: 爱奇艺
+      link: https://www.iqiyi.com/creator/1569044152
+      avatar: /img/ico/iqiyi.ico
+      descr: ''
+    - name: 优酷
+      link: https://www.youku.com/profile/index/?uid=UNjM1OTIyMDI0MA==
+      avatar: /img/ico/youku.ico
+      descr: ''
+    - name: 搜狐视频
+      link: https://tv.sohu.com/user/334351365
+      avatar: /img/ico/tv.sohu.ico
+      descr: ''
+
+- class_name: '<i class="fa-solid fa-pen-to-square" style="margin-right: 10px"></i>内容链接'
+  class_desc: Articles and videos related to Minecraft and more content are published on these platforms.
+  link_list:
+    - name: 头条号
+      link: https://www.toutiao.com/c/user/1596089100415331/
+      avatar: /img/ico/toutiao.ico
+      descr: ''
+    - name: 百家号
+      link: https://baijiahao.baidu.com/u?app_id=1639304967228015
+      avatar: /img/ico/baijiahao.ico
+      descr: ''
+    - name: 搜狐号
+      link: https://mp.sohu.com/profile?xpt=MTAyNDc3MjU5Nzc0Njc4MjIwOEBzb2h1LmNvbQ
+      avatar: /img/ico/sohu.ico
+      descr: ''
+    - name: 企鹅号
+      link: https://media.om.qq.com/author?id=MP8Gjymfum9SbOt06jtPbBMw0
+      avatar: /img/ico/qiehao.ico
+      descr: ''
+    - name: 大鱼号
+      link: http://a.mp.uc.cn/media.html?mid=6e54dc45fc21492d94e143d84d589aa5
+      avatar: /img/ico/dayu.ico
+      descr: 🤡 来凑数的 🤡
+    - name: 网易号
+      link: https://www.163.com/dy/media/T1769350667916.html
+      avatar: /img/ico/163.ico
+      descr: ''
+
+- class_name: '<i class="fa-solid fa-pen-to-square" style="margin-right: 10px"></i>视频自媒体平台和内容自媒体平台'
+  class_desc: Below are the recommended platforms.
+  link_list:
+    - name: 抖音创作者中心
+      link: https://creator.douyin.com/
+      avatar: /img/ico/douyin.ico
+      descr: ''
+    - name: 快手创作者服务平台
+      link: https://cp.kuaishou.com/
+      avatar: /img/ico/kuaishou.ico
+      descr: ''
+    - name: bilibili创作中心
+      link: https://member.bilibili.com/
+      avatar: /img/ico/bilibili.ico
+      descr: ''
+    - name: 腾讯视频创作平台
+      link: https://mp.v.qq.com/
+      avatar: /img/ico/v.qq.ico
+      descr: ''
+    - name: 爱奇艺号
+      link: https://mp.iqiyi.com/
+      avatar: /img/ico/iqiyi.ico
+      descr: ''
+    - name: 优酷号创作平台
+      link: https://mp.youku.com/v2/login
+      avatar: /img/ico/youku.ico
+      descr: ''
+    - name: 搜狐视频创作中心
+      link: https://my.tv.sohu.com/user/video/upload
+      avatar: /img/ico/tv.sohu.ico
+      descr: ''
+    - name: 头条号
+      link: https://mp.toutiao.com/
+      avatar: /img/ico/toutiao.ico
+      descr: 今日头条旗下的内容推送平台。
+    - name: 百家号
+      link: https://baijiahao.baidu.com/
+      avatar: /img/ico/baijiahao.ico
+      descr: 百度旗下内容创作平台。
+    - name: 搜狐号
+      link: https://mp.sohu.com/
+      avatar: /img/ico/sohu.ico
+      descr: 搜狐旗下内容入驻、发布和分发平台。
+    - name: 企鹅号（腾讯内容开放平台）
+      link: https://om.qq.com/
+      avatar: /img/ico/qiehao.ico
+      descr: 腾讯旗下内容创作平台。
+    - name: 大鱼号
+      link: https://mp.dayu.com/
+      avatar: /img/ico/dayu.ico
+      descr: 阿里大文娱旗下内容创作平台。
+    - name: 网易号
+      link: https://mp.163.com/
+      avatar: /img/ico/163.ico
+      descr: 网易传媒旗下自媒体内容分发与品牌助推平台。
