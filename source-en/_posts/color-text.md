@@ -36,7 +36,7 @@ Preview:
 
 {% color blue 25px %}Screen Color Picker{% endcolor %}
 If you need color codes in `HEX`, `RGB`, `RGBA`, `HSL`, `HSLA`, `HSV`, `HSVA`, `CMYK`, `CMYKA` formats for a specific color, you can extract them using the tool below.
-{% btn '/2024/12/10-color-picker/',Screen Color Picker,fas fa-eye-dropper,blue outline block center large %}
+{% btn '/2024/12/10-color-picker/',Screen Color Picker,fas fa-eye-dropper,blue outline block center larger %}
 
 # Method 2: JavaScript Script
 

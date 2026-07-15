@@ -36,7 +36,7 @@ cover:
 
 {% color blue 25px %}屏幕颜色拾取器{% endcolor %}
 如果你需要某一颜色的 `HEX`、`RGB`、`RGBA`、`HSL`、`HSLA`、`HSV`、`HSVA`、`CMYK`、`CMYKA` 格式颜色码，可以使用下方工具来提取。
-{% btn '/2024/12/10-color-picker/',屏幕颜色拾取器,fas fa-eye-dropper,blue outline block center large %}
+{% btn '/2024/12/10-color-picker/',屏幕颜色拾取器,fas fa-eye-dropper,blue outline block center larger %}
 
 # 方法二：JavaScript 脚本
 

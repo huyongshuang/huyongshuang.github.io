@@ -715,4 +715,4 @@ End Sub
 {% asset_img 13.png 图13 %}
 
 # 4. 文件下载
-{% btn '/2026/1/11-heart-shaped-function/心形曲线.zip?download',点击下载,fas fa-download,blue outline block center large %}
+{% btn '/2026/1/11-heart-shaped-function/心形曲线.zip?download',点击下载,fas fa-download,blue outline block center larger %}
