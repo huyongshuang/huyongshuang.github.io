@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HuYongshuang</title>
+    <link>https://huyongshuang.top/en/</link>
+    <description>HuYongshuang's blog website focuses on sharing technologies related to Minecraft's redstone, commands, servers, etc., as well as more technical content in areas such as mathematics, networks, and computers. Infinite creation, infinite possibilities.</description>
+    <language>en</language>
+    <copyright>All rights reserved 2026, HuYongshuang</copyright>
+    <lastBuildDate>Tue, 07 Jul 2026 05:23:40 GMT</lastBuildDate>
+    <generator>Hexo</generator>
+    <image>
+      <url>https://huyongshuang.top/en/icon.png</url>
+      <title>HuYongshuang</title>
+      <link>https://huyongshuang.top/en/</link>
+    </image>
+    <atom:link href="https://huyongshuang.top/en/rss2.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Binary Arithmetic Videos Collection (Bilibili)</title>
+      <link>https://huyongshuang.top/en/2026/5/20-binary-arithmetic-videos/</link>
+      <description>Binary Arithmetic Videos Collection.</description>
+      <author>HuYongshuang</author>
+      <category domain="https://huyongshuang.top/en/categories/Minecraft/">Minecraft</category>
+      <category domain="https://huyongshuang.top/en/categories/Minecraft/Video/">Video</category>
+      <category domain="https://huyongshuang.top/en/tags/Minecraft/">Minecraft</category>
+      <category domain="https://huyongshuang.top/en/tags/Video-Collection/">Video Collection</category>
+      <pubDate>Wed, 20 May 2026 10:27:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>Binary Arithmetic</title>
+      <link>https://huyongshuang.top/en/2026/2/17-binary-arithmetic/</link>
+      <description>Minecraft binary arithmetic operations including logic gate circuits, half adders, full adders, adders, addition-subtraction modules, multipliers, dividers, etc.</description>
+      <author>HuYongshuang</author>
+      <category domain="https://huyongshuang.top/en/categories/Minecraft/">Minecraft</category>
+      <category domain="https://huyongshuang.top/en/categories/Minecraft/Tutorial/">Tutorial</category>
+      <category domain="https://huyongshuang.top/en/categories/Minecraft/Tutorial/Redstone-Digital-Logic/">Redstone Digital Logic</category>
+      <category domain="https://huyongshuang.top/en/tags/Minecraft/">Minecraft</category>
+      <category domain="https://huyongshuang.top/en/tags/Redstone-Digital-Logic/">Redstone Digital Logic</category>
+      <category domain="https://huyongshuang.top/en/tags/Logic-Gate-Circuit/">Logic Gate Circuit</category>
+      <pubDate>Tue, 17 Feb 2026 15:14:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>Heart-shaped Function</title>
+      <link>https://huyongshuang.top/en/2026/1/11-heart-shaped-function/</link>
+      <description>
+        <![CDATA[<h1 id="1.-function-formula" tabindex="-1">1. Function Formula <a class="header-anchor"]]>
+      </description>
+      <author>HuYongshuang</author>
+      <pubDate>Sun, 11 Jan 2026 08:28:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>Rubik's Cube formula</title>
+      <link>https://huyongshuang.top/en/2025/2/7-rubiks-cube-formula/</link>
+      <description>This article includes the basic solving methods of 3x3 Rubik's Cubes, as well as the 2x2, 4x4 and 5x5 Rubik's Cubes.</description>
+      <author>HuYongshuang</author>
+      <category domain="https://huyongshuang.top/en/categories/Tutorial/">Tutorial</category>
+      <category domain="https://huyongshuang.top/en/categories/Tutorial/Rubik-s-Cube-formula/">Rubik's Cube formula</category>
+      <category domain="https://huyongshuang.top/en/tags/Tutorial/">Tutorial</category>
+      <category domain="https://huyongshuang.top/en/tags/Rubik-s-Cube-formula/">Rubik's Cube formula</category>
+      <pubDate>Fri, 07 Feb 2025 05:14:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>5×5 Rubik's Cube formula</title>
+      <link>https://huyongshuang.top/en/2025/2/4-5%C3%975-cube-formula/</link>
+      <description>This article mainly introduces the basic solving method for the 5×5 Rubik's Cube, which consists of two main steps: solving center pieces and solving edge pieces. After completing these steps, you can continue solving the cube following the procedures for a 3×3 Rubik's Cube.</description>
+      <author>HuYongshuang</author>
+      <category domain="https://huyongshuang.top/en/categories/Tutorial/">Tutorial</category>
+      <category domain="https://huyongshuang.top/en/categories/Tutorial/Rubik-s-Cube-formula/">Rubik's Cube formula</category>
+      <category domain="https://huyongshuang.top/en/tags/Tutorial/">Tutorial</category>
+      <category domain="https://huyongshuang.top/en/tags/Rubik-s-Cube-formula/">Rubik's Cube formula</category>
+      <category domain="https://huyongshuang.top/en/tags/5%C3%975-Rubik-s-Cube/">5×5 Rubik's Cube</category>
+      <pubDate>Tue, 04 Feb 2025 09:24:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>4×4 Rubik's Cube formula</title>
+      <link>https://huyongshuang.top/en/2025/2/3-4%C3%974-cube-formula/</link>
+      <description>This article mainly introduces the basic solving method for the 4×4 Rubik's Cube, which consists of two main steps: solving center pieces and solving edge pieces. After completing these steps, you can continue solving the cube following the procedures for a 3×3 Rubik's Cube. Two special cases may occur during the solving process that need to be addressed.</description>
+      <author>HuYongshuang</author>
+      <category domain="https://huyongshuang.top/en/categories/Tutorial/">Tutorial</category>
+      <category domain="https://huyongshuang.top/en/categories/Tutorial/Rubik-s-Cube-formula/">Rubik's Cube formula</category>
+      <category domain="https://huyongshuang.top/en/tags/Tutorial/">Tutorial</category>
+      <category domain="https://huyongshuang.top/en/tags/Rubik-s-Cube-formula/">Rubik's Cube formula</category>
+      <category domain="https://huyongshuang.top/en/tags/4%C3%974-Rubik-s-Cube/">4×4 Rubik's Cube</category>
+      <pubDate>Mon, 03 Feb 2025 06:47:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>2×2 Rubik's Cube formula</title>
+      <link>https://huyongshuang.top/en/2025/2/1-2%C3%972-cube-formula/</link>
+      <description>This article mainly covers the basic solving method for the 2×2 Rubik's Cube, which includes two main stages: solving the bottom layer and solving the top layer.</description>
+      <author>HuYongshuang</author>
+      <category domain="https://huyongshuang.top/en/categories/Tutorial/">Tutorial</category>
+      <category domain="https://huyongshuang.top/en/categories/Tutorial/Rubik-s-Cube-formula/">Rubik's Cube formula</category>
+      <category domain="https://huyongshuang.top/en/tags/Tutorial/">Tutorial</category>
+      <category domain="https://huyongshuang.top/en/tags/Rubik-s-Cube-formula/">Rubik's Cube formula</category>
+      <category domain="https://huyongshuang.top/en/tags/2%C3%972-Rubik-s-Cube/">2×2 Rubik's Cube</category>
+      <pubDate>Sat, 01 Feb 2025 05:36:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>All States, Transformations and Solving Steps for the Top Face of a 3×3 Rubik’s Cube</title>
+      <link>https://huyongshuang.top/en/2025/1/30-cube-top/</link>
+      <description>This article mainly focuses on all possible states that may appear during the top-face solving stage of a 3×3 Rubik's Cube, along with their transformations and corresponding solving procedures.</description>
+      <author>HuYongshuang</author>
+      <category domain="https://huyongshuang.top/en/categories/Tutorial/">Tutorial</category>
+      <category domain="https://huyongshuang.top/en/categories/Tutorial/Rubik-s-Cube-formula/">Rubik's Cube formula</category>
+      <category domain="https://huyongshuang.top/en/tags/Tutorial/">Tutorial</category>
+      <category domain="https://huyongshuang.top/en/tags/Rubik-s-Cube-formula/">Rubik's Cube formula</category>
+      <pubDate>Thu, 30 Jan 2025 03:45:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>3×3 Rubik's Cube formula</title>
+      <link>https://huyongshuang.top/en/2025/1/27-3%C3%973-cube-formula/</link>
+      <description>This article mainly introduces the basic solving method for the 3×3 Rubik's Cube, consisting of three major stages: solving the bottom layer, solving the middle layer and solving the top layer.</description>
+      <author>HuYongshuang</author>
+      <category domain="https://huyongshuang.top/en/categories/Tutorial/">Tutorial</category>
+      <category domain="https://huyongshuang.top/en/categories/Tutorial/Rubik-s-Cube-formula/">Rubik's Cube formula</category>
+      <category domain="https://huyongshuang.top/en/tags/Tutorial/">Tutorial</category>
+      <category domain="https://huyongshuang.top/en/tags/Rubik-s-Cube-formula/">Rubik's Cube formula</category>
+      <category domain="https://huyongshuang.top/en/tags/3%C3%973-Rubik-s-Cube/">3×3 Rubik's Cube</category>
+      <pubDate>Mon, 27 Jan 2025 02:27:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>Implement Colored Text in Hexo</title>
+      <link>https://huyongshuang.top/en/2024/12/13-color-text/</link>
+      <description>Methods to implement colored text in Hexo: 1. CSS style attribute; 2. JavaScript script implementation.</description>
+      <author>HuYongshuang</author>
+      <pubDate>Fri, 13 Dec 2024 11:36:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>Hexo Deployment Script</title>
+      <link>https://huyongshuang.top/en/2024/12/12-deploy-script/</link>
+      <description>
+        <![CDATA[<ul>
+<li>Before using it, please change the folder name where you store your Hexo project files to ‘Blog’, and place the following ‘bat’]]>
+      </description>
+      <author>HuYongshuang</author>
+      <pubDate>Thu, 12 Dec 2024 08:51:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>Screen Color Picker</title>
+      <link>https://huyongshuang.top/en/2024/12/10-color-picker/</link>
+      <description>A web tool that can extract colors from any position on the screen, built on the EyeDropper API. When using it, minimize the browser window and place the interface from which you need to extract colors outside the browser window.</description>
+      <author>HuYongshuang</author>
+      <pubDate>Tue, 10 Dec 2024 02:20:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>The solution for Hexo being unable to skip the rendering of yml files</title>
+      <link>https://huyongshuang.top/en/2024/11/11-copy-yaml/</link>
+      <description>
+        <![CDATA[<ul>
+<li>Root cause of the problem: Hexo will recognize <code>.yml</code> / <code>.yaml</code> files as data files. These files will be]]>
+      </description>
+      <author>HuYongshuang</author>
+      <pubDate>Mon, 11 Nov 2024 07:42:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>Hexo Tutorial (5) - Deploy to Cloud Server</title>
+      <link>https://huyongshuang.top/en/2024/10/24-Hexo-5/</link>
+      <description>Preparation for deploying Hexo to a cloud server: 1. Local Hexo project files that have been completed; 2. Purchased cloud server, such as Tencent Cloud, Alibaba Cloud, etc.; 3. Server system: CentOS or Ubuntu; 4. Server has opened ports: 22 (SSH), 80 (HTTP), 443 (HTTPS, optional); 5. Obtained server public IP, root account password/key; 6. Purchased domain name and registered (unregistered cannot be accessed) (optional); 7. Purchased SSL certificate (can be accessed via HTTPS) (optional).</description>
+      <author>HuYongshuang</author>
+      <category domain="https://huyongshuang.top/en/categories/Tutorial/">Tutorial</category>
+      <category domain="https://huyongshuang.top/en/categories/Tutorial/Hexo/">Hexo</category>
+      <category domain="https://huyongshuang.top/en/tags/Tutorial/">Tutorial</category>
+      <category domain="https://huyongshuang.top/en/tags/Hexo/">Hexo</category>
+      <category domain="https://huyongshuang.top/en/tags/Blog/">Blog</category>
+      <pubDate>Thu, 24 Oct 2024 07:12:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>Hexo Tutorial (4) - Comment System</title>
+      <link>https://huyongshuang.top/en/2024/10/4-Hexo-4/</link>
+      <description>There are many plugins for the comment system, and many themes also have built-in comment system plugins. Let's take the Redefine theme as an example to introduce the usage of the Waline comment system.</description>
+      <author>HuYongshuang</author>
+      <category domain="https://huyongshuang.top/en/categories/Tutorial/">Tutorial</category>
+      <category domain="https://huyongshuang.top/en/categories/Tutorial/Hexo/">Hexo</category>
+      <category domain="https://huyongshuang.top/en/tags/Tutorial/">Tutorial</category>
+      <category domain="https://huyongshuang.top/en/tags/Hexo/">Hexo</category>
+      <category domain="https://huyongshuang.top/en/tags/Blog/">Blog</category>
+      <pubDate>Fri, 04 Oct 2024 11:36:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>Hexo Tutorial (3) - Themes</title>
+      <link>https://huyongshuang.top/en/2024/10/3-Hexo-3/</link>
+      <description>The main content of this section is about the installation and usage of Hexo themes. Taking the Redefine theme as an example, the content is roughly divided into two parts: installing the Redefine theme and configuring the theme.</description>
+      <author>HuYongshuang</author>
+      <category domain="https://huyongshuang.top/en/categories/Tutorial/">Tutorial</category>
+      <category domain="https://huyongshuang.top/en/categories/Tutorial/Hexo/">Hexo</category>
+      <category domain="https://huyongshuang.top/en/tags/Tutorial/">Tutorial</category>
+      <category domain="https://huyongshuang.top/en/tags/Hexo/">Hexo</category>
+      <category domain="https://huyongshuang.top/en/tags/Blog/">Blog</category>
+      <pubDate>Thu, 03 Oct 2024 01:32:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>Hexo Tutorial (2) - Configuration</title>
+      <link>https://huyongshuang.top/en/2024/10/2-Hexo-2/</link>
+      <description>If you have installed a Hexo theme, most of the settings will be handled in the _config.[theme].yml file of the theme configuration. Since the priority of the theme configuration file is higher than that of the Hexo configuration file, most of the information about the Hexo configuration file will not be necessary to pay attention to. I will introduce a few commonly used settings of Hexo configuration files at the end.</description>
+      <author>HuYongshuang</author>
+      <category domain="https://huyongshuang.top/en/categories/Tutorial/">Tutorial</category>
+      <category domain="https://huyongshuang.top/en/categories/Tutorial/Hexo/">Hexo</category>
+      <category domain="https://huyongshuang.top/en/tags/Tutorial/">Tutorial</category>
+      <category domain="https://huyongshuang.top/en/tags/Hexo/">Hexo</category>
+      <category domain="https://huyongshuang.top/en/tags/Blog/">Blog</category>
+      <pubDate>Wed, 02 Oct 2024 04:23:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>
+        <![CDATA[Hexo Tutorial (1) – Site Construction, Deployment & Writing]]>
+      </title>
+      <link>https://huyongshuang.top/en/2024/10/1-Hexo-1/</link>
+      <description>This article mainly walks you through building a personal blog website from scratch using Hexo and GitHub Pages, covering five sections: preparation, creating a GitHub repository, installing Hexo, deploying to GitHub Pages, and basic blog writing.</description>
+      <author>HuYongshuang</author>
+      <category domain="https://huyongshuang.top/en/categories/Tutorial/">Tutorial</category>
+      <category domain="https://huyongshuang.top/en/categories/Tutorial/Hexo/">Hexo</category>
+      <category domain="https://huyongshuang.top/en/tags/Tutorial/">Tutorial</category>
+      <category domain="https://huyongshuang.top/en/tags/Hexo/">Hexo</category>
+      <category domain="https://huyongshuang.top/en/tags/Blog/">Blog</category>
+      <pubDate>Tue, 01 Oct 2024 05:14:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>hello-world</title>
+      <link>https://huyongshuang.top/en/2020/10/27-hello-world/</link>
+      <description>
+        <![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a>]]>
+      </description>
+      <author>HuYongshuang</author>
+      <pubDate>Tue, 27 Oct 2020 02:21:49 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

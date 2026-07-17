@@ -1,0 +1,51 @@
+top:
+  - name:
+    icon:
+    html: |
+      <div class="sidebar-widget widget">
+        <div class="time-section">
+          <div id="current-time" class="current-time"></div>
+        </div>
+        <div class="date-section">
+          <div id="current-date" class="current-date"></div>
+        </div>
+        <div class="weather-section">
+          <div id="current-weather" class="current-weather">Loading...</div>
+        </div>
+        <div class="calendar-section">
+          <div class="calendar-header">
+            <button id="prev-month" class="calendar-nav-btn">&lt</button>
+            <h3 id="calendar-month-year"></h3>
+            <button id="next-month" class="calendar-nav-btn">&gt</button>
+          </div>
+          <div class="calendar-weekdays">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+          </div>
+          <div id="calendar-dates" class="calendar-dates"></div>
+        </div>
+      </div>
+  - name: Settings
+    icon: fa-solid fa-gear
+    html: |
+      <div class="setting">
+        <h3>Language</h3>
+        <div class="lang-switch">
+          <a href="/">中文</a>
+          <a href="/en/">English</a>
+        </div>
+        <h3>Background Effect</h3>
+        <div class="snowflake-switch">
+          <button id="switchSnowBtn">Switch Effect</button>
+        </div>
+        <h3>Cursor Switching</h3>
+        <div class="cursor-switch">
+          Cursor one<button id="cursor-switch-1">ON</button><br>
+          Cursor two<button id="cursor-switch-2">OFF</button>
+        </div>
+      </div>

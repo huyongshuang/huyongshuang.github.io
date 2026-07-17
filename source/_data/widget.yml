@@ -1,0 +1,51 @@
+top:
+  - name:
+    icon:
+    html: |
+      <div class="sidebar-widget widget">
+        <div class="time-section">
+          <div id="current-time" class="current-time"></div>
+        </div>
+        <div class="date-section">
+          <div id="current-date" class="current-date"></div>
+        </div>
+        <div class="weather-section">
+          <div id="current-weather" class="current-weather">加载中...</div>
+        </div>
+        <div class="calendar-section">
+          <div class="calendar-header">
+            <button id="prev-month" class="calendar-nav-btn">&lt</button>
+            <h3 id="calendar-month-year"></h3>
+            <button id="next-month" class="calendar-nav-btn">&gt</button>
+          </div>
+          <div class="calendar-weekdays">
+            <div>日</div>
+            <div>一</div>
+            <div>二</div>
+            <div>三</div>
+            <div>四</div>
+            <div>五</div>
+            <div>六</div>
+          </div>
+          <div id="calendar-dates" class="calendar-dates"></div>
+        </div>
+      </div>
+  - name: 设置
+    icon: fa-solid fa-gear
+    html: |
+      <div class="setting">
+        <h3>网站语言</h3>
+        <div class="lang-switch">
+          <a href="/">中文</a>
+          <a href="/en/">English</a>
+        </div>
+        <h3>背景特效</h3>
+        <div class="snowflake-switch">
+          <button id="switchSnowBtn">切换特效</button>
+        </div>
+        <h3>光标切换</h3>
+        <div class="cursor-switch">
+          光标一<button id="cursor-switch-1">开启</button><br>
+          光标二<button id="cursor-switch-2">关闭</button>
+        </div>
+      </div>

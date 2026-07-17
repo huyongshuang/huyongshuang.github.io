@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Color Picker</title>
+    <link rel="icon" href="https://huyongshuang.github.io/img/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-eye-dropper"></i> Screen Color Picker</h1>
+            <p class="subtitle">Use the EyeDropper API to extract colors from anywhere on the screen, supporting conversion of multiple color formats.</p>
+        </header>
+        <div class="color-display">
+            <div class="color-preview" id="colorPreview"></div>
+            <div class="color-info">
+                <div class="current-hex">
+                    <span id="hexValue">#dee2e6</span>
+                    <div class="hex-actions">
+                        <button class="btn btn-small case-toggle" id="toggleCase">
+                            <i class="fas fa-exchange-alt"></i> Case </button>
+                        <button class="btn btn-small btn-success" id="copyHex">
+                            <i class="far fa-copy"></i> Copy HEX </button>
+                    </div>
+                </div>
+                <button class="btn btn-primary" id="pickColor">
+                    <i class="fas fa-eye-dropper"></i> Open Color Picker </button>
+                <p style="margin-top: 15px; color: #7f8c8d;"> After clicking the button, your mouse will turn into a dropper; click any position on the screen to get the color value. </p>
+            </div>
+        </div>
+        <div class="color-formats">
+            <h2><i class="fas fa-palette"></i> Color Formats</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Format</th>
+                        <th>Value</th>
+                        <th class="actions-cell">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="colorTable">
+                </tbody>
+            </table>
+        </div>
+        <div class="instructions">
+            <h3><i class="fas fa-info-circle"></i> </h3>
+            <p>1. Click the "Open Color Picker" button, your mouse will become a color dropper;</p>
+            <p>2. Click any spot on the screen to retrieve its color value;</p>
+            <p>3. Click the "Case" button next to the HEX color to switch uppercase and lowercase HEX code;</p>
+            <p>4. Click the "Copy" button beside each color format to copy the color code to clipboard.</p>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Screen color picking tool built on <a href="https://github.com/WICG/eyedropper-api">EyeDropper API</a> | Supports HEX, RGB, HSL, HSV, CMYK and other formats</p> © <a href="https://github.com/huyongshuang/huyongshuang.github.io/tree/main/source-en/html/color-picker">GitHub</a>
+    </div>
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i>
+        <span id="notificationText">Color copied to clipboard</span>
+    </div>
+    <script src="./assets/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+# 全局页面配置
+global:
+  # 相册名称
+  album_name: 壁纸
+  # 封面图片路径
+  cover_path: photos/2026-05-01-1.png
+  # 相册描述
+  album_desc: 电脑壁纸
+  # 是否按最新日期在前排序
+  new_first: true
+  # 本地媒体根路径：完整路径 = local_media_path + id.ext
+  local_media_path: photos/
+
+# 本地媒体列表：日期从 id 中解析
+local_media_list:
+  - id: 2026-05-01-1
+    ext: png
+    name: '橘子洲头'
+    description: ''
+  - id: 2026-05-01-2
+    ext: png
+    name: ''
+    description: ''
+  - id: 2026-05-01-3
+    ext: png
+    name: ''
+    description: ''
+  - id: 2026-05-01-4
+    ext: png
+    name: ''
+    description: ''
+
+# 远程媒体列表：日期由 date 字段指定，直接使用 url 加载资源
+remote_media_list:
+  - url: https://picsum.photos/1600/900?random=1
+    date: 2026-2-16-01
+    name: 远程示例图片01
+    description: 这是一张远程加载的示例图片
+  - url: https://picsum.photos/1600/900?random=2
+    date: 2026-2-16-02
+    name: 远程示例图片02
+    description: 这是一张远程加载的示例图片
+  - url: https://picsum.photos/1600/900?random=3
+    date: 2026-2-16-03
+    name: 远程示例图片03
+    description: 这是一张远程加载的示例图片
+  - url: https://picsum.photos/1600/900?random=4
+    date: 2026-2-16-04
+    name: 远程示例图片04
+    description: 这是一张远程加载的示例图片
+  - url: https://picture.huyongshuang.top/sample_videos/如果不是着急赶路 语文应该是最美的学科了.mp4
+    date: 2026-3-1-1
+    name: 远程示例视频1
+    description: 这是一段远程加载的示例视频
+  - url: https://picture.huyongshuang.top/sample_videos/济宁好孩子.mp4
+    date: 2026-3-1-2
+    name: 远程示例视频2
+    description: 这是一段远程加载的示例视频
+  - url: https://picture.huyongshuang.top/sample_videos/弓箭运动员 后羿.mp4
+    date: 2026-3-1-3
+    name: 远程示例视频3
+    description: 这是一段远程加载的示例视频
+  - url: https://picture.huyongshuang.top/sample_videos/2月8日.mp4
+    date: 2026-3-1-4
+    name: 远程示例视频4
+    description: 这是一段远程加载的示例视频

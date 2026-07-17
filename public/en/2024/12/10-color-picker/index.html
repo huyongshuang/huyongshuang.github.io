@@ -1,0 +1,1527 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Screen Color Picker | HuYongshuang</title><meta name="author" content="HuYongshuang"><meta name="copyright" content="HuYongshuang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="A web tool that can extract colors from any position on the screen, built on the EyeDropper API. When using it, minimize the browser window and place the interface from which you need to extract color">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Screen Color Picker">
+<meta property="og:url" content="https://huyongshuang.top/en/2024/12/10-color-picker/">
+<meta property="og:site_name" content="HuYongshuang">
+<meta property="og:description" content="A web tool that can extract colors from any position on the screen, built on the EyeDropper API. When using it, minimize the browser window and place the interface from which you need to extract color">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://huyongshuang.top/en/img/avatar.png">
+<meta property="article:published_time" content="2024-12-10T02:20:04.000Z">
+<meta property="article:modified_time" content="2026-01-28T13:31:57.574Z">
+<meta property="article:author" content="HuYongshuang">
+<meta property="article:tag" content="HuYongshuang, Minecraft, Redstone, Commands, Hexo, Blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://huyongshuang.top/en/img/avatar.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Screen Color Picker",
+  "url": "https://huyongshuang.top/en/2024/12/10-color-picker/",
+  "image": "https://huyongshuang.top/en/img/avatar.png",
+  "datePublished": "2024-12-10T02:20:04.000Z",
+  "dateModified": "2026-01-28T13:31:57.574Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "HuYongshuang",
+      "url": "https://huyongshuang.top/en"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/en/img/favicon.ico"><link rel="canonical" href="https://huyongshuang.top/en/2024/12/10-color-picker/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="baidu-site-verification" content="b8339f0567f3c2c09e96a0b7b538df5f"/><link rel="stylesheet" href="/en/css/index.css?v=5.5.5"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?c2ee7ad807ec11f79b2e779adac6d8db";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+btf.addGlobalFn('pjaxComplete', () => {
+  _hmt.push(['_trackPageview',window.location.pathname])
+}, 'baidu_analytics')
+</script><script>const GLOBAL_CONFIG = {
+  root: '/en/',
+  algolia: undefined,
+  localSearch: {"path":"/en/search.json","preload":true,"top_n_per_article":-1,"unescape":true,"pagination":{"enable":true,"hitsPerPage":10},"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":true,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"You have switched to Traditional Chinese","cht_to_chs":"You have switched to Simplified Chinese","day_to_night":"You have switched to Dark Mode","night_to_day":"You have switched to Light Mode","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-center"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Screen Color Picker',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><script src="https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.min.js"></script><link id="cursor_1" rel="stylesheet" href="/en/assets/cursor/cursor.css"><link id="cursor_2" rel="stylesheet" href="/en/assets/cursor/cursor-gif.css" disabled><link rel="stylesheet" href="/en/css/cursor-switch.css"><link rel="stylesheet" href="/en/css/language.css"><link rel="stylesheet" href="/en/css/time-widget.css"><meta name="generator" content="Hexo 8.1.2"><link rel="alternate" href="/en/atom.xml" title="HuYongshuang" type="application/atom+xml">
+<link rel="alternate" href="/en/rss2.xml" title="HuYongshuang" type="application/rss+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      if ($loadingBox.classList.contains('loaded')) return
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+
+  if (document.readyState === 'complete') {
+    preloader.endLoading()
+  } else {
+    window.addEventListener('load', preloader.endLoading)
+    document.addEventListener('DOMContentLoaded', preloader.endLoading)
+    // Add timeout protection: force end after 7 seconds
+    setTimeout(preloader.endLoading, 7000)
+  }
+
+  if (false) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div class="bg-animation" id="web_bg"></div><script>(() => {
+  const arr = ["background-image: url(/en/img/background_1.png);","background-image: url(/en/img/background_2.png);"]
+  const webBgDiv = document.getElementById('web_bg')
+
+  const setRandomBg = () => {
+    webBgDiv.style = arr[Math.floor(Math.random() * arr.length)]
+    requestAnimationFrame(() => webBgDiv.classList.add('bg-animation'))
+  }
+
+  document.addEventListener('pjax:send', () => {
+    webBgDiv.style = ''
+    webBgDiv.classList.remove('bg-animation')
+  })
+
+  document.addEventListener('pjax:complete', setRandomBg)
+  document.addEventListener('DOMContentLoaded', setRandomBg)
+})()
+</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/en/img/avatar.png" onerror="this.onerror=null;this.src='/en/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/en/archives/"><div class="headline">Articles</div><div class="length-num">19</div></a><a href="/en/tags/"><div class="headline">Tags</div><div class="length-num">12</div></a><a href="/en/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/en/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-archive"></i><span> Archives</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/en/archives/"><i class="fa-fw fas fa-history"></i><span> Timeline</span></a></li><li><a class="site-page child" href="/en/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li><li><a class="site-page child" href="/en/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/en/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list-ul"></i><span> List</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/en/html/"><i class="fa-fw fas fa-code"></i><span> HTML</span></a></li><li><a class="site-page child" href="/en/pages/"><i class="fa-fw fas fa-book-open"></i><span> Pages</span></a></li><li><a class="site-page child" href="/en/shuoshuo/"><i class="fa-fw fas fa-pen-to-square"></i><span> Shuoshuo</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/en/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heart"></i><span> More</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/en/huyongshuang/"><i class="fa-fw fas fa-user"></i><span> About</span></a></li><li><a class="site-page child" href="/en/album/"><i class="fa-fw fas fa-images"></i><span> Album</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/en/messageboard/"><i class="fa-fw fas fa-comment-dots"></i><span> Message Board</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/en/img/default_img.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/en/"><img class="site-icon" src="/en/img/logo.png" alt="Logo"><span class="site-name">HuYongshuang</span></a><a class="nav-page-title" href="/en/"><span class="site-name">Screen Color Picker</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  Back to Home</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/en/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-archive"></i><span> Archives</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/en/archives/"><i class="fa-fw fas fa-history"></i><span> Timeline</span></a></li><li><a class="site-page child" href="/en/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li><li><a class="site-page child" href="/en/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/en/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list-ul"></i><span> List</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/en/html/"><i class="fa-fw fas fa-code"></i><span> HTML</span></a></li><li><a class="site-page child" href="/en/pages/"><i class="fa-fw fas fa-book-open"></i><span> Pages</span></a></li><li><a class="site-page child" href="/en/shuoshuo/"><i class="fa-fw fas fa-pen-to-square"></i><span> Shuoshuo</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/en/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heart"></i><span> More</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/en/huyongshuang/"><i class="fa-fw fas fa-user"></i><span> About</span></a></li><li><a class="site-page child" href="/en/album/"><i class="fa-fw fas fa-images"></i><span> Album</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/en/messageboard/"><i class="fa-fw fas fa-comment-dots"></i><span> Message Board</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Screen Color Picker<a class="post-edit-link" href="https://github.com/huyongshuang/huyongshuang.github.io/tree/main/source-en/_posts/color-picker.md" rel="external nofollow noreferrer" title="Edit" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-12-10T02:20:04.000Z" title="Created 2024-12-10 10:20:04">2024-12-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2026-01-28T13:31:57.574Z" title="Updated 2026-01-28 21:31:57">2026-01-28</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>11mins</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">Comments:</span><a href="/en/2024/12/10-color-picker/#post-comment"><span class="waline-comment-count" data-path="/en/2024/12/10-color-picker/"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;It has been&quot;,&quot;messageNext&quot;:&quot;days since the last update, the content of the article may be outdated.&quot;,&quot;postUpdate&quot;:&quot;2026-01-28 21:31:57&quot;}" hidden></div><ul>
+<li><strong>Screen Color Picker</strong>: A web tool that can extract colors from any position on the screen, built on the EyeDropper API. When using it, minimize the browser window and place the interface from which you need to extract colors outside the browser window.</li>
+</ul>
+<style>
+.color-picker-wrap {
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: inherit;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: -40px;
+}
+
+.color-picker-wrap .container {
+  max-width: 900px;
+  width: 100%;
+  background-color: inherit;
+  border-radius: 16px;
+  padding: 30px;
+  margin-top: 20px;
+}
+
+.color-picker-wrap header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.color-picker-wrap h1 {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.color-picker-wrap h1 i {
+  color: #3498db;
+}
+
+.color-picker-wrap .subtitle {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
+
+.color-picker-wrap .color-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.color-picker-wrap .color-preview {
+  width: 150px;
+  height: 150px;
+  border-radius: 16px;
+  border: 5px solid white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.color-picker-wrap .color-preview:hover {
+  transform: scale(1.03);
+}
+
+.color-picker-wrap .color-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.color-picker-wrap .current-hex {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.color-picker-wrap .hex-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.color-picker-wrap .btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 1rem;
+}
+
+.color-picker-wrap .btn-primary {
+  background-color: #3498db;
+  color: white;
+}
+
+.color-picker-wrap .btn-primary:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+.color-picker-wrap .btn-secondary {
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+.color-picker-wrap .btn-secondary:hover {
+  background-color: #dee2e6;
+  transform: translateY(-2px);
+}
+
+.color-picker-wrap .btn-small {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+}
+
+.color-picker-wrap .btn-success {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.color-picker-wrap .btn-success:hover {
+  background-color: #27ae60;
+}
+
+.color-picker-wrap .color-formats {
+  margin-top: 30px;
+}
+
+.color-picker-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.color-picker-wrap th {
+  background-color: inherit;
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+  color: #495057;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.color-picker-wrap td {
+  padding: 15px;
+  border-bottom: 1px solid #e9ecef;
+  vertical-align: middle;
+}
+
+.color-picker-wrap tr:hover {
+  background-color: inherit;
+}
+
+.color-picker-wrap .color-name {
+  font-weight: 600;
+  width: 100px;
+}
+
+.color-picker-wrap .color-value {
+  font-family: 'Courier New', monospace;
+  background-color: inherit;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #e9ecef;
+  flex-grow: 1;
+  word-break: break-all;
+}
+
+.color-picker-wrap .actions-cell {
+  width: 180px;
+  text-align: right;
+}
+
+.color-picker-wrap .color-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.color-picker-wrap .copy-btn {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.color-picker-wrap .copy-btn:hover {
+  background-color: #5a6268;
+}
+
+.color-picker-wrap .copy-btn.copied {
+  background-color: #2ecc71;
+}
+
+.color-picker-wrap .case-toggle {
+  background-color: #adb5bd;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 0.9rem;
+}
+
+.color-picker-wrap .case-toggle:hover {
+  background-color: #868e96;
+}
+
+.color-picker-wrap .instructions {
+  background-color: inherit;
+  border-left: 4px solid #3498db;
+  padding: 15px 20px;
+  margin-top: 30px;
+  border-radius: 0 8px 8px 0;
+}
+
+.color-picker-wrap .instructions h3 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.color-picker-wrap .instructions p {
+  margin-bottom: 8px;
+  color: #34495e;
+}
+
+.color-picker-wrap .footer {
+  margin-top: 30px;
+  text-align: center;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  padding-top: 20px;
+  border-top: 1px solid #e9ecef;
+  width: 100%;
+}
+
+.color-picker-wrap .notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #2ecc71;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.color-picker-wrap .notification.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .color-picker-wrap .container {
+    padding: 20px;
+  }
+
+  .color-picker-wrap h1 {
+    font-size: 2rem;
+  }
+
+  .color-picker-wrap .color-display {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .color-picker-wrap .color-info {
+    min-width: 100%;
+  }
+
+  .color-picker-wrap .current-hex {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .color-picker-wrap th,
+  .color-picker-wrap td {
+    padding: 10px;
+  }
+
+  .color-picker-wrap .actions-cell {
+    width: 140px;
+  }
+}
+
+[data-theme="dark"] .color-picker-wrap {
+  color: #f1f1f1;
+}
+
+[data-theme="dark"] .color-picker-wrap h1 {
+  color: #e6edf3;
+}
+
+[data-theme="dark"] .color-picker-wrap .subtitle {
+  color: #adb5bd;
+}
+
+[data-theme="dark"] .color-picker-wrap .instructions h3 {
+  color: #e6edf3;
+}
+
+[data-theme="dark"] .color-picker-wrap .instructions p {
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .color-picker-wrap th {
+  color: #e2e8f0;
+}
+
+[data-theme="dark"] .color-picker-wrap .color-value {
+  border-color: #444;
+}
+
+[data-theme="dark"] .color-picker-wrap header,
+[data-theme="dark"] .color-picker-wrap .footer,
+[data-theme="dark"] .color-picker-wrap td {
+  border-color: #333;
+}
+</style>
+<div class="color-picker-wrap">
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-eye-dropper"></i> Screen Color Picker</h1>
+      <p class="subtitle">Use the EyeDropper API to extract colors from anywhere on the screen, supporting conversion of multiple color formats.</p>
+    </header>
+    <div class="color-display">
+      <div class="color-preview" id="colorPreview"></div>
+      <div class="color-info">
+        <div class="current-hex">
+          <span id="hexValue">#dee2e6</span>
+          <div class="hex-actions">
+            <button class="btn btn-small case-toggle" id="toggleCase">
+              <i class="fas fa-exchange-alt"></i> Case </button>
+            <button class="btn btn-small btn-success" id="copyHex">
+              <i class="far fa-copy"></i> Copy HEX </button>
+          </div>
+        </div>
+        <button class="btn btn-primary" id="pickColor">
+          <i class="fas fa-eye-dropper"></i> Open Color Picker </button>
+        <p style="margin-top: 15px; color: #7f8c8d;"> After clicking the button, your mouse will turn into a dropper; click any position on the screen to get the color value. </p>
+      </div>
+    </div>
+    <div class="color-formats">
+      <h2><i class="fas fa-palette"></i> Color Formats</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Format</th>
+            <th>Value</th>
+            <th class="actions-cell">Action</th>
+          </tr>
+        </thead>
+        <tbody id="colorTable">
+        </tbody>
+      </table>
+    </div>
+    <div class="instructions">
+      <h3><i class="fas fa-info-circle"></i> </h3>
+      <p>1. Click the "Open Color Picker" button, your mouse will become a color dropper;</p>
+      <p>2. Click any spot on the screen to retrieve its color value;</p>
+      <p>3. Click the "Case" button next to the HEX color to switch uppercase and lowercase HEX code;</p>
+      <p>4. Click the "Copy" button beside each color format to copy the color code to clipboard.</p>
+    </div>
+  </div>
+  <div class="footer">
+    <p>Screen color picking tool built on <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/WICG/eyedropper-api">EyeDropper API</a> | Supports HEX, RGB, HSL, HSV, CMYK and other formats</p>
+    © <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/huyongshuang/huyongshuang.github.io/tree/main/source-en/html/color-picker">GitHub</a>
+  </div>
+  <div class="notification" id="notification">
+    <i class="fas fa-check-circle"></i>
+    <span id="notificationText">Color copied to clipboard</span>
+  </div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // 初始颜色
+  let currentColor = '#dee2e6';
+  let hexUpperCase = false;
+
+  // 获取DOM元素
+  const colorPreview = document.getElementById('colorPreview');
+  const hexValue = document.getElementById('hexValue');
+  const pickColorBtn = document.getElementById('pickColor');
+  const toggleCaseBtn = document.getElementById('toggleCase');
+  const copyHexBtn = document.getElementById('copyHex');
+  const colorTable = document.getElementById('colorTable');
+  const notification = document.getElementById('notification');
+  const notificationText = document.getElementById('notificationText');
+
+  // 初始化颜色预览
+  colorPreview.style.backgroundColor = currentColor;
+
+  // 检查浏览器是否支持EyeDropper API
+  if (!window.EyeDropper) {
+    pickColorBtn.disabled = true;
+    pickColorBtn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> 浏览器不支持EyeDropper API';
+    pickColorBtn.style.backgroundColor = '#e74c3c';
+    showNotification('您的浏览器不支持EyeDropper API，请使用Chrome或Edge浏览器', 'error');
+  }
+
+  // 打开颜色拾取器
+  pickColorBtn.addEventListener('click', async () => {
+    try {
+      const eyeDropper = new EyeDropper();
+      const result = await eyeDropper.open();
+
+      // 更新当前颜色
+      currentColor = result.sRGBHex;
+      updateColorDisplay();
+      showNotification('Color picked successfully', 'success');
+    } catch (err) {
+      // 用户取消取色操作
+      if (err.toString().includes('AbortError')) {
+        console.log('User canceled color picking');
+      } else {
+        console.error('Color pick error:', err);
+        showNotification('An error occurred during color picking', 'error');
+      }
+    }
+  });
+
+  // HEX大小写切换
+  toggleCaseBtn.addEventListener('click', () => {
+    hexUpperCase = !hexUpperCase;
+    updateHexDisplay();
+  });
+
+  // 复制HEX颜色
+  copyHexBtn.addEventListener('click', () => {
+    const hexToCopy = hexUpperCase ? currentColor.toUpperCase() : currentColor.toLowerCase();
+    copyToClipboard(hexToCopy);
+    showNotification(`HEX color ${hexToCopy} copied to clipboard`);
+  });
+
+  // 初始化颜色表格
+  initColorTable();
+
+  // 更新颜色显示
+  function updateColorDisplay() {
+    // 更新颜色预览
+    colorPreview.style.backgroundColor = currentColor;
+
+    // 更新HEX显示
+    updateHexDisplay();
+
+    // 更新所有颜色格式
+    updateAllColorFormats();
+  }
+
+  // 更新HEX显示
+  function updateHexDisplay() {
+    hexValue.textContent = hexUpperCase ? currentColor.toUpperCase() : currentColor.toLowerCase();
+  }
+
+  // 初始化颜色表格
+  function initColorTable() {
+    const colorFormats = [{
+        name: 'RGB',
+        format: 'rgb'
+      },
+      {
+        name: 'RGBA',
+        format: 'rgba'
+      },
+      {
+        name: 'HSL',
+        format: 'hsl'
+      },
+      {
+        name: 'HSLA',
+        format: 'hsla'
+      },
+      {
+        name: 'HSV',
+        format: 'hsv'
+      },
+      {
+        name: 'HSVA',
+        format: 'hsva'
+      },
+      {
+        name: 'CMYK',
+        format: 'cmyk'
+      },
+      {
+        name: 'CMYKA',
+        format: 'cmyka'
+      }
+    ];
+
+    colorFormats.forEach(format => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+                <td class="color-name">${format.name}</td>
+                <td>
+                    <div class="color-row">
+                        <div class="color-value" id="${format.format}Value">${getColorValue(format.format)}</div>
+                    </div>
+                </td>
+                <td class="actions-cell">
+                    <button class="copy-btn" data-format="${format.format}">
+                        <i class="far fa-copy"></i> Copy
+                    </button>
+                </td>
+            `;
+      colorTable.appendChild(row);
+    });
+
+    // 添加复制按钮事件监听器
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const format = this.getAttribute('data-format');
+        const valueElement = document.getElementById(`${format}Value`);
+        const value = valueElement.textContent;
+
+        copyToClipboard(value);
+        showNotification(`${format.toUpperCase()} color copied to clipboard`);
+
+        // 添加复制成功视觉反馈
+        this.classList.add('copied');
+        this.innerHTML = '<i class="fas fa-check"></i> Copied';
+
+        setTimeout(() => {
+          this.classList.remove('copied');
+          this.innerHTML = '<i class="far fa-copy"></i> Copy';
+        }, 2000);
+      });
+    });
+  }
+
+  // 更新所有颜色格式
+  function updateAllColorFormats() {
+    const formats = ['rgb', 'rgba', 'hsl', 'hsla', 'hsv', 'hsva', 'cmyk', 'cmyka'];
+
+    formats.forEach(format => {
+      const element = document.getElementById(`${format}Value`);
+      if (element) {
+        element.textContent = getColorValue(format);
+      }
+    });
+  }
+
+  // 获取颜色值
+  function getColorValue(format) {
+    // 将HEX转换为RGB
+    const r = parseInt(currentColor.slice(1, 3), 16);
+    const g = parseInt(currentColor.slice(3, 5), 16);
+    const b = parseInt(currentColor.slice(5, 7), 16);
+
+    switch (format) {
+      case 'rgb':
+        return `rgb(${r},${g},${b})`;
+      case 'rgba':
+        return `rgba(${r},${g},${b},1.00)`;
+      case 'hsl':
+        return rgbToHsl(r, g, b, false);
+      case 'hsla':
+        return rgbToHsl(r, g, b, true);
+      case 'hsv':
+        return rgbToHsv(r, g, b, false);
+      case 'hsva':
+        return rgbToHsv(r, g, b, true);
+      case 'cmyk':
+        return rgbToCmyk(r, g, b, false);
+      case 'cmyka':
+        return rgbToCmyk(r, g, b, true);
+      default:
+        return currentColor;
+    }
+  }
+
+  // RGB转HSL
+  function rgbToHsl(r, g, b, includeAlpha) {
+    r /= 255;
+    g /= 255;
+    b /= 255;
+
+    const max = Math.max(r, g, b);
+    const min = Math.min(r, g, b);
+    let h, s, l = (max + min) / 2;
+
+    if (max === min) {
+      h = s = 0; // 灰色
+    } else {
+      const d = max - min;
+      s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+
+      switch (max) {
+        case r:
+          h = (g - b) / d + (g < b ? 6 : 0);
+          break;
+        case g:
+          h = (b - r) / d + 2;
+          break;
+        case b:
+          h = (r - g) / d + 4;
+          break;
+      }
+
+      h /= 6;
+    }
+
+    h = Math.round(h * 360);
+    s = Math.round(s * 100);
+    l = Math.round(l * 100);
+
+    if (includeAlpha) {
+      return `hsla(${h},${s}%,${l}%,1.00)`;
+    }
+
+    return `hsl(${h},${s}%,${l}%)`;
+  }
+
+  // RGB转HSV
+  function rgbToHsv(r, g, b, includeAlpha) {
+    r /= 255;
+    g /= 255;
+    b /= 255;
+
+    const max = Math.max(r, g, b);
+    const min = Math.min(r, g, b);
+    let h, s, v = max;
+
+    const d = max - min;
+    s = max === 0 ? 0 : d / max;
+
+    if (max === min) {
+      h = 0; // 灰色
+    } else {
+      switch (max) {
+        case r:
+          h = (g - b) / d + (g < b ? 6 : 0);
+          break;
+        case g:
+          h = (b - r) / d + 2;
+          break;
+        case b:
+          h = (r - g) / d + 4;
+          break;
+      }
+
+      h /= 6;
+    }
+
+    h = Math.round(h * 360);
+    s = Math.round(s * 100);
+    v = Math.round(v * 100);
+
+    if (includeAlpha) {
+      return `hsva(${h},${s}%,${v}%,1.00)`;
+    }
+
+    return `hsv(${h},${s}%,${v}%)`;
+  }
+
+  // RGB转CMYK
+  function rgbToCmyk(r, g, b, includeAlpha) {
+    if (r === 0 && g === 0 && b === 0) {
+      if (includeAlpha) {
+        return 'cmyka(0,0,0,100,1.00)';
+      }
+      return 'cmyk(0,0,0,100)';
+    }
+
+    r /= 255;
+    g /= 255;
+    b /= 255;
+
+    const k = 1 - Math.max(r, g, b);
+    const c = (1 - r - k) / (1 - k);
+    const m = (1 - g - k) / (1 - k);
+    const y = (1 - b - k) / (1 - k);
+
+    const cVal = Math.round(c * 100);
+    const mVal = Math.round(m * 100);
+    const yVal = Math.round(y * 100);
+    const kVal = Math.round(k * 100);
+
+    if (includeAlpha) {
+      return `cmyka(${cVal},${mVal},${yVal},${kVal},1.00)`;
+    }
+
+    return `cmyk(${cVal},${mVal},${yVal},${kVal})`;
+  }
+
+  // 复制到剪贴板
+  function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(() => {
+      console.log('Text copied to clipboard:', text);
+    }).catch(err => {
+      console.error('Copy failed:', err);
+      // 备用方法
+      const textArea = document.createElement('textarea');
+      textArea.value = text;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+    });
+  }
+
+  // 显示通知
+  function showNotification(message, type = 'success') {
+    notificationText.textContent = message;
+
+    if (type === 'error') {
+      notification.style.backgroundColor = '#e74c3c';
+    } else {
+      notification.style.backgroundColor = '#2ecc71';
+    }
+
+    notification.classList.add('show');
+
+    setTimeout(() => {
+      notification.classList.remove('show');
+    }, 3000);
+  }
+
+  // 使用示例图片中的初始值
+  function initializeWithExample() {
+    currentColor = '#44bb85';
+    updateColorDisplay();
+  }
+
+  // 初始化示例颜色
+  initializeWithExample();
+});
+</script></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://huyongshuang.top/en">HuYongshuang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://huyongshuang.top/en/2024/12/10-color-picker/">https://huyongshuang.top/en/2024/12/10-color-picker/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener external nofollow noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/en/img/avatar.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>Thank you for your support!</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/en/img/weixin_pay.png" target="_blank"><img class="post-qr-code-img" src="/en/img/weixin_pay.png" alt="Wechat"/></a><div class="post-qr-code-desc">Wechat</div></li><li class="reward-item"><a href="/en/img/alipay.png" target="_blank"><img class="post-qr-code-img" src="/en/img/alipay.png" alt="Alipay"/></a><div class="post-qr-code-desc">Alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/en/2024/12/12-deploy-script/" title="Hexo Deployment Script"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">Hexo Deployment Script</div></div><div class="info-2"><div class="info-item-1"> Before using it, please change the folder name where you store your Hexo project files to ‘Blog’, and place the following ‘bat’ files in the same directory as’ Blog '. You can customize your file name and location in the code below.  1. Hexo Local Deployment Script ⚓︎ Click to download the Hexo Local Deployment.bat file. 1wt -d &quot;Blog&quot; cmd /k &quot;hexo clean &amp; hexo generate &amp; hexo server&quot; 2. Hexo Deployment to GitHub Pages Script ⚓︎ Please install hexo-deployer-git and configure Hexo properly. Click to download the Hexo Deploy to GitHub Pages.bat file. 1wt -d &quot;Blog&quot; cmd /k &quot;hexo clean &amp; hexo generate &amp; hexo deploy&quot; 3. Git Push Script ⚓︎ Click to download the Git Push Script.bat file. 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120...</div></div></div></a><a class="pagination-related" href="/en/2024/11/11-copy-yaml/" title="The solution for Hexo being unable to skip the rendering of yml files"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">The solution for Hexo being unable to skip the rendering of yml files</div></div><div class="info-2"><div class="info-item-1"> Root cause of the problem: Hexo will recognize .yml / .yaml files as data files. These files will be actively parsed by Hexo and added to the template variable site.data. This process occurs before the skip_render setting takes effect. Therefore, even if skip_render is configured, Hexo will still first parse the .yml files and then attempt to skip rendering (but the parsing process has already been completed). Solution: Use a script to forcibly copy the yml file to the public directory. Create a scripts folder in the root directory of Hexo, and within this folder, create a JavaScript file named copy-yaml.js. Write the following code into this file. Alternatively, you can download the copy-yaml.js file.  1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950&#x27;use strict&#x27;;const fs = require(&#x27;fs&#x27;);const path = require(&#x27;path&#x27;);const chokidar = require(&#x27;chokidar&#x27;);// Make sure that the YAML file is copied to the...</div></div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comments</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/en/img/avatar.png" onerror="this.onerror=null;this.src='/en/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">HuYongshuang</div><div class="author-info-description">Infinite creation, infinite possibilities.</div><div class="site-data"><a href="/en/archives/"><div class="headline">Articles</div><div class="length-num">19</div></a><a href="/en/tags/"><div class="headline">Tags</div><div class="length-num">12</div></a><a href="/en/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div><a id="card-info-btn" href="/huyongshuang"><i class="fas fa-user"></i><span>About Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/huyongshuang" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="/en/746059847@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="https://space.bilibili.com/400547411" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="fa-brands fa-bilibili" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content"><div style="text-align:center; margin:-10px -30px -15px;">
+  <p>Wechat Official Account has more content!</p>
+  <a href="https://mp.weixin.qq.com/s/Qd5I_aZf2vZh5WhoLE8czQ" rel="external nofollow noreferrer" target="_blank">
+    <img src="/en/img/weixin_gongzhong.png" alt="Wechat Official Account" style="width:250px; height:auto; margin-top:-15px;">
+  </a>
+</div>
+</div></div><div class="card-widget"><div class="item-headline"><i></i><span></span></div><div class="item-content"><div class="sidebar-widget widget">
+  <div class="time-section">
+    <div id="current-time" class="current-time"></div>
+  </div>
+  <div class="date-section">
+    <div id="current-date" class="current-date"></div>
+  </div>
+  <div class="weather-section">
+    <div id="current-weather" class="current-weather">Loading...</div>
+  </div>
+  <div class="calendar-section">
+    <div class="calendar-header">
+      <button id="prev-month" class="calendar-nav-btn">&lt</button>
+      <h3 id="calendar-month-year"></h3>
+      <button id="next-month" class="calendar-nav-btn">&gt</button>
+    </div>
+    <div class="calendar-weekdays">
+      <div>Sun</div>
+      <div>Mon</div>
+      <div>Tue</div>
+      <div>Wed</div>
+      <div>Thu</div>
+      <div>Fri</div>
+      <div>Sat</div>
+    </div>
+    <div id="calendar-dates" class="calendar-dates"></div>
+  </div>
+</div>
+</div></div><div class="card-widget"><div class="item-headline"><i class="fa-solid fa-gear"></i><span>Settings</span></div><div class="item-content"><div class="setting">
+  <h3>Language</h3>
+  <div class="lang-switch">
+    <a href="/">中文</a>
+    <a href="/en/">English</a>
+  </div>
+  <h3>Background Effect</h3>
+  <div class="snowflake-switch">
+    <button id="switchSnowBtn">Switch Effect</button>
+  </div>
+  <h3>Cursor Switching</h3>
+  <div class="cursor-switch">
+    Cursor one<button id="cursor-switch-1">ON</button><br>
+    Cursor two<button id="cursor-switch-2">OFF</button>
+  </div>
+</div>
+</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text"> Screen Color Picker</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text"> Color Formats</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text"> </span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/en/2026/5/20-binary-arithmetic-videos/" title="Binary Arithmetic Videos Collection (Bilibili)">Binary Arithmetic Videos Collection (Bilibili)</a><time datetime="2026-05-20T10:27:34.000Z" title="Created 2026-05-20 18:27:34">2026-05-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/en/2026/2/17-binary-arithmetic/" title="Binary Arithmetic"><img src="/en/2026/2/17-binary-arithmetic/0.png" onerror="this.onerror=null;this.src='/en/img/404.jpg'" alt="Binary Arithmetic"/></a><div class="content"><a class="title" href="/en/2026/2/17-binary-arithmetic/" title="Binary Arithmetic">Binary Arithmetic</a><time datetime="2026-02-17T15:14:39.000Z" title="Created 2026-02-17 23:14:39">2026-02-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/en/2026/1/11-heart-shaped-function/" title="Heart-shaped Function"><img src="/en/2026/1/11-heart-shaped-function/0.png" onerror="this.onerror=null;this.src='/en/img/404.jpg'" alt="Heart-shaped Function"/></a><div class="content"><a class="title" href="/en/2026/1/11-heart-shaped-function/" title="Heart-shaped Function">Heart-shaped Function</a><time datetime="2026-01-11T08:28:13.000Z" title="Created 2026-01-11 16:28:13">2026-01-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/en/2025/2/7-rubiks-cube-formula/" title="Rubik's Cube formula"><img src="/en/2025/2/7-rubiks-cube-formula/0.png" onerror="this.onerror=null;this.src='/en/img/404.jpg'" alt="Rubik's Cube formula"/></a><div class="content"><a class="title" href="/en/2025/2/7-rubiks-cube-formula/" title="Rubik's Cube formula">Rubik's Cube formula</a><time datetime="2025-02-07T05:14:27.000Z" title="Created 2025-02-07 13:14:27">2025-02-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/en/2025/2/4-5%C3%975-cube-formula/" title="5×5 Rubik's Cube formula"><img src="/en/2025/2/4-5%C3%975-cube-formula/0.png" onerror="this.onerror=null;this.src='/en/img/404.jpg'" alt="5×5 Rubik's Cube formula"/></a><div class="content"><a class="title" href="/en/2025/2/4-5%C3%975-cube-formula/" title="5×5 Rubik's Cube formula">5×5 Rubik's Cube formula</a><time datetime="2025-02-04T09:24:48.000Z" title="Created 2025-02-04 17:24:48">2025-02-04</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/en/img/default_img.png);"><div class="footer-flex"><div class="footer-flex-items"><div class="footer-flex-item"><div class="footer-flex-title">Blog</div><div class="footer-flex-content"><a href="/en/music/" target="_blank" title="Music">Music</a><a href="/en/album/" target="_blank" title="Album">Album</a><a href="/en/link/" target="_blank" title="Link">Link</a><a href="/en/html/" target="_blank" title="HTML">HTML</a><a href="/en/pages/" target="_blank" title="Pages">Pages</a><a href="/en/shuoshuo/" target="_blank" title="Shuoshuo">Shuoshuo</a></div></div></div><div class="footer-flex-items"><div class="footer-flex-item"><div class="footer-flex-title">Video Homepage</div><div class="footer-flex-content"><a href="https://v.douyin.com/USq91Jn" rel="external nofollow noreferrer" target="_blank" title="Douyin">Douyin</a><a href="https://space.bilibili.com/400547411" rel="external nofollow noreferrer" target="_blank" title="Bilibili">Bilibili</a><a href="https://v.qq.com/s/videoplus/9000237633/2" rel="external nofollow noreferrer" target="_blank" title="Tencent Video">Tencent Video</a><a href="https://www.iqiyi.com/creator/1569044152" rel="external nofollow noreferrer" target="_blank" title="iQIYI">iQIYI</a><a href="https://www.youku.com/profile/index/?uid=UNjM1OTIyMDI0MA==" rel="external nofollow noreferrer" target="_blank" title="Youku">Youku</a><a href="https://tv.sohu.com/user/334351365" rel="external nofollow noreferrer" target="_blank" title="Sohu Video">Sohu Video</a></div></div></div><div class="footer-flex-items"><div class="footer-flex-item"><div class="footer-flex-title">Support</div><div class="footer-flex-content"><a href="https://github.com" rel="external nofollow noreferrer" target="_blank" title="GitHub">GitHub</a><a href="https://www.doubao.com" rel="external nofollow noreferrer" target="_blank" title="Doubao">Doubao</a><a href="https://www.deepseek.com" rel="external nofollow noreferrer" target="_blank" title="DeepSeek">DeepSeek</a><a href="https://huyongshuang.github.io" rel="external nofollow noreferrer" target="_blank" title="GitHub Pages">GitHub Pages</a><a href="https://huyongshuang.github.io/old" rel="external nofollow noreferrer" target="_blank" title="Old Blog">Old Blog</a><a href="https://github.com/huyongshuang/huyongshuang.github.io" rel="external nofollow noreferrer" target="_blank" title="Blog Repository (GitHub)">Blog Repository (GitHub)</a></div></div></div><div class="footer-flex-items"><div class="footer-flex-item"><div class="footer-flex-title">Language</div><div class="footer-flex-content"><div><a href="/" class="lang-switch">中文</a></div><div><a href="/en/" class="lang-switch">English</a></div></div></div></div></div><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2020 - 2026 By HuYongshuang</span><span class="framework-info"><span class="footer-separator">|</span><span>Framework </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.5</a></span></div><div class="footer_custom_text"><style>
+  .beian {display: flex; flex-direction: row; gap: 20px; justify-content: center; align-items: center;}
+  .beian a {text-decoration: none;}
+  .beian .police-beian {display: inline-flex; align-items: center;}
+  .beian img {height: 15px; margin-right: 5px; vertical-align: middle;}
+  @media(max-width:768px) {.beian{flex-direction: column; gap: 2.5px;}}
+</style>
+<div class="beian">
+  <a href="https://beian.miit.gov.cn/#/Integrated/index" rel="external nofollow noreferrer" target="_blank">鄂ICP备2026000237号-2</a>
+  <a class="police-beian" href="https://beian.mps.gov.cn/#/query/webSearch?code=42062402000234" rel="external nofollow noreferrer" target="_blank">
+    <img src="/en/img/beian.png" alt="备案图标">
+    <span>鄂公网安备42062402000234号</span>
+  </a>
+</div>
+<style>
+  a#upyun {display: inline-flex; align-items: center; text-decoration: none;}
+  #upyun img {height: 27px; margin-left: 2px; margin-right: 2px; vertical-align: middle;}
+  #upyun span {vertical-align: middle;}
+</style>
+<a id="upyun" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" rel="external nofollow noreferrer" target="_blank">
+  <span>This website is provided with CDN acceleration service by</span><img src="/en/img/又拍云_logo1.png" alt="又拍云">
+</a>
+</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="chat-btn" type="button" title="Chat" style="display:none"><i class="fas fa-message"></i></button><a id="to_comment" href="#post-comment" title="Scroll to Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/en/js/utils.js?v=5.5.5"></script><script src="/en/js/main.js?v=5.5.5"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>(async () => {
+  const showKatex = () => {
+    document.querySelectorAll('#article-container .katex').forEach(el => el.classList.add('katex-show'))
+  }
+
+  if (!window.katex_js_css) {
+    window.katex_js_css = true
+    await btf.getCSS('https://cdn.jsdelivr.net/npm/katex@0.17.0/dist/katex.min.css')
+    if (true) {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/katex@0.17.0/dist/contrib/copy-tex.min.js')
+    }
+  }
+
+  showKatex()
+})()</script><script>(() => {
+  const parseViewBox = viewBox => {
+    if (!viewBox) return null
+    const parts = viewBox.trim().split(/[\s,]+/).map(n => Number(n))
+    if (parts.length !== 4 || parts.some(n => Number.isNaN(n))) return null
+    return parts
+  }
+
+  const getSvgViewBox = svg => {
+    const attr = parseViewBox(svg.getAttribute('viewBox'))
+    if (attr) return attr
+
+    // Fallback: use bbox to build a viewBox
+    try {
+      const bbox = svg.getBBox()
+      if (bbox && bbox.width && bbox.height) return [bbox.x, bbox.y, bbox.width, bbox.height]
+    } catch (e) {
+      // getBBox may fail on some edge cases; ignore
+    }
+
+    const w = Number(svg.getAttribute('width')) || 0
+    const h = Number(svg.getAttribute('height')) || 0
+    if (w > 0 && h > 0) return [0, 0, w, h]
+    return [0, 0, 100, 100]
+  }
+
+  const setSvgViewBox = (svg, vb) => {
+    svg.setAttribute('viewBox', `${vb[0]} ${vb[1]} ${vb[2]} ${vb[3]}`)
+  }
+
+  const clamp = (v, min, max) => Math.max(min, Math.min(max, v))
+
+  const openSvgInNewTab = ({ source, initViewBox }) => {
+    const getClonedSvg = () => {
+      if (typeof source === 'string') {
+        const template = document.createElement('template')
+        template.innerHTML = source.trim()
+        const svg = template.content.querySelector('svg')
+        return svg ? svg.cloneNode(true) : null
+      }
+      if (source && typeof source.cloneNode === 'function') {
+        return source.cloneNode(true)
+      }
+      return null
+    }
+
+    const clone = getClonedSvg()
+    if (!clone) return
+    if (initViewBox && initViewBox.length === 4) {
+      clone.setAttribute('viewBox', initViewBox.join(' '))
+    }
+    if (!clone.getAttribute('xmlns')) clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg')
+    if (!clone.getAttribute('xmlns:xlink') && clone.outerHTML.includes('xlink:')) {
+      clone.setAttribute('xmlns:xlink', 'http://www.w3.org/1999/xlink')
+    }
+    // inject background to match current theme
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark'
+    const bg = getComputedStyle(document.body).backgroundColor || (isDark ? '#1e1e1e' : '#ffffff')
+    if (!clone.style.background) clone.style.background = bg
+
+    const serializer = new XMLSerializer()
+    const svgSource = serializer.serializeToString(clone)
+    const htmlSource = `<!doctype html><html><head><meta charset="utf-8" />
+      <style>
+        html, body { width: 100%; height: 100%; margin: 0; display: flex; align-items: center; justify-content: center; background: ${bg}; }
+        svg { max-width: 100%; max-height: 100%; height: auto; width: auto; }
+      </style>
+      </head><body>${svgSource}</body></html>`
+    const blob = new Blob([htmlSource], { type: 'text/html;charset=utf-8' })
+    const url = URL.createObjectURL(blob)
+    window.open(url, '_blank', 'noopener')
+    setTimeout(() => URL.revokeObjectURL(url), 30000)
+  }
+
+  const attachMermaidViewerButton = wrap => {
+    let btn = wrap.querySelector('.mermaid-open-btn')
+    if (!btn) {
+      btn = document.createElement('button')
+      btn.type = 'button'
+      btn.className = 'mermaid-open-btn'
+      wrap.appendChild(btn)
+    }
+
+    btn.innerHTML = '<i class="fa fa-search fa-fw" aria-hidden="true"></i>'
+
+    if (!btn.__mermaidViewerBound) {
+      btn.addEventListener('click', e => {
+        e.preventDefault()
+        e.stopPropagation()
+        const svg = wrap.__mermaidOriginalSvg || wrap.querySelector('svg')
+        if (!svg) return
+        const initViewBox = wrap.__mermaidInitViewBox
+        if (typeof svg === 'string') {
+          openSvgInNewTab({ source: svg, initViewBox })
+          return
+        }
+        openSvgInNewTab({ source: svg, initViewBox })
+      })
+      btn.__mermaidViewerBound = true
+    }
+  }
+
+  // Zoom around a point (px, py) in the SVG viewport (in viewBox coordinates)
+  const zoomAtPoint = (vb, factor, px, py) => {
+    const w = vb[2] * factor
+    const h = vb[3] * factor
+    const nx = px - (px - vb[0]) * factor
+    const ny = py - (py - vb[1]) * factor
+    return [nx, ny, w, h]
+  }
+
+  const initMermaidGestures = wrap => {
+    const svg = wrap.querySelector('svg')
+    if (!svg) return
+
+    // Ensure viewBox exists so gestures always work
+    const initVb = getSvgViewBox(svg)
+    wrap.__mermaidInitViewBox = initVb
+    wrap.__mermaidCurViewBox = initVb.slice()
+    setSvgViewBox(svg, initVb)
+
+    // Avoid binding multiple times on themeChange/pjax
+    if (wrap.__mermaidGestureBound) return
+    wrap.__mermaidGestureBound = true
+
+    // Helper: map client (viewport) coordinate -> viewBox coordinate
+    const clientToViewBox = (clientX, clientY) => {
+      const rect = svg.getBoundingClientRect()
+      const vb = wrap.__mermaidCurViewBox || getSvgViewBox(svg)
+      const x = vb[0] + (clientX - rect.left) * (vb[2] / rect.width)
+      const y = vb[1] + (clientY - rect.top) * (vb[3] / rect.height)
+      return { x, y, rect, vb }
+    }
+
+    const state = {
+      pointers: new Map(),
+      startVb: null,
+      startDist: 0,
+      startCenter: null
+    }
+
+    const clampVb = vb => {
+      const init = wrap.__mermaidInitViewBox || vb
+      const minW = init[2] * 0.1
+      const maxW = init[2] * 10
+      const minH = init[3] * 0.1
+      const maxH = init[3] * 10
+      vb[2] = clamp(vb[2], minW, maxW)
+      vb[3] = clamp(vb[3], minH, maxH)
+      return vb
+    }
+
+    const setCurVb = vb => {
+      vb = clampVb(vb)
+      wrap.__mermaidCurViewBox = vb
+      setSvgViewBox(svg, vb)
+    }
+
+    const onPointerDown = e => {
+      // Allow only primary button for mouse
+      if (e.pointerType === 'mouse' && e.button !== 0) return
+      svg.setPointerCapture(e.pointerId)
+      state.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY })
+
+      if (state.pointers.size === 1) {
+        state.startVb = (wrap.__mermaidCurViewBox || getSvgViewBox(svg)).slice()
+      } else if (state.pointers.size === 2) {
+        const pts = [...state.pointers.values()]
+        const dx = pts[0].x - pts[1].x
+        const dy = pts[0].y - pts[1].y
+        state.startDist = Math.hypot(dx, dy)
+        state.startVb = (wrap.__mermaidCurViewBox || getSvgViewBox(svg)).slice()
+        state.startCenter = { x: (pts[0].x + pts[1].x) / 2, y: (pts[0].y + pts[1].y) / 2 }
+      }
+    }
+
+    const onPointerMove = e => {
+      if (!state.pointers.has(e.pointerId)) return
+      state.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY })
+
+      // Pan with 1 pointer
+      if (state.pointers.size === 1 && state.startVb) {
+        const p = [...state.pointers.values()][0]
+        const prev = { x: e.clientX - e.movementX, y: e.clientY - e.movementY }
+        // movementX/Y unreliable on touch, compute from stored last position
+        const last = wrap.__mermaidLastSinglePointer || p
+        const dxClient = p.x - last.x
+        const dyClient = p.y - last.y
+        wrap.__mermaidLastSinglePointer = p
+
+        const { rect } = clientToViewBox(p.x, p.y)
+        const vb = (wrap.__mermaidCurViewBox || getSvgViewBox(svg)).slice()
+        const dx = dxClient * (vb[2] / rect.width)
+        const dy = dyClient * (vb[3] / rect.height)
+        setCurVb([vb[0] - dx, vb[1] - dy, vb[2], vb[3]])
+        return
+      }
+
+      // Pinch zoom with 2 pointers
+      if (state.pointers.size === 2 && state.startVb && state.startDist > 0) {
+        const pts = [...state.pointers.values()]
+        const dx = pts[0].x - pts[1].x
+        const dy = pts[0].y - pts[1].y
+        const dist = Math.hypot(dx, dy)
+        if (!dist) return
+        const factor = state.startDist / dist // dist bigger => zoom in (viewBox smaller)
+
+        const cx = (pts[0].x + pts[1].x) / 2
+        const cy = (pts[0].y + pts[1].y) / 2
+        const centerClient = { x: cx, y: cy }
+
+        const pxy = clientToViewBox(centerClient.x, centerClient.y)
+        const cpx = pxy.x
+        const cpy = pxy.y
+
+        const vb = zoomAtPoint(state.startVb, factor, cpx, cpy)
+        setCurVb(vb)
+      }
+    }
+
+    const onPointerUpOrCancel = e => {
+      state.pointers.delete(e.pointerId)
+      if (state.pointers.size === 0) {
+        state.startVb = null
+        state.startDist = 0
+        state.startCenter = null
+        wrap.__mermaidLastSinglePointer = null
+      } else if (state.pointers.size === 1) {
+        // reset single pointer baseline to avoid jump
+        wrap.__mermaidLastSinglePointer = [...state.pointers.values()][0]
+      }
+    }
+
+    // Wheel zoom (mouse/trackpad)
+    const onWheel = e => {
+      // ctrlKey on mac trackpad pinch; we treat both as zoom
+      e.preventDefault()
+      const delta = e.deltaY
+      const zoomFactor = delta > 0 ? 1.1 : 0.9
+      const { x, y } = clientToViewBox(e.clientX, e.clientY)
+      const vb = (wrap.__mermaidCurViewBox || getSvgViewBox(svg)).slice()
+      setCurVb(zoomAtPoint(vb, zoomFactor, x, y))
+    }
+
+    const onDblClick = () => {
+      const init = wrap.__mermaidInitViewBox
+      if (!init) return
+      wrap.__mermaidCurViewBox = init.slice()
+      setSvgViewBox(svg, init)
+    }
+
+    svg.addEventListener('pointerdown', onPointerDown)
+    svg.addEventListener('pointermove', onPointerMove)
+    svg.addEventListener('pointerup', onPointerUpOrCancel)
+    svg.addEventListener('pointercancel', onPointerUpOrCancel)
+    svg.addEventListener('wheel', onWheel, { passive: false })
+    svg.addEventListener('dblclick', onDblClick)
+  }
+
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+
+      // Clear old render (themeChange/pjax will rerun)
+      const oldSvg = item.querySelector('svg')
+      if (oldSvg) oldSvg.remove()
+      item.__mermaidGestureBound = false
+
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+        if (true) initMermaidGestures(item)
+        item.__mermaidOriginalSvg = svg
+        if (true) attachMermaidViewerButton(item)
+      }
+
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (true) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.15.0/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const abcjsInit = () => {
+    const abcjsFn = () => {
+      setTimeout(() => {
+        const sheets = document.querySelectorAll(".abc-music-sheet")
+        for (let i = 0; i < sheets.length; i++) {
+          const ele = sheets[i]
+          if (ele.children.length > 0) continue
+
+          // Parse parameters from data-params attribute
+          let params = {}
+          const dp = ele.getAttribute("data-params")
+          if (dp) {
+            try {
+              params = JSON.parse(dp)
+            } catch (e) {
+              console.error("Failed to parse data-params:", e)
+            }
+          }
+
+          // Merge parsed parameters with the responsive option
+          // Ensures params content appears before responsive
+          const options = { ...params, responsive: "resize" }
+
+          // Render the music score using ABCJS.renderAbc
+          ABCJS.renderAbc(ele, ele.textContent, options)
+        }
+      }, 100)
+    }
+
+    if (typeof ABCJS === "object") {
+      abcjsFn()
+    } else {
+      btf.getScript("https://cdn.jsdelivr.net/npm/abcjs@6.6.3/dist/abcjs-basic-min.min.js").then(abcjsFn)
+    }
+  }
+
+  if (window.pjax) {
+    abcjsInit()
+  } else {
+    window.addEventListener("load", abcjsInit)
+  }
+
+  btf.addGlobalFn("encrypt", abcjsInit, "abcjs")
+})()</script><script>(() => {
+  let initFn = window.walineFn || null
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = {"emoji":["https://unpkg.com/@waline/emojis@1.4.0/qq","https://unpkg.com/@waline/emojis@1.4.0/weibo","https://unpkg.com/@waline/emojis@1.4.0/bilibili","https://unpkg.com/@waline/emojis@1.4.0/bmoji","https://unpkg.com/@waline/emojis@1.4.0/tieba","https://unpkg.com/@waline/emojis@1.4.0/tw-emoji"],"requiredMeta":["nick"],"noCopyright":false,"reaction":true,"reactionCount":true}
+
+  const destroyWaline = ele => ele.destroy()
+
+  const initWaline = (Fn, el = document, path = window.location.pathname) => {
+    const waline = Fn({
+      el: el.querySelector('#waline-wrap'),
+      serverURL: 'https://comment.huyongshuang.top',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      comment: true,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyWaline = () => {
+        destroyWaline(waline)
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const loadWaline = (el, path) => {
+    if (initFn) initWaline(initFn, el, path)
+    else {
+      btf.getCSS('https://cdn.jsdelivr.net/npm/@waline/client@3.15.2/dist/waline.min.css')
+        .then(() => import('https://cdn.jsdelivr.net/npm/@waline/client@3.15.2/dist/waline.min.js'))
+        .then(({ init }) => {
+          initFn = init || Waline.init
+          initWaline(initFn, el, path)
+          window.walineFn = initFn
+        })
+    }
+  }
+
+  if (isShuoshuo) {
+    'Waline' === 'Waline'
+      ? window.shuoshuoComment = { loadComment: loadWaline } 
+      : window.loadOtherComment = loadWaline
+    return
+  }
+
+  if ('Waline' === 'Waline' || !false) {
+    if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script></div><script src="/en/assets/cursor/cursor-gif.js"></script><script src="/en/js/cursor_1.js"></script><script src="/en/js/cursor_2.js"></script><script src="/en/js/language.js"></script><script src="/en/js/time-widget.js"></script><script src="/en/js/snowflake.js"></script><script src="/en/js/cursor-star.js"></script><script src="/en/assets/live2d-widget/autoload.js"></script><div class="aplayer no-destroy" data-id="6603686444" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-autoplay="false"></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/click-show-text.min.js" data-mobile="false" data-text="Wish you all the best,Stay happy and healthy,May luck be with you,Enjoy every bright day,All dreams come true,Peace fill your whole life,Hope joy surrounds you,Have a wonderful life,Good fortune always yours,May you thrive always" data-fontsize="14px" data-random="false" async="async"></script><script>(() => {
+  window.ChatraID = 'eAytia8GjQfC5Mbih'
+  window.Chatra = window.Chatra || function() {
+    (window.Chatra.q = window.Chatra.q || []).push(arguments)
+  }
+
+  btf.getScript('https://call.chatra.io/chatra.js').then(() => {
+    const isChatBtn = true
+    const isChatHideShow = false
+
+    if (isChatBtn) {
+      const close = () => {
+        Chatra('minimizeWidget')
+        Chatra('hide')
+      }
+
+      const open = () => {
+        Chatra('openChat', true)
+        Chatra('show')
+      }
+
+      window.ChatraSetup = { startHidden: true }
+    
+      window.chatBtnFn = () => document.getElementById('chatra').classList.contains('chatra--expanded') ? close() : open()
+
+      document.getElementById('chat-btn').style.display = 'block'
+    } else if (isChatHideShow) {
+      window.chatBtn = {
+        hide: () => Chatra('hide'),
+        show: () => Chatra('show')
+      }
+    }
+  })
+})()</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/metingjs/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="local-search-input"><input placeholder="Search for Posts" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/en/js/search/local-search.js?v=5.5.5"></script></div></div></body></html>

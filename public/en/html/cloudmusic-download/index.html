@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloudmusic Download Tool</title>
+    <link rel="icon" href="https://huyongshuang.github.io/img/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cloudmusic Download Tool</h1>
+        <p class="subtitle">Easily extract the song ID and obtain the download link</p>
+        <div class="section">
+            <h2><i class="fas fa-search"></i> Step 1: Search for songs</h2>
+            <div class="step">
+                <p><span class="step-number">1</span> Click the button below to jump to the official website of NetEase Cloud Music and search for the songs you want.</p>
+            </div>
+            <div class="step">
+                <p><span class="step-number">2</span> After finding the song, copy the song link in the browser address bar.</p>
+                <div class="example">For example: https://music.163.com/#/song?id=1815120094</div>
+            </div>
+            <a href="https://music.163.com/" target="_blank" class="button">
+                <i class="fas fa-external-link-alt icon"></i>Go to Cloudmusic </a>
+        </div>
+        <div class="section">
+            <h2><i class="fas fa-download"></i> Step 2: Download the music</h2>
+            <div class="step">
+                <p><span class="step-number">3</span> Paste the copied song link into the input box below.</p>
+                <div class="auto-generate-notice">
+                    <i class="fas fa-bolt"></i> The link will be automatically generated.
+                </div>
+            </div>
+            <div class="input-group">
+                <input type="text" id="songUrl" placeholder="Paste the song link, for example: https://music.163.com/#/song?id=1815120094">
+            </div>
+            <div class="button-group">
+                <button class="button copy-button" id="copyBtn">
+                    <i class="fas fa-copy icon"></i>Copy link </button>
+                <button class="button" id="downloadBtn">
+                    <i class="fas fa-music icon"></i>Download music </button>
+                <button class="button secondary-button" id="clearBtn">
+                    <i class="fas fa-broom icon"></i>Clear input </button>
+            </div>
+            <div class="result" id="resultBox">
+                <div class="result-content"> Download link:<br>
+                    <div class="result-link" id="downloadLink"></div>
+                    <div class="result-note">
+                        <i class="fas fa-hand-pointer"></i> Clicking on this area will directly open the link.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tip">
+            <p><strong>Usage Tips:</strong></p>
+            <p>1. This tool is solely used to extract the song ID and generate a standard external link for NetEase Cloud Music. It does not offer any cracking or downloading services.</p>
+            <p>2. The generated download link is an official external link from NetEase Cloud Music. Some songs may require VIP access to be played.</p>
+            <p>3. Please ensure that you have the legal permission to use the song and respect the music copyright.</p>
+        </div>
+    </div>
+    <div class="toast" id="toast">The link has been copied to the clipboard!</div>
+    <script src="./assets/script.js"></script>
+</body>
+</html>

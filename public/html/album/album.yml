@@ -1,0 +1,15 @@
+# 全局页面配置
+global:
+  title: 相册
+  description: 分享生活，留住美好！
+
+# 相册列表配置
+album:
+  - name: 相册
+    cover: /html/album-per/photos/2026-05-01-01.png
+    link: /html/album-per
+    password: ""
+  - name: 密码相册
+    cover:
+    link: https://www.bilibili.com/video/BV1GJ411x7h7
+    password: "123456"

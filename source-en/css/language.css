@@ -1,0 +1,32 @@
+.setting {
+	margin: -20px 0 0;
+}
+
+.setting .lang-switch {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	align-items: center;
+	margin: -10px 0 0;
+}
+
+.lang-switch a {
+	display: inline-block;
+	padding: 5px 15px;
+	border: 1.5px solid #ccc;
+	border-radius: 5px;
+	background: transparent !important;
+	color: inherit !important;
+	transition: all 0.2s ease;
+	text-decoration: none !important;
+}
+
+.lang-switch a:hover {
+	border-color: #409eff;
+}
+
+.lang-switch a.lang-active {
+	background-color: #409eff !important;
+	border-color: #409eff !important;
+	color: #fff !important;
+}

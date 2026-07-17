@@ -1,0 +1,32 @@
+.snowflake-switch,
+.cursor-switch {
+	margin: -10px 0 0;
+}
+
+#switchSnowBtn,
+#cursor-switch-1,
+#cursor-switch-2 {
+	display: inline-block;
+	padding: 5px 15px !important;
+	border: 1.5px solid #ccc;
+	border-radius: 5px;
+	background: transparent !important;
+	color: inherit !important;
+	z-index: 9999;
+}
+
+#cursor-switch-1,
+#cursor-switch-2 {
+	margin-left: 10px;
+}
+
+#cursor-switch-1 {
+	margin-bottom: 10px;
+}
+
+#cursor-switch-1:hover,
+#cursor-switch-2:hover,
+#switchSnowBtn:hover {
+	border-color: #409eff !important;
+	color: #409eff !important;
+}

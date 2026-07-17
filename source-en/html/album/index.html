@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album</title>
+    <link rel="icon" href="https://huyongshuang.github.io/img/favicon.ico">
+    <link rel="stylesheet" href="./assets/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+</head>
+<body>
+    <div class="page-header" id="headerWrap">
+        <h2 class="page-title" id="pageTitle"></h2>
+        <p class="page-desc" id="pageDesc"></p>
+    </div>
+    <div class="album-container" id="albumWrap"></div>
+    <div class="mask" id="mask">
+        <div class="pwd-box">
+            <h3>Please enter the album access password.</h3>
+            <div class="tip-text" id="errTip">Password incorrect. Please re-enter.</div>
+            <input type="password" class="pwd-input" id="pwdInput" placeholder="Enter password">
+            <div class="btn-group">
+                <button class="cancel-btn" id="cancelBtn">Cancel</button>
+                <button class="confirm-btn" id="confirmBtn">Confirm</button>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/script.js"></script>
+</body>
+</html>

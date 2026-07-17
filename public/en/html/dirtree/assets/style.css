@@ -1,0 +1,310 @@
+/* 默认: 夜间模式 (Dark Mode) */
+:root {
+    --bg-color: #0d1117;
+    --container-bg: #161b22;
+    --text-color: #c9d1d9;
+    --text-color-muted: #8b949e;
+    --primary-color: #58a6ff;
+    --primary-hover-color: #79c0ff;
+    --border-color: #30363d;
+    --output-bg: #010409;
+    --button-bg: #21262d;
+    --button-hover-bg: #30363d;
+    --success-color: #238636;
+    --notice-text: #d29922;
+    --notice-bg: rgba(210, 153, 34, 0.1);
+    --notice-border: rgba(210, 153, 34, 0.2);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --shadow-glow: 0 0 12px rgba(88, 166, 255, 0.3);
+}
+
+/* 日间模式 (Light Mode) */
+body.light-mode {
+    --bg-color: #f6f8fa;
+    --container-bg: #ffffff;
+    --text-color: #24292f;
+    --text-color-muted: #57606a;
+    --primary-color: #0969da;
+    --primary-hover-color: #0a60c8;
+    --border-color: #d0d7de;
+    --output-bg: #f6f8fa;
+    --button-bg: #f6f8fa;
+    --button-hover-bg: #eef1f4;
+    --success-color: #1a7f37;
+    --notice-text: #9a6700;
+    --notice-bg: #fff8c5;
+    --notice-border: #f2c600;
+    --shadow-color: rgba(140, 149, 159, 0.2);
+    --shadow-glow: 0 0 12px rgba(9, 105, 218, 0.3);
+}
+
+/* --- 全局与基础样式 --- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    background-color: var(--bg-color);
+    background-image: 
+        linear-gradient(rgba(110, 118, 129, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(110, 118, 129, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+    color: var(--text-color);
+    margin: 0;
+    padding: 2.5rem 1rem;
+    display: flex;
+    justify-content: center;
+    line-height: 1.7;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    background-color: var(--container-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 2rem 3rem;
+    box-shadow: 0 8px 24px var(--shadow-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* --- 头部 --- */
+header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--text-color);
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+header .subtitle {
+    font-size: 1.1rem;
+    color: var(--text-color-muted);
+    transition: color 0.3s ease;
+}
+
+/* --- 控制区 --- */
+.controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+#select-folder-btn {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 500;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+body.light-mode #select-folder-btn {
+    color: white;
+}
+#select-folder-btn:hover {
+    background-color: var(--primary-hover-color);
+    box-shadow: var(--shadow-glow);
+}
+#select-folder-btn:disabled {
+    background-color: var(--button-bg);
+    color: var(--text-color-muted);
+    cursor: not-allowed;
+    box-shadow: none;
+}
+#exclude-input {
+    flex-grow: 1;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 0.7rem 1rem;
+    transition: all 0.2s ease;
+}
+#exclude-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-color) 25%, transparent);
+}
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 1rem;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* --- 结果区 --- */
+.results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.results-header h2 {
+    margin: 0; 
+    font-size: 1.5rem; 
+    font-weight: 500;
+}
+.view-controls-panel {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-grow: 1;
+    flex-wrap: wrap;
+}
+.control-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.control-group-wide {
+    flex-grow: 1;
+}
+.control-group label { 
+    font-size: 0.9rem; 
+    color: var(--text-color-muted);
+    white-space: nowrap;
+}
+.control-group input[type="number"] {
+    width: 60px;
+}
+.control-group input { 
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 0.4rem 0.6rem;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+.control-group-wide input {
+    flex-grow: 1;
+    text-align: left;
+    padding-left: 0.8rem;
+}
+#copy-btn, .view-controls-panel button {
+    background-color: var(--button-bg);
+    color: var(--primary-color);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-left: auto;
+}
+#copy-btn:hover, .view-controls-panel button:hover {
+    background-color: var(--button-hover-bg);
+    border-color: var(--primary-color);
+}
+#copy-btn.copied {
+    background-color: var(--success-color);
+    color: white;
+    border-color: var(--success-color);
+}
+.output-wrapper {
+    background-color: var(--output-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+#tree-output {
+    margin: 0;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    font-size: 0.95rem;
+    max-height: 450px;
+    overflow: auto;
+    white-space: pre;
+}
+
+/* --- 使用说明区 --- */
+#info-section {
+    margin-top: 4rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 2rem;
+    transition: border-color 0.3s ease;
+}
+#info-section article {
+    margin-bottom: 2.5rem;
+}
+#info-section h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+#info-section ul { padding-left: 1.5rem; }
+#info-section ul li { margin-bottom: 0.5rem; }
+#info-section ul ul { margin-top: 0.5rem; }
+
+.notice {
+    color: var(--notice-text); 
+    background-color: var(--notice-bg);
+    border: 1px solid var(--notice-border); 
+    border-radius: 6px;
+    padding: 1rem 1.5rem; 
+    margin: 2rem 0;
+    transition: all 0.3s ease;
+}
+
+/* --- 页脚 --- */
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 1rem;
+    color: var(--text-color-muted);
+    transition: all 0.3s ease;
+}
+footer a {
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* --- 主题切换按钮 --- */
+#theme-toggle-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    background-color: var(--container-bg);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    overflow: hidden;
+}
+#theme-toggle-btn:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-glow);
+}
+#theme-toggle-btn .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--primary-color);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+/* 默认（夜间模式）下，月亮图标不可见 */
+.icon-moon { display: none; }
+
+/* 日间模式下，隐藏太阳，显示月亮 */
+.light-mode .icon-sun { display: none; }
+.light-mode .icon-moon { display: block; }

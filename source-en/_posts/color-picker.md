@@ -1,0 +1,777 @@
+---
+title: Screen Color Picker
+date: 2024-12-10 10:20:04
+updated:
+tags:
+categories:
+keywords:
+description: A web tool that can extract colors from any position on the screen, built on the EyeDropper API. When using it, minimize the browser window and place the interface from which you need to extract colors outside the browser window.
+top_img:
+cover:
+---
+
+* **Screen Color Picker**: A web tool that can extract colors from any position on the screen, built on the EyeDropper API. When using it, minimize the browser window and place the interface from which you need to extract colors outside the browser window.
+
+<style>
+.color-picker-wrap {
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: inherit;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: -40px;
+}
+
+.color-picker-wrap .container {
+  max-width: 900px;
+  width: 100%;
+  background-color: inherit;
+  border-radius: 16px;
+  padding: 30px;
+  margin-top: 20px;
+}
+
+.color-picker-wrap header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.color-picker-wrap h1 {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.color-picker-wrap h1 i {
+  color: #3498db;
+}
+
+.color-picker-wrap .subtitle {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
+
+.color-picker-wrap .color-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.color-picker-wrap .color-preview {
+  width: 150px;
+  height: 150px;
+  border-radius: 16px;
+  border: 5px solid white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.color-picker-wrap .color-preview:hover {
+  transform: scale(1.03);
+}
+
+.color-picker-wrap .color-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.color-picker-wrap .current-hex {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.color-picker-wrap .hex-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.color-picker-wrap .btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 1rem;
+}
+
+.color-picker-wrap .btn-primary {
+  background-color: #3498db;
+  color: white;
+}
+
+.color-picker-wrap .btn-primary:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+.color-picker-wrap .btn-secondary {
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+.color-picker-wrap .btn-secondary:hover {
+  background-color: #dee2e6;
+  transform: translateY(-2px);
+}
+
+.color-picker-wrap .btn-small {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+}
+
+.color-picker-wrap .btn-success {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.color-picker-wrap .btn-success:hover {
+  background-color: #27ae60;
+}
+
+.color-picker-wrap .color-formats {
+  margin-top: 30px;
+}
+
+.color-picker-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.color-picker-wrap th {
+  background-color: inherit;
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+  color: #495057;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.color-picker-wrap td {
+  padding: 15px;
+  border-bottom: 1px solid #e9ecef;
+  vertical-align: middle;
+}
+
+.color-picker-wrap tr:hover {
+  background-color: inherit;
+}
+
+.color-picker-wrap .color-name {
+  font-weight: 600;
+  width: 100px;
+}
+
+.color-picker-wrap .color-value {
+  font-family: 'Courier New', monospace;
+  background-color: inherit;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #e9ecef;
+  flex-grow: 1;
+  word-break: break-all;
+}
+
+.color-picker-wrap .actions-cell {
+  width: 180px;
+  text-align: right;
+}
+
+.color-picker-wrap .color-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.color-picker-wrap .copy-btn {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.color-picker-wrap .copy-btn:hover {
+  background-color: #5a6268;
+}
+
+.color-picker-wrap .copy-btn.copied {
+  background-color: #2ecc71;
+}
+
+.color-picker-wrap .case-toggle {
+  background-color: #adb5bd;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 0.9rem;
+}
+
+.color-picker-wrap .case-toggle:hover {
+  background-color: #868e96;
+}
+
+.color-picker-wrap .instructions {
+  background-color: inherit;
+  border-left: 4px solid #3498db;
+  padding: 15px 20px;
+  margin-top: 30px;
+  border-radius: 0 8px 8px 0;
+}
+
+.color-picker-wrap .instructions h3 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.color-picker-wrap .instructions p {
+  margin-bottom: 8px;
+  color: #34495e;
+}
+
+.color-picker-wrap .footer {
+  margin-top: 30px;
+  text-align: center;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  padding-top: 20px;
+  border-top: 1px solid #e9ecef;
+  width: 100%;
+}
+
+.color-picker-wrap .notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #2ecc71;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.color-picker-wrap .notification.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .color-picker-wrap .container {
+    padding: 20px;
+  }
+
+  .color-picker-wrap h1 {
+    font-size: 2rem;
+  }
+
+  .color-picker-wrap .color-display {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .color-picker-wrap .color-info {
+    min-width: 100%;
+  }
+
+  .color-picker-wrap .current-hex {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .color-picker-wrap th,
+  .color-picker-wrap td {
+    padding: 10px;
+  }
+
+  .color-picker-wrap .actions-cell {
+    width: 140px;
+  }
+}
+
+[data-theme="dark"] .color-picker-wrap {
+  color: #f1f1f1;
+}
+
+[data-theme="dark"] .color-picker-wrap h1 {
+  color: #e6edf3;
+}
+
+[data-theme="dark"] .color-picker-wrap .subtitle {
+  color: #adb5bd;
+}
+
+[data-theme="dark"] .color-picker-wrap .instructions h3 {
+  color: #e6edf3;
+}
+
+[data-theme="dark"] .color-picker-wrap .instructions p {
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .color-picker-wrap th {
+  color: #e2e8f0;
+}
+
+[data-theme="dark"] .color-picker-wrap .color-value {
+  border-color: #444;
+}
+
+[data-theme="dark"] .color-picker-wrap header,
+[data-theme="dark"] .color-picker-wrap .footer,
+[data-theme="dark"] .color-picker-wrap td {
+  border-color: #333;
+}
+</style>
+
+<div class="color-picker-wrap">
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-eye-dropper"></i> Screen Color Picker</h1>
+      <p class="subtitle">Use the EyeDropper API to extract colors from anywhere on the screen, supporting conversion of multiple color formats.</p>
+    </header>
+    <div class="color-display">
+      <div class="color-preview" id="colorPreview"></div>
+      <div class="color-info">
+        <div class="current-hex">
+          <span id="hexValue">#dee2e6</span>
+          <div class="hex-actions">
+            <button class="btn btn-small case-toggle" id="toggleCase">
+              <i class="fas fa-exchange-alt"></i> Case </button>
+            <button class="btn btn-small btn-success" id="copyHex">
+              <i class="far fa-copy"></i> Copy HEX </button>
+          </div>
+        </div>
+        <button class="btn btn-primary" id="pickColor">
+          <i class="fas fa-eye-dropper"></i> Open Color Picker </button>
+        <p style="margin-top: 15px; color: #7f8c8d;"> After clicking the button, your mouse will turn into a dropper; click any position on the screen to get the color value. </p>
+      </div>
+    </div>
+    <div class="color-formats">
+      <h2><i class="fas fa-palette"></i> Color Formats</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Format</th>
+            <th>Value</th>
+            <th class="actions-cell">Action</th>
+          </tr>
+        </thead>
+        <tbody id="colorTable">
+        </tbody>
+      </table>
+    </div>
+    <div class="instructions">
+      <h3><i class="fas fa-info-circle"></i> </h3>
+      <p>1. Click the "Open Color Picker" button, your mouse will become a color dropper;</p>
+      <p>2. Click any spot on the screen to retrieve its color value;</p>
+      <p>3. Click the "Case" button next to the HEX color to switch uppercase and lowercase HEX code;</p>
+      <p>4. Click the "Copy" button beside each color format to copy the color code to clipboard.</p>
+    </div>
+  </div>
+  <div class="footer">
+    <p>Screen color picking tool built on <a href="https://github.com/WICG/eyedropper-api">EyeDropper API</a> | Supports HEX, RGB, HSL, HSV, CMYK and other formats</p>
+    © <a href="https://github.com/huyongshuang/huyongshuang.github.io/tree/main/source-en/html/color-picker">GitHub</a>
+  </div>
+  <div class="notification" id="notification">
+    <i class="fas fa-check-circle"></i>
+    <span id="notificationText">Color copied to clipboard</span>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // 初始颜色
+  let currentColor = '#dee2e6';
+  let hexUpperCase = false;
+
+  // 获取DOM元素
+  const colorPreview = document.getElementById('colorPreview');
+  const hexValue = document.getElementById('hexValue');
+  const pickColorBtn = document.getElementById('pickColor');
+  const toggleCaseBtn = document.getElementById('toggleCase');
+  const copyHexBtn = document.getElementById('copyHex');
+  const colorTable = document.getElementById('colorTable');
+  const notification = document.getElementById('notification');
+  const notificationText = document.getElementById('notificationText');
+
+  // 初始化颜色预览
+  colorPreview.style.backgroundColor = currentColor;
+
+  // 检查浏览器是否支持EyeDropper API
+  if (!window.EyeDropper) {
+    pickColorBtn.disabled = true;
+    pickColorBtn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> 浏览器不支持EyeDropper API';
+    pickColorBtn.style.backgroundColor = '#e74c3c';
+    showNotification('您的浏览器不支持EyeDropper API，请使用Chrome或Edge浏览器', 'error');
+  }
+
+  // 打开颜色拾取器
+  pickColorBtn.addEventListener('click', async () => {
+    try {
+      const eyeDropper = new EyeDropper();
+      const result = await eyeDropper.open();
+
+      // 更新当前颜色
+      currentColor = result.sRGBHex;
+      updateColorDisplay();
+      showNotification('Color picked successfully', 'success');
+    } catch (err) {
+      // 用户取消取色操作
+      if (err.toString().includes('AbortError')) {
+        console.log('User canceled color picking');
+      } else {
+        console.error('Color pick error:', err);
+        showNotification('An error occurred during color picking', 'error');
+      }
+    }
+  });
+
+  // HEX大小写切换
+  toggleCaseBtn.addEventListener('click', () => {
+    hexUpperCase = !hexUpperCase;
+    updateHexDisplay();
+  });
+
+  // 复制HEX颜色
+  copyHexBtn.addEventListener('click', () => {
+    const hexToCopy = hexUpperCase ? currentColor.toUpperCase() : currentColor.toLowerCase();
+    copyToClipboard(hexToCopy);
+    showNotification(`HEX color ${hexToCopy} copied to clipboard`);
+  });
+
+  // 初始化颜色表格
+  initColorTable();
+
+  // 更新颜色显示
+  function updateColorDisplay() {
+    // 更新颜色预览
+    colorPreview.style.backgroundColor = currentColor;
+
+    // 更新HEX显示
+    updateHexDisplay();
+
+    // 更新所有颜色格式
+    updateAllColorFormats();
+  }
+
+  // 更新HEX显示
+  function updateHexDisplay() {
+    hexValue.textContent = hexUpperCase ? currentColor.toUpperCase() : currentColor.toLowerCase();
+  }
+
+  // 初始化颜色表格
+  function initColorTable() {
+    const colorFormats = [{
+        name: 'RGB',
+        format: 'rgb'
+      },
+      {
+        name: 'RGBA',
+        format: 'rgba'
+      },
+      {
+        name: 'HSL',
+        format: 'hsl'
+      },
+      {
+        name: 'HSLA',
+        format: 'hsla'
+      },
+      {
+        name: 'HSV',
+        format: 'hsv'
+      },
+      {
+        name: 'HSVA',
+        format: 'hsva'
+      },
+      {
+        name: 'CMYK',
+        format: 'cmyk'
+      },
+      {
+        name: 'CMYKA',
+        format: 'cmyka'
+      }
+    ];
+
+    colorFormats.forEach(format => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+                <td class="color-name">${format.name}</td>
+                <td>
+                    <div class="color-row">
+                        <div class="color-value" id="${format.format}Value">${getColorValue(format.format)}</div>
+                    </div>
+                </td>
+                <td class="actions-cell">
+                    <button class="copy-btn" data-format="${format.format}">
+                        <i class="far fa-copy"></i> Copy
+                    </button>
+                </td>
+            `;
+      colorTable.appendChild(row);
+    });
+
+    // 添加复制按钮事件监听器
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const format = this.getAttribute('data-format');
+        const valueElement = document.getElementById(`${format}Value`);
+        const value = valueElement.textContent;
+
+        copyToClipboard(value);
+        showNotification(`${format.toUpperCase()} color copied to clipboard`);
+
+        // 添加复制成功视觉反馈
+        this.classList.add('copied');
+        this.innerHTML = '<i class="fas fa-check"></i> Copied';
+
+        setTimeout(() => {
+          this.classList.remove('copied');
+          this.innerHTML = '<i class="far fa-copy"></i> Copy';
+        }, 2000);
+      });
+    });
+  }
+
+  // 更新所有颜色格式
+  function updateAllColorFormats() {
+    const formats = ['rgb', 'rgba', 'hsl', 'hsla', 'hsv', 'hsva', 'cmyk', 'cmyka'];
+
+    formats.forEach(format => {
+      const element = document.getElementById(`${format}Value`);
+      if (element) {
+        element.textContent = getColorValue(format);
+      }
+    });
+  }
+
+  // 获取颜色值
+  function getColorValue(format) {
+    // 将HEX转换为RGB
+    const r = parseInt(currentColor.slice(1, 3), 16);
+    const g = parseInt(currentColor.slice(3, 5), 16);
+    const b = parseInt(currentColor.slice(5, 7), 16);
+
+    switch (format) {
+      case 'rgb':
+        return `rgb(${r},${g},${b})`;
+      case 'rgba':
+        return `rgba(${r},${g},${b},1.00)`;
+      case 'hsl':
+        return rgbToHsl(r, g, b, false);
+      case 'hsla':
+        return rgbToHsl(r, g, b, true);
+      case 'hsv':
+        return rgbToHsv(r, g, b, false);
+      case 'hsva':
+        return rgbToHsv(r, g, b, true);
+      case 'cmyk':
+        return rgbToCmyk(r, g, b, false);
+      case 'cmyka':
+        return rgbToCmyk(r, g, b, true);
+      default:
+        return currentColor;
+    }
+  }
+
+  // RGB转HSL
+  function rgbToHsl(r, g, b, includeAlpha) {
+    r /= 255;
+    g /= 255;
+    b /= 255;
+
+    const max = Math.max(r, g, b);
+    const min = Math.min(r, g, b);
+    let h, s, l = (max + min) / 2;
+
+    if (max === min) {
+      h = s = 0; // 灰色
+    } else {
+      const d = max - min;
+      s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+
+      switch (max) {
+        case r:
+          h = (g - b) / d + (g < b ? 6 : 0);
+          break;
+        case g:
+          h = (b - r) / d + 2;
+          break;
+        case b:
+          h = (r - g) / d + 4;
+          break;
+      }
+
+      h /= 6;
+    }
+
+    h = Math.round(h * 360);
+    s = Math.round(s * 100);
+    l = Math.round(l * 100);
+
+    if (includeAlpha) {
+      return `hsla(${h},${s}%,${l}%,1.00)`;
+    }
+
+    return `hsl(${h},${s}%,${l}%)`;
+  }
+
+  // RGB转HSV
+  function rgbToHsv(r, g, b, includeAlpha) {
+    r /= 255;
+    g /= 255;
+    b /= 255;
+
+    const max = Math.max(r, g, b);
+    const min = Math.min(r, g, b);
+    let h, s, v = max;
+
+    const d = max - min;
+    s = max === 0 ? 0 : d / max;
+
+    if (max === min) {
+      h = 0; // 灰色
+    } else {
+      switch (max) {
+        case r:
+          h = (g - b) / d + (g < b ? 6 : 0);
+          break;
+        case g:
+          h = (b - r) / d + 2;
+          break;
+        case b:
+          h = (r - g) / d + 4;
+          break;
+      }
+
+      h /= 6;
+    }
+
+    h = Math.round(h * 360);
+    s = Math.round(s * 100);
+    v = Math.round(v * 100);
+
+    if (includeAlpha) {
+      return `hsva(${h},${s}%,${v}%,1.00)`;
+    }
+
+    return `hsv(${h},${s}%,${v}%)`;
+  }
+
+  // RGB转CMYK
+  function rgbToCmyk(r, g, b, includeAlpha) {
+    if (r === 0 && g === 0 && b === 0) {
+      if (includeAlpha) {
+        return 'cmyka(0,0,0,100,1.00)';
+      }
+      return 'cmyk(0,0,0,100)';
+    }
+
+    r /= 255;
+    g /= 255;
+    b /= 255;
+
+    const k = 1 - Math.max(r, g, b);
+    const c = (1 - r - k) / (1 - k);
+    const m = (1 - g - k) / (1 - k);
+    const y = (1 - b - k) / (1 - k);
+
+    const cVal = Math.round(c * 100);
+    const mVal = Math.round(m * 100);
+    const yVal = Math.round(y * 100);
+    const kVal = Math.round(k * 100);
+
+    if (includeAlpha) {
+      return `cmyka(${cVal},${mVal},${yVal},${kVal},1.00)`;
+    }
+
+    return `cmyk(${cVal},${mVal},${yVal},${kVal})`;
+  }
+
+  // 复制到剪贴板
+  function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(() => {
+      console.log('Text copied to clipboard:', text);
+    }).catch(err => {
+      console.error('Copy failed:', err);
+      // 备用方法
+      const textArea = document.createElement('textarea');
+      textArea.value = text;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+    });
+  }
+
+  // 显示通知
+  function showNotification(message, type = 'success') {
+    notificationText.textContent = message;
+
+    if (type === 'error') {
+      notification.style.backgroundColor = '#e74c3c';
+    } else {
+      notification.style.backgroundColor = '#2ecc71';
+    }
+
+    notification.classList.add('show');
+
+    setTimeout(() => {
+      notification.classList.remove('show');
+    }, 3000);
+  }
+
+  // 使用示例图片中的初始值
+  function initializeWithExample() {
+    currentColor = '#44bb85';
+    updateColorDisplay();
+  }
+
+  // 初始化示例颜色
+  initializeWithExample();
+});
+</script>

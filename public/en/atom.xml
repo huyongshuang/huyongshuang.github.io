@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <author>
+    <name>HuYongshuang</name>
+  </author>
+  <generator uri="https://hexo.io/">Hexo</generator>
+  <icon>https://huyongshuang.top/en/icon.png</icon>
+  <id>https://huyongshuang.top/en/</id>
+  <link href="https://huyongshuang.top/en/" rel="alternate"/>
+  <link href="https://huyongshuang.top/en/atom.xml" rel="self"/>
+  <rights>All rights reserved 2026, HuYongshuang</rights>
+  <subtitle>HuYongshuang's blog website focuses on sharing technologies related to Minecraft's redstone, commands, servers, etc., as well as more technical content in areas such as mathematics, networks, and computers. Infinite creation, infinite possibilities.</subtitle>
+  <title>HuYongshuang</title>
+  <updated>2026-07-07T05:23:40.299Z</updated>
+  <entry>
+    <author>
+      <name>HuYongshuang</name>
+    </author>
+    <category term="Minecraft" scheme="https://huyongshuang.top/en/categories/Minecraft/"/>
+    <category term="Video" scheme="https://huyongshuang.top/en/categories/Minecraft/Video/"/>
+    <category term="Minecraft" scheme="https://huyongshuang.top/en/tags/Minecraft/"/>
+    <category term="Video Collection" scheme="https://huyongshuang.top/en/tags/Video-Collection/"/>
+    <id>https://huyongshuang.top/en/2026/5/20-binary-arithmetic-videos/</id>
+    <link href="https://huyongshuang.top/en/2026/5/20-binary-arithmetic-videos/"/>
+    <published>2026-05-20T10:27:34.000Z</published>
+    <summary>Binary Arithmetic Videos Collection.</summary>
+    <title>Binary Arithmetic Videos Collection (Bilibili)</title>
+    <updated>2026-07-07T05:23:40.299Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>HuYongshuang</name>
+    </author>
+    <category term="Minecraft" scheme="https://huyongshuang.top/en/categories/Minecraft/"/>
+    <category term="Tutorial" scheme="https://huyongshuang.top/en/categories/Minecraft/Tutorial/"/>
+    <category term="Redstone Digital Logic" scheme="https://huyongshuang.top/en/categories/Minecraft/Tutorial/Redstone-Digital-Logic/"/>
+    <category term="Minecraft" scheme="https://huyongshuang.top/en/tags/Minecraft/"/>
+    <category term="Redstone Digital Logic" scheme="https://huyongshuang.top/en/tags/Redstone-Digital-Logic/"/>
+    <category term="Logic Gate Circuit" scheme="https://huyongshuang.top/en/tags/Logic-Gate-Circuit/"/>
+    <id>https://huyongshuang.top/en/2026/2/17-binary-arithmetic/</id>
+    <link href="https://huyongshuang.top/en/2026/2/17-binary-arithmetic/"/>
+    <published>2026-02-17T15:14:39.000Z</published>
+    <summary>Minecraft binary arithmetic operations including logic gate circuits, half adders, full adders, adders, addition-subtraction modules, multipliers, dividers, etc.</summary>
+    <title>Binary Arithmetic</title>
+    <updated>2026-07-17T09:11:09.441Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>HuYongshuang</name>
+    </author>
+    <id>https://huyongshuang.top/en/2026/1/11-heart-shaped-function/</id>
+    <link href="https://huyongshuang.top/en/2026/1/11-heart-shaped-function/"/>
+    <published>2026-01-11T08:28:13.000Z</published>
+    <summary>
+      <![CDATA[<h1 id="1.-function-formula" tabindex="-1">1. Function Formula <a class="header-anchor"]]>
+    </summary>
+    <title>Heart-shaped Function</title>
+    <updated>2026-07-15T10:09:49.369Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>HuYongshuang</name>
+    </author>
+    <category term="Tutorial" scheme="https://huyongshuang.top/en/categories/Tutorial/"/>
+    <category term="Rubik's Cube formula" scheme="https://huyongshuang.top/en/categories/Tutorial/Rubik-s-Cube-formula/"/>
+    <category term="Tutorial" scheme="https://huyongshuang.top/en/tags/Tutorial/"/>
+    <category term="Rubik's Cube formula" scheme="https://huyongshuang.top/en/tags/Rubik-s-Cube-formula/"/>
+    <id>https://huyongshuang.top/en/2025/2/7-rubiks-cube-formula/</id>
+    <link href="https://huyongshuang.top/en/2025/2/7-rubiks-cube-formula/"/>
+    <published>2025-02-07T05:14:27.000Z</published>
+    <summary>This article includes the basic solving methods of 3x3 Rubik's Cubes, as well as the 2x2, 4x4 and 5x5 Rubik's Cubes.</summary>
+    <title>Rubik's Cube formula</title>
+    <updated>2026-07-17T15:29:11.038Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>HuYongshuang</name>
+    </author>
+    <category term="Tutorial" scheme="https://huyongshuang.top/en/categories/Tutorial/"/>
+    <category term="Rubik's Cube formula" scheme="https://huyongshuang.top/en/categories/Tutorial/Rubik-s-Cube-formula/"/>
+    <category term="Tutorial" scheme="https://huyongshuang.top/en/tags/Tutorial/"/>
+    <category term="Rubik's Cube formula" scheme="https://huyongshuang.top/en/tags/Rubik-s-Cube-formula/"/>
+    <category term="5×5 Rubik's Cube" scheme="https://huyongshuang.top/en/tags/5%C3%975-Rubik-s-Cube/"/>
+    <id>https://huyongshuang.top/en/2025/2/4-5%C3%975-cube-formula/</id>
+    <link href="https://huyongshuang.top/en/2025/2/4-5%C3%975-cube-formula/"/>
+    <published>2025-02-04T09:24:48.000Z</published>
+    <summary>This article mainly introduces the basic solving method for the 5×5 Rubik's Cube, which consists of two main steps: solving center pieces and solving edge pieces. After completing these steps, you can continue solving the cube following the procedures for a 3×3 Rubik's Cube.</summary>
+    <title>5×5 Rubik's Cube formula</title>
+    <updated>2026-07-17T13:59:35.029Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>HuYongshuang</name>
+    </author>
+    <category term="Tutorial" scheme="https://huyongshuang.top/en/categories/Tutorial/"/>
+    <category term="Rubik's Cube formula" scheme="https://huyongshuang.top/en/categories/Tutorial/Rubik-s-Cube-formula/"/>
+    <category term="Tutorial" scheme="https://huyongshuang.top/en/tags/Tutorial/"/>
+    <category term="Rubik's Cube formula" scheme="https://huyongshuang.top/en/tags/Rubik-s-Cube-formula/"/>
+    <category term="4×4 Rubik's Cube" scheme="https://huyongshuang.top/en/tags/4%C3%974-Rubik-s-Cube/"/>
+    <id>https://huyongshuang.top/en/2025/2/3-4%C3%974-cube-formula/</id>
+    <link href="https://huyongshuang.top/en/2025/2/3-4%C3%974-cube-formula/"/>
+    <published>2025-02-03T06:47:45.000Z</published>
+    <summary>This article mainly introduces the basic solving method for the 4×4 Rubik's Cube, which consists of two main steps: solving center pieces and solving edge pieces. After completing these steps, you can continue solving the cube following the procedures for a 3×3 Rubik's Cube. Two special cases may occur during the solving process that need to be addressed.</summary>
+    <title>4×4 Rubik's Cube formula</title>
+    <updated>2026-07-17T13:58:27.411Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>HuYongshuang</name>
+    </author>
+    <category term="Tutorial" scheme="https://huyongshuang.top/en/categories/Tutorial/"/>
+    <category term="Rubik's Cube formula" scheme="https://huyongshuang.top/en/categories/Tutorial/Rubik-s-Cube-formula/"/>
+    <category term="Tutorial" scheme="https://huyongshuang.top/en/tags/Tutorial/"/>
+    <category term="Rubik's Cube formula" scheme="https://huyongshuang.top/en/tags/Rubik-s-Cube-formula/"/>
+    <category term="2×2 Rubik's Cube" scheme="https://huyongshuang.top/en/tags/2%C3%972-Rubik-s-Cube/"/>
+    <id>https://huyongshuang.top/en/2025/2/1-2%C3%972-cube-formula/</id>
+    <link href="https://huyongshuang.top/en/2025/2/1-2%C3%972-cube-formula/"/>
+    <published>2025-02-01T05:36:13.000Z</published>
+    <summary>This article mainly covers the basic solving method for the 2×2 Rubik's Cube, which includes two main stages: solving the bottom layer and solving the top layer.</summary>
+    <title>2×2 Rubik's Cube formula</title>
+    <updated>2025-02-01T12:16:32.366Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>HuYongshuang</name>
+    </author>
+    <category term="Tutorial" scheme="https://huyongshuang.top/en/categories/Tutorial/"/>
+    <category term="Rubik's Cube formula" scheme="https://huyongshuang.top/en/categories/Tutorial/Rubik-s-Cube-formula/"/>
+    <category term="Tutorial" scheme="https://huyongshuang.top/en/tags/Tutorial/"/>
+    <category term="Rubik's Cube formula" scheme="https://huyongshuang.top/en/tags/Rubik-s-Cube-formula/"/>
+    <id>https://huyongshuang.top/en/2025/1/30-cube-top/</id>
+    <link href="https://huyongshuang.top/en/2025/1/30-cube-top/"/>
+    <published>2025-01-30T03:45:15.000Z</published>
+    <summary>This article mainly focuses on all possible states that may appear during the top-face solving stage of a 3×3 Rubik's Cube, along with their transformations and corresponding solving procedures.</summary>
+    <title>All States, Transformations and Solving Steps for the Top Face of a 3×3 Rubik’s Cube</title>
+    <updated>2025-01-30T10:49:58.005Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>HuYongshuang</name>
+    </author>
+    <category term="Tutorial" scheme="https://huyongshuang.top/en/categories/Tutorial/"/>
+    <category term="Rubik's Cube formula" scheme="https://huyongshuang.top/en/categories/Tutorial/Rubik-s-Cube-formula/"/>
+    <category term="Tutorial" scheme="https://huyongshuang.top/en/tags/Tutorial/"/>
+    <category term="Rubik's Cube formula" scheme="https://huyongshuang.top/en/tags/Rubik-s-Cube-formula/"/>
+    <category term="3×3 Rubik's Cube" scheme="https://huyongshuang.top/en/tags/3%C3%973-Rubik-s-Cube/"/>
+    <id>https://huyongshuang.top/en/2025/1/27-3%C3%973-cube-formula/</id>
+    <link href="https://huyongshuang.top/en/2025/1/27-3%C3%973-cube-formula/"/>
+    <published>2025-01-27T02:27:15.000Z</published>
+    <summary>This article mainly introduces the basic solving method for the 3×3 Rubik's Cube, consisting of three major stages: solving the bottom layer, solving the middle layer and solving the top layer.</summary>
+    <title>3×3 Rubik's Cube formula</title>
+    <updated>2026-07-09T13:25:14.139Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>HuYongshuang</name>
+    </author>
+    <id>https://huyongshuang.top/en/2024/12/13-color-text/</id>
+    <link href="https://huyongshuang.top/en/2024/12/13-color-text/"/>
+    <published>2024-12-13T11:36:43.000Z</published>
+    <summary>Methods to implement colored text in Hexo: 1. CSS style attribute; 2. JavaScript script implementation.</summary>
+    <title>Implement Colored Text in Hexo</title>
+    <updated>2026-07-15T10:09:49.369Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>HuYongshuang</name>
+    </author>
+    <id>https://huyongshuang.top/en/2024/12/12-deploy-script/</id>
+    <link href="https://huyongshuang.top/en/2024/12/12-deploy-script/"/>
+    <published>2024-12-12T08:51:26.000Z</published>
+    <summary>
+      <![CDATA[<ul>
+<li>Before using it, please change the folder name where you store your Hexo project files to ‘Blog’, and place the following ‘bat’]]>
+    </summary>
+    <title>Hexo Deployment Script</title>
+    <updated>2024-12-12T08:51:26.000Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>HuYongshuang</name>
+    </author>
+    <id>https://huyongshuang.top/en/2024/12/10-color-picker/</id>
+    <link href="https://huyongshuang.top/en/2024/12/10-color-picker/"/>
+    <published>2024-12-10T02:20:04.000Z</published>
+    <summary>A web tool that can extract colors from any position on the screen, built on the EyeDropper API. When using it, minimize the browser window and place the interface from which you need to extract colors outside the browser window.</summary>
+    <title>Screen Color Picker</title>
+    <updated>2026-01-28T13:31:57.574Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>HuYongshuang</name>
+    </author>
+    <id>https://huyongshuang.top/en/2024/11/11-copy-yaml/</id>
+    <link href="https://huyongshuang.top/en/2024/11/11-copy-yaml/"/>
+    <published>2024-11-11T07:42:51.000Z</published>
+    <summary>
+      <![CDATA[<ul>
+<li>Root cause of the problem: Hexo will recognize <code>.yml</code> / <code>.yaml</code> files as data files. These files will be]]>
+    </summary>
+    <title>The solution for Hexo being unable to skip the rendering of yml files</title>
+    <updated>2026-07-10T09:59:01.538Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>HuYongshuang</name>
+    </author>
+    <category term="Tutorial" scheme="https://huyongshuang.top/en/categories/Tutorial/"/>
+    <category term="Hexo" scheme="https://huyongshuang.top/en/categories/Tutorial/Hexo/"/>
+    <category term="Tutorial" scheme="https://huyongshuang.top/en/tags/Tutorial/"/>
+    <category term="Hexo" scheme="https://huyongshuang.top/en/tags/Hexo/"/>
+    <category term="Blog" scheme="https://huyongshuang.top/en/tags/Blog/"/>
+    <id>https://huyongshuang.top/en/2024/10/24-Hexo-5/</id>
+    <link href="https://huyongshuang.top/en/2024/10/24-Hexo-5/"/>
+    <published>2024-10-24T07:12:28.000Z</published>
+    <summary>Preparation for deploying Hexo to a cloud server: 1. Local Hexo project files that have been completed; 2. Purchased cloud server, such as Tencent Cloud, Alibaba Cloud, etc.; 3. Server system: CentOS or Ubuntu; 4. Server has opened ports: 22 (SSH), 80 (HTTP), 443 (HTTPS, optional); 5. Obtained server public IP, root account password/key; 6. Purchased domain name and registered (unregistered cannot be accessed) (optional); 7. Purchased SSL certificate (can be accessed via HTTPS) (optional).</summary>
+    <title>Hexo Tutorial (5) - Deploy to Cloud Server</title>
+    <updated>2025-12-17T15:45:27.000Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>HuYongshuang</name>
+    </author>
+    <category term="Tutorial" scheme="https://huyongshuang.top/en/categories/Tutorial/"/>
+    <category term="Hexo" scheme="https://huyongshuang.top/en/categories/Tutorial/Hexo/"/>
+    <category term="Tutorial" scheme="https://huyongshuang.top/en/tags/Tutorial/"/>
+    <category term="Hexo" scheme="https://huyongshuang.top/en/tags/Hexo/"/>
+    <category term="Blog" scheme="https://huyongshuang.top/en/tags/Blog/"/>
+    <id>https://huyongshuang.top/en/2024/10/4-Hexo-4/</id>
+    <link href="https://huyongshuang.top/en/2024/10/4-Hexo-4/"/>
+    <published>2024-10-04T11:36:23.000Z</published>
+    <summary>There are many plugins for the comment system, and many themes also have built-in comment system plugins. Let's take the Redefine theme as an example to introduce the usage of the Waline comment system.</summary>
+    <title>Hexo Tutorial (4) - Comment System</title>
+    <updated>2025-12-16T23:54:43.000Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>HuYongshuang</name>
+    </author>
+    <category term="Tutorial" scheme="https://huyongshuang.top/en/categories/Tutorial/"/>
+    <category term="Hexo" scheme="https://huyongshuang.top/en/categories/Tutorial/Hexo/"/>
+    <category term="Tutorial" scheme="https://huyongshuang.top/en/tags/Tutorial/"/>
+    <category term="Hexo" scheme="https://huyongshuang.top/en/tags/Hexo/"/>
+    <category term="Blog" scheme="https://huyongshuang.top/en/tags/Blog/"/>
+    <id>https://huyongshuang.top/en/2024/10/3-Hexo-3/</id>
+    <link href="https://huyongshuang.top/en/2024/10/3-Hexo-3/"/>
+    <published>2024-10-03T01:32:12.000Z</published>
+    <summary>The main content of this section is about the installation and usage of Hexo themes. Taking the Redefine theme as an example, the content is roughly divided into two parts: installing the Redefine theme and configuring the theme.</summary>
+    <title>Hexo Tutorial (3) - Themes</title>
+    <updated>2025-12-16T09:04:37.000Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>HuYongshuang</name>
+    </author>
+    <category term="Tutorial" scheme="https://huyongshuang.top/en/categories/Tutorial/"/>
+    <category term="Hexo" scheme="https://huyongshuang.top/en/categories/Tutorial/Hexo/"/>
+    <category term="Tutorial" scheme="https://huyongshuang.top/en/tags/Tutorial/"/>
+    <category term="Hexo" scheme="https://huyongshuang.top/en/tags/Hexo/"/>
+    <category term="Blog" scheme="https://huyongshuang.top/en/tags/Blog/"/>
+    <id>https://huyongshuang.top/en/2024/10/2-Hexo-2/</id>
+    <link href="https://huyongshuang.top/en/2024/10/2-Hexo-2/"/>
+    <published>2024-10-02T04:23:56.000Z</published>
+    <summary>If you have installed a Hexo theme, most of the settings will be handled in the _config.[theme].yml file of the theme configuration. Since the priority of the theme configuration file is higher than that of the Hexo configuration file, most of the information about the Hexo configuration file will not be necessary to pay attention to. I will introduce a few commonly used settings of Hexo configuration files at the end.</summary>
+    <title>Hexo Tutorial (2) - Configuration</title>
+    <updated>2025-12-15T07:48:42.000Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>HuYongshuang</name>
+    </author>
+    <category term="Tutorial" scheme="https://huyongshuang.top/en/categories/Tutorial/"/>
+    <category term="Hexo" scheme="https://huyongshuang.top/en/categories/Tutorial/Hexo/"/>
+    <category term="Tutorial" scheme="https://huyongshuang.top/en/tags/Tutorial/"/>
+    <category term="Hexo" scheme="https://huyongshuang.top/en/tags/Hexo/"/>
+    <category term="Blog" scheme="https://huyongshuang.top/en/tags/Blog/"/>
+    <id>https://huyongshuang.top/en/2024/10/1-Hexo-1/</id>
+    <link href="https://huyongshuang.top/en/2024/10/1-Hexo-1/"/>
+    <published>2024-10-01T05:14:27.000Z</published>
+    <summary>This article mainly walks you through building a personal blog website from scratch using Hexo and GitHub Pages, covering five sections: preparation, creating a GitHub repository, installing Hexo, deploying to GitHub Pages, and basic blog writing.</summary>
+    <title>
+      <![CDATA[Hexo Tutorial (1) – Site Construction, Deployment & Writing]]>
+    </title>
+    <updated>2025-12-12T07:27:36.000Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>HuYongshuang</name>
+    </author>
+    <id>https://huyongshuang.top/en/2020/10/27-hello-world/</id>
+    <link href="https://huyongshuang.top/en/2020/10/27-hello-world/"/>
+    <published>2020-10-27T02:21:49.000Z</published>
+    <summary>
+      <![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a>]]>
+    </summary>
+    <title>hello-world</title>
+    <updated>2020-10-27T02:21:49.000Z</updated>
+  </entry>
+</feed>
