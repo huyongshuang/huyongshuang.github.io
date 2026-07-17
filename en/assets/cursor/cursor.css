@@ -1,0 +1,11 @@
+html, body {
+    cursor: url("/assets/cursor/cur/default.cur"), auto !important;
+}
+
+a, button, img, label, li, ul, ol, dl, span, i, svg, #nav {
+    cursor: url("/assets/cursor/cur/pointer.cur"), pointer !important;
+}
+
+input, textarea {
+    cursor: url("/assets/cursor/cur/text.cur"), text !important;
+}

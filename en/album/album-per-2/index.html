@@ -1,0 +1,1407 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>壁纸 | HuYongshuang</title><meta name="author" content="HuYongshuang"><meta name="copyright" content="HuYongshuang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="&#x2F;* PC头部布局 *&#x2F; .album-header {     display: flex;     gap: 32px;     align-items: center;     margin-bottom: 42px; }  &#x2F;* 封面容器 *&#x2F; .cover-box {     width: 330px;     height: 230px;     flex-shrink: 0;">
+<meta property="og:type" content="website">
+<meta property="og:title" content="壁纸">
+<meta property="og:url" content="https://huyongshuang.top/en/album/album-per-2/">
+<meta property="og:site_name" content="HuYongshuang">
+<meta property="og:description" content="&#x2F;* PC头部布局 *&#x2F; .album-header {     display: flex;     gap: 32px;     align-items: center;     margin-bottom: 42px; }  &#x2F;* 封面容器 *&#x2F; .cover-box {     width: 330px;     height: 230px;     flex-shrink: 0;">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://huyongshuang.top/en/img/avatar.png">
+<meta property="article:published_time" content="2026-07-17T17:42:55.377Z">
+<meta property="article:modified_time" content="2026-07-13T06:39:59.282Z">
+<meta property="article:author" content="HuYongshuang">
+<meta property="article:tag" content="HuYongshuang, Minecraft, Redstone, Commands, Hexo, Blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://huyongshuang.top/en/img/avatar.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/en/img/favicon.ico"><link rel="canonical" href="https://huyongshuang.top/en/album/album-per-2/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="baidu-site-verification" content="b8339f0567f3c2c09e96a0b7b538df5f"/><link rel="stylesheet" href="/en/css/index.css?v=5.5.5"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?c2ee7ad807ec11f79b2e779adac6d8db";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+btf.addGlobalFn('pjaxComplete', () => {
+  _hmt.push(['_trackPageview',window.location.pathname])
+}, 'baidu_analytics')
+</script><script>const GLOBAL_CONFIG = {
+  root: '/en/',
+  algolia: undefined,
+  localSearch: {"path":"/en/search.json","preload":true,"top_n_per_article":-1,"unescape":true,"pagination":{"enable":true,"hitsPerPage":10},"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":true,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"You have switched to Traditional Chinese","cht_to_chs":"You have switched to Simplified Chinese","day_to_night":"You have switched to Dark Mode","night_to_day":"You have switched to Light Mode","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-center"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '壁纸',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><script src="https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.min.js"></script><link id="cursor_1" rel="stylesheet" href="/en/assets/cursor/cursor.css"><link id="cursor_2" rel="stylesheet" href="/en/assets/cursor/cursor-gif.css" disabled><link rel="stylesheet" href="/en/css/cursor-switch.css"><link rel="stylesheet" href="/en/css/language.css"><link rel="stylesheet" href="/en/css/time-widget.css"><meta name="generator" content="Hexo 8.1.2"><link rel="alternate" href="/en/atom.xml" title="HuYongshuang" type="application/atom+xml">
+<link rel="alternate" href="/en/rss2.xml" title="HuYongshuang" type="application/rss+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      if ($loadingBox.classList.contains('loaded')) return
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+
+  if (document.readyState === 'complete') {
+    preloader.endLoading()
+  } else {
+    window.addEventListener('load', preloader.endLoading)
+    document.addEventListener('DOMContentLoaded', preloader.endLoading)
+    // Add timeout protection: force end after 7 seconds
+    setTimeout(preloader.endLoading, 7000)
+  }
+
+  if (false) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div class="bg-animation" id="web_bg"></div><script>(() => {
+  const arr = ["background-image: url(/en/img/background_1.png);","background-image: url(/en/img/background_2.png);"]
+  const webBgDiv = document.getElementById('web_bg')
+
+  const setRandomBg = () => {
+    webBgDiv.style = arr[Math.floor(Math.random() * arr.length)]
+    requestAnimationFrame(() => webBgDiv.classList.add('bg-animation'))
+  }
+
+  document.addEventListener('pjax:send', () => {
+    webBgDiv.style = ''
+    webBgDiv.classList.remove('bg-animation')
+  })
+
+  document.addEventListener('pjax:complete', setRandomBg)
+  document.addEventListener('DOMContentLoaded', setRandomBg)
+})()
+</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/en/img/avatar.png" onerror="this.onerror=null;this.src='/en/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/en/archives/"><div class="headline">Articles</div><div class="length-num">19</div></a><a href="/en/tags/"><div class="headline">Tags</div><div class="length-num">12</div></a><a href="/en/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/en/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-archive"></i><span> Archives</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/en/archives/"><i class="fa-fw fas fa-history"></i><span> Timeline</span></a></li><li><a class="site-page child" href="/en/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li><li><a class="site-page child" href="/en/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/en/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list-ul"></i><span> List</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/en/html/"><i class="fa-fw fas fa-code"></i><span> HTML</span></a></li><li><a class="site-page child" href="/en/pages/"><i class="fa-fw fas fa-book-open"></i><span> Pages</span></a></li><li><a class="site-page child" href="/en/shuoshuo/"><i class="fa-fw fas fa-pen-to-square"></i><span> Shuoshuo</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/en/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heart"></i><span> More</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/en/huyongshuang/"><i class="fa-fw fas fa-user"></i><span> About</span></a></li><li><a class="site-page child" href="/en/album/"><i class="fa-fw fas fa-images"></i><span> Album</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/en/messageboard/"><i class="fa-fw fas fa-comment-dots"></i><span> Message Board</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(/en/img/default_img.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/en/"><img class="site-icon" src="/en/img/logo.png" alt="Logo"><span class="site-name">HuYongshuang</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/en/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-archive"></i><span> Archives</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/en/archives/"><i class="fa-fw fas fa-history"></i><span> Timeline</span></a></li><li><a class="site-page child" href="/en/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li><li><a class="site-page child" href="/en/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/en/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list-ul"></i><span> List</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/en/html/"><i class="fa-fw fas fa-code"></i><span> HTML</span></a></li><li><a class="site-page child" href="/en/pages/"><i class="fa-fw fas fa-book-open"></i><span> Pages</span></a></li><li><a class="site-page child" href="/en/shuoshuo/"><i class="fa-fw fas fa-pen-to-square"></i><span> Shuoshuo</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/en/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heart"></i><span> More</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/en/huyongshuang/"><i class="fa-fw fas fa-user"></i><span> About</span></a></li><li><a class="site-page child" href="/en/album/"><i class="fa-fw fas fa-images"></i><span> Album</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/en/messageboard/"><i class="fa-fw fas fa-comment-dots"></i><span> Message Board</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title">壁纸</h1></div></header><main class="layout" id="content-inner"><div id="page"><div class="container" id="article-container"><script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+<style>
+/* PC头部布局 */
+.album-header {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    margin-bottom: 42px;
+}
+
+/* 封面容器 */
+.cover-box {
+    width: 330px;
+    height: 230px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: zoom-in;
+    background-color: #f6f6f6;
+}
+
+/* 封面图片 */
+.cover-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 头部文字外层 */
+.album-text {
+    flex: 1;
+}
+
+/* 相册大标题 */
+.album-title {
+    font-size: 44px;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+/* 相册描述文字 */
+.album-desc {
+    font-size: 16px;
+    color: #666666;
+    line-height: 1.8;
+}
+
+/* 日期分组标题 */
+.date-group-title {
+    font-size: 21px;
+    margin: 40px 0 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+/* 照片网格容器 */
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+/* 媒体卡片 */
+.media-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    cursor: zoom-in;
+    background: #f8f8f8;
+}
+
+/* 卡片内图片、视频通用样式 */
+.media-card img,
+.media-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 卡片底部悬浮文字 */
+.media-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 10px 12px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.68));
+    color: #ffffff;
+}
+
+/* 卡片内图片名称 */
+.media-caption .pic-name {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+/* 卡片内图片描述 */
+.media-caption .pic-desc {
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+/* 全屏放大弹窗 */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.93);
+    z-index: 9999;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.lightbox.show {
+    display: flex;
+}
+
+/* 弹窗关闭按钮 */
+.lightbox-close {
+    position: absolute;
+    top: 24px;
+    right: 36px;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10;
+}
+
+/* 左右切换按钮 */
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.15);
+    width: 50px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 6px;
+    z-index: 10;
+    transition: background 0.2s;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* 左右切换按钮定位 */
+.lightbox-prev {
+    left: 20px;
+}
+
+.lightbox-next {
+    right: 20px;
+}
+
+/* 弹窗内图片/视频尺寸 */
+.lightbox-media {
+    max-width: 92vw;
+    max-height: 82vh;
+}
+
+/* 弹窗底部文字容器 */
+.lightbox-text {
+    margin-top: 20px;
+    color: white;
+    text-align: center;
+    max-width: 900px;
+}
+
+/* 弹窗图片名称 */
+.lightbox-name {
+    font-size: 24px;
+    margin-bottom: 6px;
+}
+
+/* 弹窗拍摄日期 */
+.lightbox-date {
+    font-size: 16px;
+    opacity: 0.75;
+    margin-bottom: 8px;
+}
+
+/* 弹窗图片描述 */
+.lightbox-desc {
+    font-size: 16px;
+    opacity: 0.86;
+    line-height: 1.7;
+}
+
+/* 手机端适配 768px以下 */
+@media (max-width: 768px) {
+    .album-header {
+        flex-direction: column;
+        position: relative;
+        margin-bottom: 30px;
+    }
+
+    .cover-box {
+        width: 100%;
+        height: 270px;
+    }
+
+    .album-text {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 22px 16px;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.72));
+        border-radius: 0 0 10px 10px;
+    }
+
+    .album-title {
+        font-size: 30px;
+        color: #fff;
+    }
+
+    .album-desc {
+        font-size: 14px;
+        color: #eeeeee;
+    }
+
+    /* 手机一行3张 */
+    .media-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+
+    .date-group-title {
+        font-size: 18px;
+        margin: 28px 0 14px;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        width: 30px;
+        height: 60px;
+        font-size: 30px;
+    }
+
+    .lightbox-prev {
+        left: 8px;
+    }
+
+    .lightbox-next {
+        right: 8px;
+    }
+
+    .lightbox-media {
+        max-width: 75vw;
+        max-height: 65vh;
+    }
+}
+</style>
+<div class="album-header" id="albumHeader">
+    <div class="cover-box" id="coverWrap">
+        <img id="coverImg" alt="相册封面" class="no-lightbox">
+    </div>
+    <div class="album-text">
+        <h1 class="album-title" id="albumName"></h1>
+        <p class="album-desc" id="albumDesc"></p>
+    </div>
+</div>
+<div id="photoContainer"></div>
+<div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="closeBtn">×</span>
+    <span class="lightbox-prev" id="prevBtn">&lt;</span>
+    <span class="lightbox-next" id="nextBtn">&gt;</span>
+    <img class="lightbox-media" id="lbImg" style="display:none;">
+    <video class="lightbox-media" id="lbVideo" controls style="display:none;"></video>
+    <div class="lightbox-text" id="lbText"></div>
+</div>
+<script>
+let globalCfg = {};
+let mediaAll = [];
+let currentIndex = -1;
+const coverWrap = document.getElementById('coverWrap');
+const coverImg = document.getElementById('coverImg');
+const albumName = document.getElementById('albumName');
+const albumDesc = document.getElementById('albumDesc');
+const photoContainer = document.getElementById('photoContainer');
+const lightbox = document.getElementById('lightbox');
+const closeBtn = document.getElementById('closeBtn');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const lbImg = document.getElementById('lbImg');
+const lbVideo = document.getElementById('lbVideo');
+const lbText = document.getElementById('lbText');
+
+// 加载配置：优先 YML，加载/解析失败时自动降级为 JSON
+async function loadConfig() {
+    let cfg = null;
+
+    // 第一步：尝试加载 YAML 配置
+    try {
+        const res = await fetch('./config.yml');
+        if (!res.ok) throw new Error('YAML 文件不存在');
+        const yamlText = await res.text();
+        cfg = jsyaml.load(yamlText);
+    } catch (yamlErr) {
+        console.warn('YAML 配置加载失败，自动尝试加载 JSON 配置', yamlErr);
+
+        // 第二步：YAML 失败，尝试加载 JSON 配置
+        try {
+            const res = await fetch('./config.json');
+            if (!res.ok) throw new Error('JSON 文件不存在');
+            cfg = await res.json();
+        } catch (jsonErr) {
+            alert('读取配置文件失败，请检查配置文件路径是否正确');
+            console.error('YAML 和 JSON 配置均加载失败', jsonErr);
+            return;
+        }
+    }
+
+    // 初始化全局配置，设置默认值与路径兼容
+    globalCfg = cfg.global || {};
+    if (!globalCfg.local_media_path) globalCfg.local_media_path = 'photos/';
+    // 自动补全路径末尾斜杠，避免拼接错误
+    if (!globalCfg.local_media_path.endsWith('/')) {
+        globalCfg.local_media_path += '/';
+    }
+
+    // 解析本地与远程媒体列表，兼容空列表
+    const localList = cfg.local_media_list || [];
+    const remoteList = cfg.remote_media_list || [];
+    mediaAll = [
+        ...parseLocalMedia(localList),
+        ...parseRemoteMedia(remoteList)
+    ];
+
+    renderHeader();
+    sortAndGroupMedia();
+}
+
+// 解析本地媒体：从 ID 提取日期，路径由 local_media_path 拼接
+function parseLocalMedia(list) {
+    return list.map(item => {
+        const idArr = item.id.split('-');
+        const year = idArr[0];
+        const month = idArr[1];
+        const day = idArr[2];
+        const sortNum = parseInt(idArr[3], 10) || 0;
+        const dateShow = `${year}/${month}/${day}`;
+        const dateTime = new Date(`${year}-${month}-${day}`).getTime();
+
+        return {
+            id: item.id,
+            type: 'local',
+            ext: item.ext,
+            name: item.name || '',
+            desc: item.description || '',
+            fullSrc: `${globalCfg.local_media_path}${item.id}.${item.ext}`,
+            dateStr: dateShow,
+            dateSort: dateTime,
+            serial: sortNum
+        };
+    });
+}
+
+// 解析远程媒体：支持 YYYY-MM-DD-NN 格式，按日期+序号排序
+function parseRemoteMedia(list) {
+    return list.map((item, index) => {
+        let year, month, day, serialNum;
+        const dateRaw = item.date;
+
+        // 兜底分支：YAML 自动解析为 Date 对象（带序号的date不会进入此分支）
+        if (dateRaw instanceof Date) {
+            year = dateRaw.getFullYear();
+            month = String(dateRaw.getMonth() + 1).padStart(2, '0');
+            day = String(dateRaw.getDate()).padStart(2, '0');
+            serialNum = index;
+        }
+        // 主逻辑：字符串格式「年-月-日-序号」解析
+        else {
+            const dateStr = String(dateRaw || '1970-01-01-0');
+            const parts = dateStr.split('-');
+            year = parts[0] || '1970';
+            month = parts[1] || '01';
+            day = parts[2] || '01';
+
+            // 提取第4段作为当日序号，解析失败则默认为0
+            serialNum = parts[3] ? parseInt(parts[3], 10) : 0;
+            if (isNaN(serialNum)) serialNum = 0;
+        }
+
+        const dateShow = `${year}/${month}/${day}`;
+        const dateTime = new Date(`${year}-${month}-${day}`).getTime();
+
+        // 从 URL 提取后缀，自动识别图片/视频
+        const ext = item.url.split('.').pop().toLowerCase() || 'jpg';
+
+        return {
+            id: `remote_${index}_${encodeURIComponent(item.url)}`,
+            type: 'remote',
+            ext: ext,
+            name: item.name || '',
+            desc: item.description || '',
+            fullSrc: item.url,
+            dateStr: dateShow,
+            dateSort: dateTime,
+            serial: serialNum
+        };
+    });
+}
+
+// 媒体统一排序 + 分组渲染
+function sortAndGroupMedia() {
+    mediaAll.sort((a, b) => {
+        if (globalCfg.new_first) {
+            if (b.dateSort !== a.dateSort) return b.dateSort - a.dateSort;
+            return a.serial - b.serial;
+        } else {
+            if (a.dateSort !== b.dateSort) return a.dateSort - b.dateSort;
+            return a.serial - b.serial;
+        }
+    });
+    groupAndRender(mediaAll);
+}
+
+// 渲染顶部封面信息
+function renderHeader() {
+    coverImg.src = globalCfg.cover_path;
+    albumName.innerText = globalCfg.album_name;
+    albumDesc.innerText = globalCfg.album_desc;
+}
+
+// 按日期分组渲染页面
+function groupAndRender(list) {
+    photoContainer.innerHTML = '';
+    const groupMap = new Map();
+    list.forEach(item => {
+        if (!groupMap.has(item.dateStr)) groupMap.set(item.dateStr, []);
+        groupMap.get(item.dateStr).push(item);
+    });
+
+    groupMap.forEach(groupItems => {
+        const date = groupItems[0].dateStr;
+        const title = document.createElement('h2');
+        title.className = 'date-group-title';
+        title.innerText = date;
+        photoContainer.appendChild(title);
+
+        const grid = document.createElement('div');
+        grid.className = 'media-grid';
+        groupItems.forEach(media => {
+            grid.appendChild(createMediaCard(media));
+        });
+        photoContainer.appendChild(grid);
+    });
+}
+
+// 生成单张媒体卡片
+function createMediaCard(media) {
+    const card = document.createElement('div');
+    card.className = 'media-card';
+
+    let el;
+    // 支持常见视频格式自动识别
+    if (['mp4', 'webm', 'ogg'].includes(media.ext)) {
+        el = document.createElement('video');
+        el.muted = true;
+    } else {
+        el = document.createElement('img');
+    }
+    el.src = media.fullSrc;
+    card.appendChild(el);
+
+    if (media.name || media.desc) {
+        const cap = document.createElement('div');
+        cap.className = 'media-caption';
+        cap.innerHTML = `
+                <div class="pic-name">${media.name}</div>
+                <div class="pic-desc">${media.desc}</div>
+            `;
+        card.appendChild(cap);
+    }
+
+    card.onclick = () => {
+        currentIndex = mediaAll.findIndex(m => m.id === media.id);
+        openLightBox(media);
+    };
+    return card;
+}
+
+// 打开全屏弹窗
+function openLightBox(media) {
+    lbImg.style.display = 'none';
+    lbVideo.style.display = 'none';
+    lbVideo.pause();
+
+    if (['mp4', 'webm', 'ogg'].includes(media.ext)) {
+        lbVideo.src = media.fullSrc;
+        lbVideo.style.display = 'block';
+    } else {
+        lbImg.src = media.fullSrc;
+        lbImg.style.display = 'block';
+    }
+
+    lbText.innerHTML = `
+            <div class="lightbox-name">${media.name || ''}</div>
+            <div class="lightbox-date">拍摄日期：${media.dateStr}</div>
+            <div class="lightbox-desc">${media.desc || ''}</div>
+        `;
+    lightbox.classList.add('show');
+}
+
+// 切换上一张
+function prevMedia() {
+    if (currentIndex <= 0) return;
+    currentIndex -= 1;
+    openLightBox(mediaAll[currentIndex]);
+}
+
+// 切换下一张
+function nextMedia() {
+    if (currentIndex >= mediaAll.length - 1) return;
+    currentIndex += 1;
+    openLightBox(mediaAll[currentIndex]);
+}
+
+// 封面点击放大
+coverWrap.onclick = () => {
+    currentIndex = -1;
+    lbImg.src = globalCfg.cover_path;
+    lbImg.style.display = 'block';
+    lbVideo.style.display = 'none';
+    lbText.innerHTML = `<div class="lightbox-name">相册封面</div>`;
+    lightbox.classList.add('show');
+};
+
+// 关闭弹窗
+function closeLightBox() {
+    lightbox.classList.remove('show');
+    lbVideo.pause();
+    currentIndex = -1;
+}
+
+// 事件绑定
+closeBtn.onclick = closeLightBox;
+prevBtn.onclick = prevMedia;
+nextBtn.onclick = nextMedia;
+lightbox.onclick = (e) => {
+    if (e.target === lightbox) closeLightBox();
+};
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('show')) {
+        closeLightBox();
+    }
+});
+
+window.addEventListener('DOMContentLoaded', loadConfig);
+</script></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comments</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/en/img/avatar.png" onerror="this.onerror=null;this.src='/en/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">HuYongshuang</div><div class="author-info-description">Infinite creation, infinite possibilities.</div><div class="site-data"><a href="/en/archives/"><div class="headline">Articles</div><div class="length-num">19</div></a><a href="/en/tags/"><div class="headline">Tags</div><div class="length-num">12</div></a><a href="/en/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div><a id="card-info-btn" href="/huyongshuang"><i class="fas fa-user"></i><span>About Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/huyongshuang" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="/en/746059847@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="https://space.bilibili.com/400547411" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="fa-brands fa-bilibili" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content"><div style="text-align:center; margin:-10px -30px -15px;">
+  <p>Wechat Official Account has more content!</p>
+  <a href="https://mp.weixin.qq.com/s/Qd5I_aZf2vZh5WhoLE8czQ" rel="external nofollow noreferrer" target="_blank">
+    <img src="/en/img/weixin_gongzhong.png" alt="Wechat Official Account" style="width:250px; height:auto; margin-top:-15px;">
+  </a>
+</div>
+</div></div><div class="card-widget"><div class="item-headline"><i></i><span></span></div><div class="item-content"><div class="sidebar-widget widget">
+  <div class="time-section">
+    <div id="current-time" class="current-time"></div>
+  </div>
+  <div class="date-section">
+    <div id="current-date" class="current-date"></div>
+  </div>
+  <div class="weather-section">
+    <div id="current-weather" class="current-weather">Loading...</div>
+  </div>
+  <div class="calendar-section">
+    <div class="calendar-header">
+      <button id="prev-month" class="calendar-nav-btn">&lt</button>
+      <h3 id="calendar-month-year"></h3>
+      <button id="next-month" class="calendar-nav-btn">&gt</button>
+    </div>
+    <div class="calendar-weekdays">
+      <div>Sun</div>
+      <div>Mon</div>
+      <div>Tue</div>
+      <div>Wed</div>
+      <div>Thu</div>
+      <div>Fri</div>
+      <div>Sat</div>
+    </div>
+    <div id="calendar-dates" class="calendar-dates"></div>
+  </div>
+</div>
+</div></div><div class="card-widget"><div class="item-headline"><i class="fa-solid fa-gear"></i><span>Settings</span></div><div class="item-content"><div class="setting">
+  <h3>Language</h3>
+  <div class="lang-switch">
+    <a href="/">中文</a>
+    <a href="/en/">English</a>
+  </div>
+  <h3>Background Effect</h3>
+  <div class="snowflake-switch">
+    <button id="switchSnowBtn">Switch Effect</button>
+  </div>
+  <h3>Cursor Switching</h3>
+  <div class="cursor-switch">
+    Cursor one<button id="cursor-switch-1">ON</button><br>
+    Cursor two<button id="cursor-switch-2">OFF</button>
+  </div>
+</div>
+</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/en/2026/5/20-binary-arithmetic-videos/" title="Binary Arithmetic Videos Collection (Bilibili)">Binary Arithmetic Videos Collection (Bilibili)</a><time datetime="2026-05-20T10:27:34.000Z" title="Created 2026-05-20 18:27:34">2026-05-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/en/2026/2/17-binary-arithmetic/" title="Binary Arithmetic"><img src="/en/2026/2/17-binary-arithmetic/0.png" onerror="this.onerror=null;this.src='/en/img/404.jpg'" alt="Binary Arithmetic"/></a><div class="content"><a class="title" href="/en/2026/2/17-binary-arithmetic/" title="Binary Arithmetic">Binary Arithmetic</a><time datetime="2026-02-17T15:14:39.000Z" title="Created 2026-02-17 23:14:39">2026-02-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/en/2026/1/11-heart-shaped-function/" title="Heart-shaped Function"><img src="/en/2026/1/11-heart-shaped-function/0.png" onerror="this.onerror=null;this.src='/en/img/404.jpg'" alt="Heart-shaped Function"/></a><div class="content"><a class="title" href="/en/2026/1/11-heart-shaped-function/" title="Heart-shaped Function">Heart-shaped Function</a><time datetime="2026-01-11T08:28:13.000Z" title="Created 2026-01-11 16:28:13">2026-01-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/en/2025/2/7-rubiks-cube-formula/" title="Rubik's Cube formula"><img src="/en/2025/2/7-rubiks-cube-formula/0.png" onerror="this.onerror=null;this.src='/en/img/404.jpg'" alt="Rubik's Cube formula"/></a><div class="content"><a class="title" href="/en/2025/2/7-rubiks-cube-formula/" title="Rubik's Cube formula">Rubik's Cube formula</a><time datetime="2025-02-07T05:14:27.000Z" title="Created 2025-02-07 13:14:27">2025-02-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/en/2025/2/4-5%C3%975-cube-formula/" title="5×5 Rubik's Cube formula"><img src="/en/2025/2/4-5%C3%975-cube-formula/0.png" onerror="this.onerror=null;this.src='/en/img/404.jpg'" alt="5×5 Rubik's Cube formula"/></a><div class="content"><a class="title" href="/en/2025/2/4-5%C3%975-cube-formula/" title="5×5 Rubik's Cube formula">5×5 Rubik's Cube formula</a><time datetime="2025-02-04T09:24:48.000Z" title="Created 2025-02-04 17:24:48">2025-02-04</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>Categories</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/en/categories/Minecraft/"><span class="card-category-list-name">Minecraft</span><span class="card-category-list-count">2</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/en/categories/Minecraft/Tutorial/"><span class="card-category-list-name">Tutorial</span><span class="card-category-list-count">1</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/en/categories/Minecraft/Tutorial/Redstone-Digital-Logic/"><span class="card-category-list-name">Redstone Digital Logic</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/en/categories/Minecraft/Video/"><span class="card-category-list-name">Video</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/en/categories/Tutorial/"><span class="card-category-list-name">Tutorial</span><span class="card-category-list-count">11</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/en/categories/Tutorial/Hexo/"><span class="card-category-list-name">Hexo</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/en/categories/Tutorial/Rubik-s-Cube-formula/"><span class="card-category-list-name">Rubik's Cube formula</span><span class="card-category-list-count">6</span></a></li></ul></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/en/tags/5%C3%975-Rubik-s-Cube/" style="font-size: 1.1em; color: #999">5×5 Rubik's Cube</a> <a href="/en/tags/Rubik-s-Cube-formula/" style="font-size: 1.4em; color: #99a5b6">Rubik's Cube formula</a> <a href="/en/tags/Blog/" style="font-size: 1.3em; color: #99a1ac">Blog</a> <a href="/en/tags/Hexo/" style="font-size: 1.3em; color: #99a1ac">Hexo</a> <a href="/en/tags/Logic-Gate-Circuit/" style="font-size: 1.1em; color: #999">Logic Gate Circuit</a> <a href="/en/tags/Tutorial/" style="font-size: 1.5em; color: #99a9bf">Tutorial</a> <a href="/en/tags/4%C3%974-Rubik-s-Cube/" style="font-size: 1.1em; color: #999">4×4 Rubik's Cube</a> <a href="/en/tags/2%C3%972-Rubik-s-Cube/" style="font-size: 1.1em; color: #999">2×2 Rubik's Cube</a> <a href="/en/tags/Redstone-Digital-Logic/" style="font-size: 1.1em; color: #999">Redstone Digital Logic</a> <a href="/en/tags/Minecraft/" style="font-size: 1.2em; color: #999da3">Minecraft</a> <a href="/en/tags/3%C3%973-Rubik-s-Cube/" style="font-size: 1.1em; color: #999">3×3 Rubik's Cube</a> <a href="/en/tags/Video-Collection/" style="font-size: 1.1em; color: #999">Video Collection</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>Archives</span>
+      <a class="card-more-btn" href="/en/archives/"
+            title="View More">
+            <i class="fas fa-angle-right"></i>
+          </a>
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/en/archives/2026/05/">
+            <span class="card-archive-list-date">
+              May 2026
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/en/archives/2026/02/">
+            <span class="card-archive-list-date">
+              February 2026
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/en/archives/2026/01/">
+            <span class="card-archive-list-date">
+              January 2026
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/en/archives/2025/02/">
+            <span class="card-archive-list-date">
+              February 2025
+            </span>
+            <span class="card-archive-list-count">4</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/en/archives/2025/01/">
+            <span class="card-archive-list-date">
+              January 2025
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/en/archives/2024/12/">
+            <span class="card-archive-list-date">
+              December 2024
+            </span>
+            <span class="card-archive-list-count">3</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/en/archives/2024/11/">
+            <span class="card-archive-list-date">
+              November 2024
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/en/archives/2024/10/">
+            <span class="card-archive-list-date">
+              October 2024
+            </span>
+            <span class="card-archive-list-count">5</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Website Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article Count :</div><div class="item-count">19</div></div><div class="webinfo-item"><div class="item-name">Runtime :</div><div class="item-count" id="runtimeshow" data-publishDate="2001-10-01T05:14:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Total Word Count :</div><div class="item-count">21.3k</div></div><div class="webinfo-item"><div class="item-name">Unique Visitors :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Page Views :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Update :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-07-17T17:49:48.135Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/en/img/default_img.png);"><div class="footer-flex"><div class="footer-flex-items"><div class="footer-flex-item"><div class="footer-flex-title">Blog</div><div class="footer-flex-content"><a href="/en/music/" target="_blank" title="Music">Music</a><a href="/en/album/" target="_blank" title="Album">Album</a><a href="/en/link/" target="_blank" title="Link">Link</a><a href="/en/html/" target="_blank" title="HTML">HTML</a><a href="/en/pages/" target="_blank" title="Pages">Pages</a><a href="/en/shuoshuo/" target="_blank" title="Shuoshuo">Shuoshuo</a></div></div></div><div class="footer-flex-items"><div class="footer-flex-item"><div class="footer-flex-title">Video Homepage</div><div class="footer-flex-content"><a href="https://v.douyin.com/USq91Jn" rel="external nofollow noreferrer" target="_blank" title="Douyin">Douyin</a><a href="https://space.bilibili.com/400547411" rel="external nofollow noreferrer" target="_blank" title="Bilibili">Bilibili</a><a href="https://v.qq.com/s/videoplus/9000237633/2" rel="external nofollow noreferrer" target="_blank" title="Tencent Video">Tencent Video</a><a href="https://www.iqiyi.com/creator/1569044152" rel="external nofollow noreferrer" target="_blank" title="iQIYI">iQIYI</a><a href="https://www.youku.com/profile/index/?uid=UNjM1OTIyMDI0MA==" rel="external nofollow noreferrer" target="_blank" title="Youku">Youku</a><a href="https://tv.sohu.com/user/334351365" rel="external nofollow noreferrer" target="_blank" title="Sohu Video">Sohu Video</a></div></div></div><div class="footer-flex-items"><div class="footer-flex-item"><div class="footer-flex-title">Support</div><div class="footer-flex-content"><a href="https://github.com" rel="external nofollow noreferrer" target="_blank" title="GitHub">GitHub</a><a href="https://www.doubao.com" rel="external nofollow noreferrer" target="_blank" title="Doubao">Doubao</a><a href="https://www.deepseek.com" rel="external nofollow noreferrer" target="_blank" title="DeepSeek">DeepSeek</a><a href="https://huyongshuang.github.io" rel="external nofollow noreferrer" target="_blank" title="GitHub Pages">GitHub Pages</a><a href="https://huyongshuang.github.io/old" rel="external nofollow noreferrer" target="_blank" title="Old Blog">Old Blog</a><a href="https://github.com/huyongshuang/huyongshuang.github.io" rel="external nofollow noreferrer" target="_blank" title="Blog Repository (GitHub)">Blog Repository (GitHub)</a></div></div></div><div class="footer-flex-items"><div class="footer-flex-item"><div class="footer-flex-title">Language</div><div class="footer-flex-content"><div><a href="/" class="lang-switch">中文</a></div><div><a href="/en/" class="lang-switch">English</a></div></div></div></div></div><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2020 - 2026 By HuYongshuang</span><span class="framework-info"><span class="footer-separator">|</span><span>Framework </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.5</a></span></div><div class="footer_custom_text"><style>
+  .beian {display: flex; flex-direction: row; gap: 20px; justify-content: center; align-items: center;}
+  .beian a {text-decoration: none;}
+  .beian .police-beian {display: inline-flex; align-items: center;}
+  .beian img {height: 15px; margin-right: 5px; vertical-align: middle;}
+  @media(max-width:768px) {.beian{flex-direction: column; gap: 2.5px;}}
+</style>
+<div class="beian">
+  <a href="https://beian.miit.gov.cn/#/Integrated/index" rel="external nofollow noreferrer" target="_blank">鄂ICP备2026000237号-2</a>
+  <a class="police-beian" href="https://beian.mps.gov.cn/#/query/webSearch?code=42062402000234" rel="external nofollow noreferrer" target="_blank">
+    <img src="/en/img/beian.png" alt="备案图标">
+    <span>鄂公网安备42062402000234号</span>
+  </a>
+</div>
+<style>
+  a#upyun {display: inline-flex; align-items: center; text-decoration: none;}
+  #upyun img {height: 27px; margin-left: 2px; margin-right: 2px; vertical-align: middle;}
+  #upyun span {vertical-align: middle;}
+</style>
+<a id="upyun" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" rel="external nofollow noreferrer" target="_blank">
+  <span>This website is provided with CDN acceleration service by</span><img src="/en/img/又拍云_logo1.png" alt="又拍云">
+</a>
+</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button id="chat-btn" type="button" title="Chat" style="display:none"><i class="fas fa-message"></i></button><a id="to_comment" href="#post-comment" title="Scroll to Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/en/js/utils.js?v=5.5.5"></script><script src="/en/js/main.js?v=5.5.5"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>(async () => {
+  const showKatex = () => {
+    document.querySelectorAll('#article-container .katex').forEach(el => el.classList.add('katex-show'))
+  }
+
+  if (!window.katex_js_css) {
+    window.katex_js_css = true
+    await btf.getCSS('https://cdn.jsdelivr.net/npm/katex@0.17.0/dist/katex.min.css')
+    if (true) {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/katex@0.17.0/dist/contrib/copy-tex.min.js')
+    }
+  }
+
+  showKatex()
+})()</script><script>(() => {
+  const parseViewBox = viewBox => {
+    if (!viewBox) return null
+    const parts = viewBox.trim().split(/[\s,]+/).map(n => Number(n))
+    if (parts.length !== 4 || parts.some(n => Number.isNaN(n))) return null
+    return parts
+  }
+
+  const getSvgViewBox = svg => {
+    const attr = parseViewBox(svg.getAttribute('viewBox'))
+    if (attr) return attr
+
+    // Fallback: use bbox to build a viewBox
+    try {
+      const bbox = svg.getBBox()
+      if (bbox && bbox.width && bbox.height) return [bbox.x, bbox.y, bbox.width, bbox.height]
+    } catch (e) {
+      // getBBox may fail on some edge cases; ignore
+    }
+
+    const w = Number(svg.getAttribute('width')) || 0
+    const h = Number(svg.getAttribute('height')) || 0
+    if (w > 0 && h > 0) return [0, 0, w, h]
+    return [0, 0, 100, 100]
+  }
+
+  const setSvgViewBox = (svg, vb) => {
+    svg.setAttribute('viewBox', `${vb[0]} ${vb[1]} ${vb[2]} ${vb[3]}`)
+  }
+
+  const clamp = (v, min, max) => Math.max(min, Math.min(max, v))
+
+  const openSvgInNewTab = ({ source, initViewBox }) => {
+    const getClonedSvg = () => {
+      if (typeof source === 'string') {
+        const template = document.createElement('template')
+        template.innerHTML = source.trim()
+        const svg = template.content.querySelector('svg')
+        return svg ? svg.cloneNode(true) : null
+      }
+      if (source && typeof source.cloneNode === 'function') {
+        return source.cloneNode(true)
+      }
+      return null
+    }
+
+    const clone = getClonedSvg()
+    if (!clone) return
+    if (initViewBox && initViewBox.length === 4) {
+      clone.setAttribute('viewBox', initViewBox.join(' '))
+    }
+    if (!clone.getAttribute('xmlns')) clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg')
+    if (!clone.getAttribute('xmlns:xlink') && clone.outerHTML.includes('xlink:')) {
+      clone.setAttribute('xmlns:xlink', 'http://www.w3.org/1999/xlink')
+    }
+    // inject background to match current theme
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark'
+    const bg = getComputedStyle(document.body).backgroundColor || (isDark ? '#1e1e1e' : '#ffffff')
+    if (!clone.style.background) clone.style.background = bg
+
+    const serializer = new XMLSerializer()
+    const svgSource = serializer.serializeToString(clone)
+    const htmlSource = `<!doctype html><html><head><meta charset="utf-8" />
+      <style>
+        html, body { width: 100%; height: 100%; margin: 0; display: flex; align-items: center; justify-content: center; background: ${bg}; }
+        svg { max-width: 100%; max-height: 100%; height: auto; width: auto; }
+      </style>
+      </head><body>${svgSource}</body></html>`
+    const blob = new Blob([htmlSource], { type: 'text/html;charset=utf-8' })
+    const url = URL.createObjectURL(blob)
+    window.open(url, '_blank', 'noopener')
+    setTimeout(() => URL.revokeObjectURL(url), 30000)
+  }
+
+  const attachMermaidViewerButton = wrap => {
+    let btn = wrap.querySelector('.mermaid-open-btn')
+    if (!btn) {
+      btn = document.createElement('button')
+      btn.type = 'button'
+      btn.className = 'mermaid-open-btn'
+      wrap.appendChild(btn)
+    }
+
+    btn.innerHTML = '<i class="fa fa-search fa-fw" aria-hidden="true"></i>'
+
+    if (!btn.__mermaidViewerBound) {
+      btn.addEventListener('click', e => {
+        e.preventDefault()
+        e.stopPropagation()
+        const svg = wrap.__mermaidOriginalSvg || wrap.querySelector('svg')
+        if (!svg) return
+        const initViewBox = wrap.__mermaidInitViewBox
+        if (typeof svg === 'string') {
+          openSvgInNewTab({ source: svg, initViewBox })
+          return
+        }
+        openSvgInNewTab({ source: svg, initViewBox })
+      })
+      btn.__mermaidViewerBound = true
+    }
+  }
+
+  // Zoom around a point (px, py) in the SVG viewport (in viewBox coordinates)
+  const zoomAtPoint = (vb, factor, px, py) => {
+    const w = vb[2] * factor
+    const h = vb[3] * factor
+    const nx = px - (px - vb[0]) * factor
+    const ny = py - (py - vb[1]) * factor
+    return [nx, ny, w, h]
+  }
+
+  const initMermaidGestures = wrap => {
+    const svg = wrap.querySelector('svg')
+    if (!svg) return
+
+    // Ensure viewBox exists so gestures always work
+    const initVb = getSvgViewBox(svg)
+    wrap.__mermaidInitViewBox = initVb
+    wrap.__mermaidCurViewBox = initVb.slice()
+    setSvgViewBox(svg, initVb)
+
+    // Avoid binding multiple times on themeChange/pjax
+    if (wrap.__mermaidGestureBound) return
+    wrap.__mermaidGestureBound = true
+
+    // Helper: map client (viewport) coordinate -> viewBox coordinate
+    const clientToViewBox = (clientX, clientY) => {
+      const rect = svg.getBoundingClientRect()
+      const vb = wrap.__mermaidCurViewBox || getSvgViewBox(svg)
+      const x = vb[0] + (clientX - rect.left) * (vb[2] / rect.width)
+      const y = vb[1] + (clientY - rect.top) * (vb[3] / rect.height)
+      return { x, y, rect, vb }
+    }
+
+    const state = {
+      pointers: new Map(),
+      startVb: null,
+      startDist: 0,
+      startCenter: null
+    }
+
+    const clampVb = vb => {
+      const init = wrap.__mermaidInitViewBox || vb
+      const minW = init[2] * 0.1
+      const maxW = init[2] * 10
+      const minH = init[3] * 0.1
+      const maxH = init[3] * 10
+      vb[2] = clamp(vb[2], minW, maxW)
+      vb[3] = clamp(vb[3], minH, maxH)
+      return vb
+    }
+
+    const setCurVb = vb => {
+      vb = clampVb(vb)
+      wrap.__mermaidCurViewBox = vb
+      setSvgViewBox(svg, vb)
+    }
+
+    const onPointerDown = e => {
+      // Allow only primary button for mouse
+      if (e.pointerType === 'mouse' && e.button !== 0) return
+      svg.setPointerCapture(e.pointerId)
+      state.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY })
+
+      if (state.pointers.size === 1) {
+        state.startVb = (wrap.__mermaidCurViewBox || getSvgViewBox(svg)).slice()
+      } else if (state.pointers.size === 2) {
+        const pts = [...state.pointers.values()]
+        const dx = pts[0].x - pts[1].x
+        const dy = pts[0].y - pts[1].y
+        state.startDist = Math.hypot(dx, dy)
+        state.startVb = (wrap.__mermaidCurViewBox || getSvgViewBox(svg)).slice()
+        state.startCenter = { x: (pts[0].x + pts[1].x) / 2, y: (pts[0].y + pts[1].y) / 2 }
+      }
+    }
+
+    const onPointerMove = e => {
+      if (!state.pointers.has(e.pointerId)) return
+      state.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY })
+
+      // Pan with 1 pointer
+      if (state.pointers.size === 1 && state.startVb) {
+        const p = [...state.pointers.values()][0]
+        const prev = { x: e.clientX - e.movementX, y: e.clientY - e.movementY }
+        // movementX/Y unreliable on touch, compute from stored last position
+        const last = wrap.__mermaidLastSinglePointer || p
+        const dxClient = p.x - last.x
+        const dyClient = p.y - last.y
+        wrap.__mermaidLastSinglePointer = p
+
+        const { rect } = clientToViewBox(p.x, p.y)
+        const vb = (wrap.__mermaidCurViewBox || getSvgViewBox(svg)).slice()
+        const dx = dxClient * (vb[2] / rect.width)
+        const dy = dyClient * (vb[3] / rect.height)
+        setCurVb([vb[0] - dx, vb[1] - dy, vb[2], vb[3]])
+        return
+      }
+
+      // Pinch zoom with 2 pointers
+      if (state.pointers.size === 2 && state.startVb && state.startDist > 0) {
+        const pts = [...state.pointers.values()]
+        const dx = pts[0].x - pts[1].x
+        const dy = pts[0].y - pts[1].y
+        const dist = Math.hypot(dx, dy)
+        if (!dist) return
+        const factor = state.startDist / dist // dist bigger => zoom in (viewBox smaller)
+
+        const cx = (pts[0].x + pts[1].x) / 2
+        const cy = (pts[0].y + pts[1].y) / 2
+        const centerClient = { x: cx, y: cy }
+
+        const pxy = clientToViewBox(centerClient.x, centerClient.y)
+        const cpx = pxy.x
+        const cpy = pxy.y
+
+        const vb = zoomAtPoint(state.startVb, factor, cpx, cpy)
+        setCurVb(vb)
+      }
+    }
+
+    const onPointerUpOrCancel = e => {
+      state.pointers.delete(e.pointerId)
+      if (state.pointers.size === 0) {
+        state.startVb = null
+        state.startDist = 0
+        state.startCenter = null
+        wrap.__mermaidLastSinglePointer = null
+      } else if (state.pointers.size === 1) {
+        // reset single pointer baseline to avoid jump
+        wrap.__mermaidLastSinglePointer = [...state.pointers.values()][0]
+      }
+    }
+
+    // Wheel zoom (mouse/trackpad)
+    const onWheel = e => {
+      // ctrlKey on mac trackpad pinch; we treat both as zoom
+      e.preventDefault()
+      const delta = e.deltaY
+      const zoomFactor = delta > 0 ? 1.1 : 0.9
+      const { x, y } = clientToViewBox(e.clientX, e.clientY)
+      const vb = (wrap.__mermaidCurViewBox || getSvgViewBox(svg)).slice()
+      setCurVb(zoomAtPoint(vb, zoomFactor, x, y))
+    }
+
+    const onDblClick = () => {
+      const init = wrap.__mermaidInitViewBox
+      if (!init) return
+      wrap.__mermaidCurViewBox = init.slice()
+      setSvgViewBox(svg, init)
+    }
+
+    svg.addEventListener('pointerdown', onPointerDown)
+    svg.addEventListener('pointermove', onPointerMove)
+    svg.addEventListener('pointerup', onPointerUpOrCancel)
+    svg.addEventListener('pointercancel', onPointerUpOrCancel)
+    svg.addEventListener('wheel', onWheel, { passive: false })
+    svg.addEventListener('dblclick', onDblClick)
+  }
+
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+
+      // Clear old render (themeChange/pjax will rerun)
+      const oldSvg = item.querySelector('svg')
+      if (oldSvg) oldSvg.remove()
+      item.__mermaidGestureBound = false
+
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+        if (true) initMermaidGestures(item)
+        item.__mermaidOriginalSvg = svg
+        if (true) attachMermaidViewerButton(item)
+      }
+
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (true) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.15.0/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const abcjsInit = () => {
+    const abcjsFn = () => {
+      setTimeout(() => {
+        const sheets = document.querySelectorAll(".abc-music-sheet")
+        for (let i = 0; i < sheets.length; i++) {
+          const ele = sheets[i]
+          if (ele.children.length > 0) continue
+
+          // Parse parameters from data-params attribute
+          let params = {}
+          const dp = ele.getAttribute("data-params")
+          if (dp) {
+            try {
+              params = JSON.parse(dp)
+            } catch (e) {
+              console.error("Failed to parse data-params:", e)
+            }
+          }
+
+          // Merge parsed parameters with the responsive option
+          // Ensures params content appears before responsive
+          const options = { ...params, responsive: "resize" }
+
+          // Render the music score using ABCJS.renderAbc
+          ABCJS.renderAbc(ele, ele.textContent, options)
+        }
+      }, 100)
+    }
+
+    if (typeof ABCJS === "object") {
+      abcjsFn()
+    } else {
+      btf.getScript("https://cdn.jsdelivr.net/npm/abcjs@6.6.3/dist/abcjs-basic-min.min.js").then(abcjsFn)
+    }
+  }
+
+  if (window.pjax) {
+    abcjsInit()
+  } else {
+    window.addEventListener("load", abcjsInit)
+  }
+
+  btf.addGlobalFn("encrypt", abcjsInit, "abcjs")
+})()</script><script>(() => {
+  let initFn = window.walineFn || null
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = {"emoji":["https://unpkg.com/@waline/emojis@1.4.0/qq","https://unpkg.com/@waline/emojis@1.4.0/weibo","https://unpkg.com/@waline/emojis@1.4.0/bilibili","https://unpkg.com/@waline/emojis@1.4.0/bmoji","https://unpkg.com/@waline/emojis@1.4.0/tieba","https://unpkg.com/@waline/emojis@1.4.0/tw-emoji"],"requiredMeta":["nick"],"noCopyright":false,"reaction":true,"reactionCount":true}
+
+  const destroyWaline = ele => ele.destroy()
+
+  const initWaline = (Fn, el = document, path = window.location.pathname) => {
+    const waline = Fn({
+      el: el.querySelector('#waline-wrap'),
+      serverURL: 'https://comment.huyongshuang.top',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      comment: true,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyWaline = () => {
+        destroyWaline(waline)
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const loadWaline = (el, path) => {
+    if (initFn) initWaline(initFn, el, path)
+    else {
+      btf.getCSS('https://cdn.jsdelivr.net/npm/@waline/client@3.15.2/dist/waline.min.css')
+        .then(() => import('https://cdn.jsdelivr.net/npm/@waline/client@3.15.2/dist/waline.min.js'))
+        .then(({ init }) => {
+          initFn = init || Waline.init
+          initWaline(initFn, el, path)
+          window.walineFn = initFn
+        })
+    }
+  }
+
+  if (isShuoshuo) {
+    'Waline' === 'Waline'
+      ? window.shuoshuoComment = { loadComment: loadWaline } 
+      : window.loadOtherComment = loadWaline
+    return
+  }
+
+  if ('Waline' === 'Waline' || !false) {
+    if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script></div><script src="/en/assets/cursor/cursor-gif.js"></script><script src="/en/js/cursor_1.js"></script><script src="/en/js/cursor_2.js"></script><script src="/en/js/language.js"></script><script src="/en/js/time-widget.js"></script><script src="/en/js/snowflake.js"></script><script src="/en/js/cursor-star.js"></script><script src="/en/assets/live2d-widget/autoload.js"></script><div class="aplayer no-destroy" data-id="6603686444" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-autoplay="false"></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/click-show-text.min.js" data-mobile="false" data-text="Wish you all the best,Stay happy and healthy,May luck be with you,Enjoy every bright day,All dreams come true,Peace fill your whole life,Hope joy surrounds you,Have a wonderful life,Good fortune always yours,May you thrive always" data-fontsize="14px" data-random="false" async="async"></script><script>(() => {
+  window.ChatraID = 'eAytia8GjQfC5Mbih'
+  window.Chatra = window.Chatra || function() {
+    (window.Chatra.q = window.Chatra.q || []).push(arguments)
+  }
+
+  btf.getScript('https://call.chatra.io/chatra.js').then(() => {
+    const isChatBtn = true
+    const isChatHideShow = false
+
+    if (isChatBtn) {
+      const close = () => {
+        Chatra('minimizeWidget')
+        Chatra('hide')
+      }
+
+      const open = () => {
+        Chatra('openChat', true)
+        Chatra('show')
+      }
+
+      window.ChatraSetup = { startHidden: true }
+    
+      window.chatBtnFn = () => document.getElementById('chatra').classList.contains('chatra--expanded') ? close() : open()
+
+      document.getElementById('chat-btn').style.display = 'block'
+    } else if (isChatHideShow) {
+      window.chatBtn = {
+        hide: () => Chatra('hide'),
+        show: () => Chatra('show')
+      }
+    }
+  })
+})()</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/metingjs/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="local-search-input"><input placeholder="Search for Posts" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/en/js/search/local-search.js?v=5.5.5"></script></div></div></body></html>
