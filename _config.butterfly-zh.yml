@@ -125,7 +125,7 @@ error_img:
 
 # A simple 404 page
 error_404:
-  enable: false
+  enable: true  # 启用 404 页面
   subtitle: 'Page Not Found'
   background: /img/image.png
 
@@ -468,7 +468,7 @@ rightside_bottom:
 
 # Conversion between Traditional and Simplified Chinese
 translate:
-  enable: true
+  enable: true  # 中文网站启用简繁转换
   # The text of a button
   default: 繁
   # the language of website (1 - Traditional Chinese/ 2 - Simplified Chinese）
