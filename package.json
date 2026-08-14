@@ -42,7 +42,7 @@
     "hexo-server": "^3.0.0",
     "hexo-theme-butterfly": "^5.5.5",
     "hexo-wordcount": "^6.0.1",
-    "katex": "^0.17.0",
+    "katex": "^0.18.4",
     "markdown-it-anchor": "^9.2.1",
     "markdown-it-attrs": "^5.0.0",
     "markdown-it-imsize": "^2.0.1",
